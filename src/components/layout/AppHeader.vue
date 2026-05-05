@@ -22,12 +22,9 @@ onMounted(() => {
     <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
       <!-- Logo -->
       <RouterLink to="/" class="flex flex-col leading-none">
-        <span class="font-script text-2xl">
+        <span class="font-display font-bold text-2xl uppercase tracking-widest">
           <span class="text-blush">Lathered</span>
           <span class="text-teal"> &amp; Lit</span>
-        </span>
-        <span class="text-[10px] uppercase tracking-[0.25em] text-gold font-body font-medium mt-0.5">
-          Soap Co.
         </span>
       </RouterLink>
 
@@ -35,14 +32,14 @@ onMounted(() => {
       <nav class="hidden md:flex items-center gap-8">
         <RouterLink
           to="/"
-          class="text-sm font-body text-gray-600 hover:text-blush transition-colors"
+          class="soap-nav text-base font-body text-gray-600 hover:text-blush transition-colors"
           active-class="text-blush"
         >
           Home
         </RouterLink>
         <RouterLink
           to="/shop"
-          class="text-sm font-body text-gray-600 hover:text-blush transition-colors"
+          class="soap-nav text-base font-body text-gray-600 hover:text-blush transition-colors"
           active-class="text-blush"
         >
           Shop
@@ -78,3 +75,25 @@ onMounted(() => {
     </div>
   </header>
 </template>
+
+<style scoped>
+.soap-nav {
+  position: relative;
+  display: inline-block;
+}
+.soap-nav::after {
+  content: '';
+  position: absolute;
+  inset: -6px -12px;
+  border: 1.5px solid #f6b7c1;
+  border-radius: 45% 55% 52% 48% / 48% 52% 48% 52%;
+  opacity: 0;
+  transform: scale(0.85);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  pointer-events: none;
+}
+.soap-nav:hover::after {
+  transform: scale(1);
+  opacity: 1;
+}
+</style>

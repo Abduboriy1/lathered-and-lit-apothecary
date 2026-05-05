@@ -11,12 +11,9 @@ const email = ref('')
       <!-- Brand -->
       <div>
         <div class="flex flex-col leading-none mb-4">
-          <span class="font-script text-2xl">
+          <span class="font-display font-bold text-3xl uppercase tracking-widest">
             <span class="text-blush">Lathered</span>
             <span class="text-teal"> &amp; Lit</span>
-          </span>
-          <span class="text-[10px] uppercase tracking-[0.25em] text-gold font-body font-medium mt-0.5">
-            Soap Co.
           </span>
         </div>
         <p class="text-sm text-gray-500 leading-relaxed max-w-xs">
@@ -62,7 +59,7 @@ const email = ref('')
     </div>
 
     <div class="border-t border-blush/10 py-6 text-center text-xs text-gray-400 font-body">
-      © {{ new Date().getFullYear() }} Lathered & Lit Soap Co. — Made with care.
+      © {{ new Date().getFullYear() }} Lathered & Lit — Made with care.
     </div>
   </footer>
 </template>

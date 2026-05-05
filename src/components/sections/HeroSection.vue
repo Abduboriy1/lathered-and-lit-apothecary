@@ -1,19 +1,35 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 import { gsap } from 'gsap'
 import { RouterLink } from 'vue-router'
-import CandleAnimation from '@/components/animation/CandleAnimation.vue'
 import GlowButton from '@/components/ui/GlowButton.vue'
 
 const heroRef = ref<HTMLElement | null>(null)
 
+const badges = ['Clean burning', 'Skin-safe', 'Hand-poured']
+const badgeColors = ['text-gold', 'text-teal', 'text-blush']
+const badgeIndex = ref(0)
+const badgeVisible = ref(true)
+let badgeTimer: ReturnType<typeof setInterval>
+
+onUnmounted(() => clearInterval(badgeTimer))
+
 onMounted(() => {
+  badgeTimer = setInterval(() => {
+    badgeVisible.value = false
+    setTimeout(() => {
+      badgeIndex.value = (badgeIndex.value + 1) % badges.length
+      badgeVisible.value = true
+    }, 350)
+  }, 2200)
+
   const tl = gsap.timeline({ delay: 0.4 })
   tl.fromTo('.hero-label', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' })
     .fromTo('.hero-title', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.7, ease: 'power2.out' }, '-=0.3')
     .fromTo('.hero-sub', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' }, '-=0.3')
-    .fromTo('.hero-ctas', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' }, '-=0.2')
-    .fromTo('.hero-candle', { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1, duration: 0.9, ease: 'back.out(1.4)' }, '-=0.6')
+    .fromTo('.hero-tagline', { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' }, '-=0.2')
+    .fromTo('.hero-ctas', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' }, '-=0.3')
+    .fromTo('.hero-image', { opacity: 0 }, { opacity: 1, duration: 0.8, ease: 'power2.out' }, '-=0.4')
 })
 </script>
 
@@ -31,16 +47,26 @@ onMounted(() => {
     <div class="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center py-16">
       <!-- Text side -->
       <div class="flex flex-col items-start">
-        <p class="hero-label font-script text-gold text-xl italic mb-2 opacity-0">
-          Handcrafted with love
+        <p class="hero-label font-script text-gold text-3xl font-semibold italic mb-2 opacity-0 flex items-center flex-wrap gap-x-2">
+          <span>Handcrafted with love,</span>
+          <span class="relative inline-block min-w-[10rem] h-[1.2em]">
+            <Transition name="badge-flip">
+              <span
+                v-if="badgeVisible"
+                :key="badgeIndex"
+                class="absolute left-0 top-0 font-bold italic whitespace-nowrap"
+                :class="badgeColors[badgeIndex]"
+              >{{ badges[badgeIndex] }}</span>
+            </Transition>
+          </span>
         </p>
 
-        <h1 class="hero-title font-script text-5xl md:text-7xl leading-tight mb-4 opacity-0">
+        <h1 class="hero-title font-display font-bold text-6xl md:text-8xl uppercase tracking-wide leading-tight mb-4 opacity-0">
           <span class="text-blush block">Lathered</span>
           <span class="text-teal">&amp; Lit</span>
         </h1>
 
-        <p class="hero-sub font-body text-gray-500 text-base md:text-lg leading-relaxed max-w-md mb-8 opacity-0">
+        <p class="hero-sub font-body text-gray-500 text-lg md:text-xl leading-relaxed max-w-md mb-8 opacity-0">
           Small-batch artisan candles and soaps, made with clean ingredients and poured with intention.
           Light one up — you deserve the glow.
         </p>
@@ -54,17 +80,15 @@ onMounted(() => {
           </RouterLink>
         </div>
 
-        <!-- Trust badges -->
-        <div class="flex gap-6 mt-10 text-xs text-gray-400 font-body">
-          <span>🕯️ Clean burning</span>
-          <span>🌿 Skin-safe</span>
-          <span>✨ Hand-poured</span>
-        </div>
       </div>
 
-      <!-- Candle side -->
-      <div class="hero-candle hidden lg:flex justify-center items-end opacity-0 w-full">
-        <CandleAnimation class="animate-float w-full max-w-xs lg:max-w-sm" />
+      <!-- Hero image (placeholder — swap src when ready) -->
+      <div class="hero-image hidden lg:flex justify-center items-center opacity-0 w-full">
+        <img
+          src="@/assets/hero1.png"
+          alt="Lathered & Lit hero"
+          class="w-full max-w-2xl object-contain"
+        />
       </div>
     </div>
 
@@ -77,3 +101,14 @@ onMounted(() => {
     </div>
   </section>
 </template>
+
+<style scoped>
+.badge-flip-enter-active,
+.badge-flip-leave-active {
+  transition: opacity 0.25s ease;
+}
+.badge-flip-enter-from,
+.badge-flip-leave-to {
+  opacity: 0;
+}
+</style>
