@@ -1,0 +1,80 @@
+<script setup lang="ts">
+import { ref, onMounted } from 'vue'
+import { gsap } from 'gsap'
+import { RouterLink } from 'vue-router'
+import { useCartStore } from '@/stores/cart'
+import GlowButton from '@/components/ui/GlowButton.vue'
+
+const cart = useCartStore()
+const headerRef = ref<HTMLElement | null>(null)
+
+onMounted(() => {
+  gsap.fromTo(
+    headerRef.value,
+    { y: -80, opacity: 0 },
+    { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out', delay: 0.1 },
+  )
+})
+</script>
+
+<template>
+  <header ref="headerRef" class="glass-nav fixed top-0 left-0 right-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <!-- Logo -->
+      <RouterLink to="/" class="flex flex-col leading-none">
+        <span class="font-script text-2xl">
+          <span class="text-blush">Lathered</span>
+          <span class="text-teal"> &amp; Lit</span>
+        </span>
+        <span class="text-[10px] uppercase tracking-[0.25em] text-gold font-body font-medium mt-0.5">
+          Soap Co.
+        </span>
+      </RouterLink>
+
+      <!-- Nav links -->
+      <nav class="hidden md:flex items-center gap-8">
+        <RouterLink
+          to="/"
+          class="text-sm font-body text-gray-600 hover:text-blush transition-colors"
+          active-class="text-blush"
+        >
+          Home
+        </RouterLink>
+        <RouterLink
+          to="/shop"
+          class="text-sm font-body text-gray-600 hover:text-blush transition-colors"
+          active-class="text-blush"
+        >
+          Shop
+        </RouterLink>
+      </nav>
+
+      <!-- Cart button -->
+      <button
+        class="relative flex items-center gap-2 cursor-pointer"
+        @click="cart.openDrawer()"
+      >
+        <svg
+          class="w-6 h-6 text-gray-600 hover:text-blush transition-colors"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.5"
+            d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
+          />
+        </svg>
+        <span
+          v-if="cart.totalItems > 0"
+          class="absolute -top-2 -right-2 w-5 h-5 bg-blush text-white text-[10px] font-bold rounded-full flex items-center justify-center"
+        >
+          {{ cart.totalItems }}
+        </span>
+        <GlowButton size="sm" class="hidden md:inline-flex">Bag</GlowButton>
+      </button>
+    </div>
+  </header>
+</template>
