@@ -5,3 +5,12 @@ declare module '*.vue' {
   const component: DefineComponent<object, object, unknown>
   export default component
 }
+
+interface ImportMetaEnv {
+  readonly VITE_SHOPIFY_STORE_DOMAIN: string
+  readonly VITE_SHOPIFY_STOREFRONT_TOKEN: string
+}
+
+interface ImportMeta {
+  readonly env: ImportMetaEnv
+}

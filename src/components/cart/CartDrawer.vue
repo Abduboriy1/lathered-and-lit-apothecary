@@ -30,8 +30,10 @@ watch(
 )
 
 function handleCheckout() {
-  cart.clearCart()
   cart.closeDrawer()
+  if (cart.checkoutUrl) {
+    window.location.href = cart.checkoutUrl
+  }
 }
 </script>
 

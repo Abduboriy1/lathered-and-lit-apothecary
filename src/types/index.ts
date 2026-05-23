@@ -13,9 +13,11 @@ export interface Product {
   featured: boolean
   stock: number
   badges?: ('bestseller' | 'new' | 'limited')[]
+  variantId?: string
 }
 
 export interface CartItem {
   product: Product
   quantity: number
+  lineId?: string
 }

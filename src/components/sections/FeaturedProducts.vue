@@ -1,21 +1,56 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, watch, nextTick, onMounted, onUnmounted } from 'vue'
 import { RouterLink } from 'vue-router'
-import { getFeaturedProducts } from '@/data/products'
-import { useScrollReveal } from '@/composables/useGsap'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useProductsStore } from '@/stores/products'
 import { useCartStore } from '@/stores/cart'
 import SectionTitle from '@/components/ui/SectionTitle.vue'
 
-const featured = getFeaturedProducts()
+const productStore = useProductsStore()
 const cart = useCartStore()
 const sectionRef = ref<HTMLElement | null>(null)
+let scrollTriggerInstance: ScrollTrigger | null = null
 
-useScrollReveal(() => sectionRef.value?.querySelectorAll('.product-card-wrapper') ?? null, {
-  stagger: 0.1,
-  start: 'top 85%',
-})
+async function initScrollReveal() {
+  await nextTick()
+  const items = sectionRef.value?.querySelectorAll('.product-card-wrapper')
+  if (!items?.length) return
+  gsap.fromTo(
+    items,
+    { opacity: 0, y: 40 },
+    {
+      opacity: 1,
+      y: 0,
+      stagger: 0.1,
+      duration: 0.7,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: items[0],
+        start: 'top 85%',
+        once: true,
+        onEnter: () => {
+          const all = ScrollTrigger.getAll()
+          scrollTriggerInstance = all[all.length - 1] ?? null
+        },
+      },
+    },
+  )
+}
 
-function addToCart(product: (typeof featured)[0]) {
+watch(
+  () => productStore.products,
+  async (products) => {
+    if (products.length) await initScrollReveal()
+  },
+  { immediate: true },
+)
+
+onMounted(() => productStore.fetchFeaturedProducts())
+
+onUnmounted(() => scrollTriggerInstance?.kill())
+
+function addToCart(product: (typeof productStore.products)[0]) {
   cart.addItem(product)
   cart.openDrawer()
 }
@@ -25,9 +60,21 @@ function addToCart(product: (typeof featured)[0]) {
   <section class="py-24 px-6 max-w-7xl mx-auto">
     <SectionTitle label="our collection" title="Featured Candles" subtitle="Poured with intention, designed for everyday ritual." />
 
-    <div ref="sectionRef" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <!-- Loading skeleton -->
+    <div v-if="productStore.loading && !productStore.products.length" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div v-for="n in 4" :key="n" class="glass-card overflow-hidden animate-pulse">
+        <div class="aspect-square bg-blush/10 rounded-t-2xl" />
+        <div class="p-4 space-y-2">
+          <div class="h-4 bg-blush/10 rounded w-3/4" />
+          <div class="h-3 bg-blush/10 rounded w-1/2" />
+          <div class="h-8 bg-blush/10 rounded-full w-1/3 mt-3" />
+        </div>
+      </div>
+    </div>
+
+    <div v-else ref="sectionRef" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
       <div
-        v-for="product in featured"
+        v-for="product in productStore.products"
         :key="product.id"
         class="product-card-wrapper"
         style="opacity: 0"

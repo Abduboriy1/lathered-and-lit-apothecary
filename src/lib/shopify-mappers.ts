@@ -1,0 +1,128 @@
+import type { Product, CartItem } from '@/types'
+
+interface ShopifyImage {
+  url: string
+  altText?: string | null
+}
+
+interface ShopifyVariant {
+  id: string
+  weight: number
+  weightUnit: string
+  quantityAvailable: number
+}
+
+interface ShopifyMetafield {
+  value: string
+}
+
+export interface ShopifyProductNode {
+  id: string
+  handle: string
+  title: string
+  description: string
+  productType: string
+  tags: string[]
+  priceRange: {
+    minVariantPrice: { amount: string; currencyCode: string }
+  }
+  images: { edges: { node: ShopifyImage }[] }
+  variants: { edges: { node: ShopifyVariant }[] }
+  shortDescription?: ShopifyMetafield | null
+  burnTime?: ShopifyMetafield | null
+}
+
+interface ShopifyCartLineMerchandise {
+  id: string
+  product: {
+    handle: string
+    title: string
+    tags: string[]
+    images: { edges: { node: { url: string } }[] }
+  }
+}
+
+interface ShopifyCartLine {
+  id: string
+  quantity: number
+  cost: { amountPerQuantity: { amount: string } }
+  merchandise: ShopifyCartLineMerchandise
+}
+
+export interface ShopifyCartResponse {
+  id: string
+  checkoutUrl: string
+  lines: { edges: { node: ShopifyCartLine }[] }
+}
+
+function mapCategory(productType: string): Product['category'] {
+  const t = productType.toLowerCase()
+  if (t === 'soap') return 'soap'
+  if (t === 'set') return 'set'
+  return 'candle'
+}
+
+function mapBadges(tags: string[]): Product['badges'] {
+  const valid = ['bestseller', 'new', 'limited'] as const
+  const found = tags.filter((t): t is typeof valid[number] => (valid as readonly string[]).includes(t))
+  return found.length ? found : undefined
+}
+
+function mapWeight(variant: ShopifyVariant | undefined): string {
+  if (!variant || !variant.weight) return ''
+  const unit = variant.weightUnit === 'OUNCES' ? 'oz' : variant.weightUnit.toLowerCase()
+  return `${variant.weight} ${unit}`
+}
+
+export function mapProduct(node: ShopifyProductNode): Product {
+  const variant = node.variants.edges[0]?.node
+  return {
+    id: node.handle,
+    name: node.title,
+    price: parseFloat(node.priceRange.minVariantPrice.amount),
+    category: mapCategory(node.productType),
+    scent: node.tags.filter((t) => t.startsWith('scent:')).map((t) => t.replace('scent:', '')),
+    description: node.description,
+    shortDescription: node.shortDescription?.value ?? node.description.slice(0, 80),
+    imageUrl: node.images.edges[0]?.node.url ?? '',
+    hoverImageUrl: node.images.edges[1]?.node.url,
+    burnTime: node.burnTime?.value,
+    weight: mapWeight(variant),
+    featured: node.tags.includes('featured'),
+    stock: variant?.quantityAvailable ?? 0,
+    badges: mapBadges(node.tags),
+    variantId: variant?.id,
+  }
+}
+
+export function mapCartLines(lines: ShopifyCartResponse['lines']): CartItem[] {
+  return lines.edges.map(({ node }) => {
+    const { product, id: variantId } = node.merchandise
+    return {
+      lineId: node.id,
+      quantity: node.quantity,
+      product: {
+        id: product.handle,
+        name: product.title,
+        price: parseFloat(node.cost.amountPerQuantity.amount),
+        category: 'candle' as const,
+        scent: product.tags.filter((t) => t.startsWith('scent:')).map((t) => t.replace('scent:', '')),
+        description: '',
+        shortDescription: '',
+        imageUrl: product.images.edges[0]?.node.url ?? '',
+        weight: '',
+        featured: false,
+        stock: 0,
+        variantId,
+      },
+    }
+  })
+}
+
+export function mapCartState(cart: ShopifyCartResponse) {
+  return {
+    cartId: cart.id,
+    checkoutUrl: cart.checkoutUrl,
+    items: mapCartLines(cart.lines),
+  }
+}

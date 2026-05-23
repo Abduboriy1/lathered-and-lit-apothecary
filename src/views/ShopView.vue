@@ -1,12 +1,13 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
-import { products } from '@/data/products'
+import { ref, computed, onMounted } from 'vue'
 import type { Product } from '@/types'
+import { useProductsStore } from '@/stores/products'
 import SectionTitle from '@/components/ui/SectionTitle.vue'
 import ProductGrid from '@/components/product/ProductGrid.vue'
 
 type Category = 'all' | 'candle' | 'soap' | 'set'
 
+const productStore = useProductsStore()
 const activeCategory = ref<Category>('all')
 
 const filters: { key: Category; label: string }[] = [
@@ -18,9 +19,11 @@ const filters: { key: Category; label: string }[] = [
 
 const filtered = computed<Product[]>(() =>
   activeCategory.value === 'all'
-    ? products
-    : products.filter((p) => p.category === activeCategory.value),
+    ? productStore.products
+    : productStore.products.filter((p) => p.category === activeCategory.value),
 )
+
+onMounted(() => productStore.fetchProducts())
 </script>
 
 <template>
@@ -48,10 +51,31 @@ const filtered = computed<Product[]>(() =>
       </button>
     </div>
 
-    <ProductGrid :products="filtered" />
+    <!-- Loading skeleton -->
+    <div v-if="productStore.loading" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div v-for="n in 8" :key="n" class="glass-card overflow-hidden animate-pulse">
+        <div class="aspect-square bg-blush/10 rounded-t-2xl" />
+        <div class="p-4 space-y-2">
+          <div class="h-4 bg-blush/10 rounded w-3/4" />
+          <div class="h-3 bg-blush/10 rounded w-1/2" />
+          <div class="h-8 bg-blush/10 rounded-full w-1/3 mt-3" />
+        </div>
+      </div>
+    </div>
 
-    <p v-if="filtered.length === 0" class="text-center text-gray-400 font-body mt-16">
-      No products in this category yet — check back soon!
+    <!-- Error -->
+    <p v-else-if="productStore.error" class="text-center text-rose-400 font-body mt-16">
+      {{ productStore.error }}
+      <button class="block mx-auto mt-3 text-blush underline" @click="productStore.fetchProducts()">
+        Try again
+      </button>
     </p>
+
+    <template v-else>
+      <ProductGrid :products="filtered" />
+      <p v-if="filtered.length === 0" class="text-center text-gray-400 font-body mt-16">
+        No products in this category yet — check back soon!
+      </p>
+    </template>
   </div>
 </template>
