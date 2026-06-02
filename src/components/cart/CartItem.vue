@@ -24,15 +24,17 @@ const cart = useCartStore()
       <!-- Qty controls -->
       <div class="flex items-center gap-2 mt-2">
         <button
-          class="w-6 h-6 rounded-full border border-blush/40 text-blush text-sm flex items-center justify-center hover:bg-blush hover:text-white transition-colors cursor-pointer"
-          @click="cart.updateQuantity(item.product.id, item.quantity - 1)"
+          class="w-6 h-6 rounded-full border border-blush/40 text-blush text-sm flex items-center justify-center hover:bg-blush hover:text-white transition-colors cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed"
+          :disabled="cart.loading"
+          @click="cart.updateQuantity(item.product.variantId!, item.quantity - 1)"
         >
           −
         </button>
         <span class="text-sm font-body text-gray-700 w-4 text-center">{{ item.quantity }}</span>
         <button
-          class="w-6 h-6 rounded-full border border-blush/40 text-blush text-sm flex items-center justify-center hover:bg-blush hover:text-white transition-colors cursor-pointer"
-          @click="cart.updateQuantity(item.product.id, item.quantity + 1)"
+          class="w-6 h-6 rounded-full border border-blush/40 text-blush text-sm flex items-center justify-center hover:bg-blush hover:text-white transition-colors cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed"
+          :disabled="cart.loading"
+          @click="cart.updateQuantity(item.product.variantId!, item.quantity + 1)"
         >
           +
         </button>
@@ -44,7 +46,7 @@ const cart = useCartStore()
       <span class="text-sm font-display text-gray-800">${{ (item.product.price * item.quantity).toFixed(2) }}</span>
       <button
         class="text-gray-300 hover:text-blush transition-colors cursor-pointer"
-        @click="cart.removeItem(item.product.id)"
+        @click="cart.removeItem(item.product.variantId!)"
       >
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12" />

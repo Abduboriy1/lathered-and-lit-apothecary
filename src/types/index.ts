@@ -1,3 +1,10 @@
+export interface ProductVariant {
+  id: string
+  title: string
+  price: number
+  stock: number
+}
+
 export interface Product {
   id: string
   name: string
@@ -14,6 +21,7 @@ export interface Product {
   stock: number
   badges?: ('bestseller' | 'new' | 'limited')[]
   variantId?: string
+  variants?: ProductVariant[]
 }
 
 export interface CartItem {

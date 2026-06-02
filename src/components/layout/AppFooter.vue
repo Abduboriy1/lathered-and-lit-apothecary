@@ -10,11 +10,8 @@ const email = ref('')
     <div class="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-3 gap-12">
       <!-- Brand -->
       <div>
-        <div class="flex flex-col leading-none mb-4">
-          <span class="font-display font-bold text-3xl uppercase tracking-widest">
-            <span class="text-blush">Lathered</span>
-            <span class="text-teal"> &amp; Lit</span>
-          </span>
+        <div class="mb-4">
+          <img src="@/assets/logo.png" alt="Lathered & Lit" class="h-36 w-auto" />
         </div>
         <p class="text-sm text-gray-500 leading-relaxed max-w-xs">
           Handcrafted with love. Every candle and bar is made in small batches using clean, skin-loving ingredients.

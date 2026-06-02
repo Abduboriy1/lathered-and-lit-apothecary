@@ -87,7 +87,7 @@ export const useCartStore = defineStore('cart', {
       }
 
       // Optimistic update
-      const existing = this.items.find((i) => i.product.id === product.id)
+      const existing = this.items.find((i) => i.product.variantId === product.variantId)
       if (existing) {
         existing.quantity += quantity
       } else {
@@ -102,9 +102,23 @@ export const useCartStore = defineStore('cart', {
             variables: { input: { lines: [{ merchandiseId: product.variantId, quantity }] } },
           })
           if (errors) throw new Error(String(errors))
-          const cart = (data as any)?.cartCreate?.cart
-          if (cart) syncFromCart(this, cart)
+          const result = (data as any)?.cartCreate
+          if (result?.userErrors?.length) throw new Error(result.userErrors[0].message)
+          if (result?.cart) syncFromCart(this, result.cart)
+        } else if (existing?.lineId) {
+          // Item already has a Shopify line — update its quantity directly
+          const { data, errors } = await shopifyClient.request(CART_LINES_UPDATE, {
+            variables: {
+              cartId: this.cartId,
+              lines: [{ id: existing.lineId, quantity: existing.quantity }],
+            },
+          })
+          if (errors) throw new Error(String(errors))
+          const result = (data as any)?.cartLinesUpdate
+          if (result?.userErrors?.length) throw new Error(result.userErrors[0].message)
+          if (result?.cart) syncFromCart(this, result.cart)
         } else {
+          // Cart exists but item not yet synced — add as new line
           const { data, errors } = await shopifyClient.request(CART_LINES_ADD, {
             variables: {
               cartId: this.cartId,
@@ -112,8 +126,13 @@ export const useCartStore = defineStore('cart', {
             },
           })
           if (errors) throw new Error(String(errors))
-          const cart = (data as any)?.cartLinesAdd?.cart
-          if (cart) syncFromCart(this, cart)
+          const result = (data as any)?.cartLinesAdd
+          if (result?.userErrors?.length) throw new Error(result.userErrors[0].message)
+          if (result?.cart) syncFromCart(this, result.cart)
+        }
+        // Detect silent rejection: Shopify accepted the request but returned qty 0
+        if (!this.items.find((i) => i.product.variantId === product.variantId)) {
+          throw new Error('This item is out of stock and could not be added')
         }
       } catch (err) {
         this.error = err instanceof Error ? err.message : 'Failed to add item'
@@ -121,19 +140,20 @@ export const useCartStore = defineStore('cart', {
         if (existing) {
           existing.quantity -= quantity
         } else {
-          this.items = this.items.filter((i) => i.product.id !== product.id)
+          this.items = this.items.filter((i) => i.product.variantId !== product.variantId)
         }
+        setTimeout(() => { this.error = null }, 4000)
       } finally {
         this.loading = false
       }
     },
 
-    async removeItem(productId: string) {
-      const item = this.items.find((i) => i.product.id === productId)
+    async removeItem(variantId: string) {
+      const item = this.items.find((i) => i.product.variantId === variantId)
       if (!item) return
 
       // Optimistic
-      this.items = this.items.filter((i) => i.product.id !== productId)
+      this.items = this.items.filter((i) => i.product.variantId !== variantId)
 
       if (!this.cartId || !item.lineId) return
 
@@ -143,8 +163,9 @@ export const useCartStore = defineStore('cart', {
           variables: { cartId: this.cartId, lineIds: [item.lineId] },
         })
         if (errors) throw new Error(String(errors))
-        const cart = (data as any)?.cartLinesRemove?.cart
-        if (cart) syncFromCart(this, cart)
+        const result = (data as any)?.cartLinesRemove
+        if (result?.userErrors?.length) throw new Error(result.userErrors[0].message)
+        if (result?.cart) syncFromCart(this, result.cart)
       } catch {
         this.items = [...this.items, item]
       } finally {
@@ -152,13 +173,13 @@ export const useCartStore = defineStore('cart', {
       }
     },
 
-    async updateQuantity(productId: string, quantity: number) {
+    async updateQuantity(variantId: string, quantity: number) {
       if (quantity <= 0) {
-        await this.removeItem(productId)
+        await this.removeItem(variantId)
         return
       }
 
-      const item = this.items.find((i) => i.product.id === productId)
+      const item = this.items.find((i) => i.product.variantId === variantId)
       if (!item) return
 
       const oldQty = item.quantity
@@ -175,8 +196,9 @@ export const useCartStore = defineStore('cart', {
           },
         })
         if (errors) throw new Error(String(errors))
-        const cart = (data as any)?.cartLinesUpdate?.cart
-        if (cart) syncFromCart(this, cart)
+        const result = (data as any)?.cartLinesUpdate
+        if (result?.userErrors?.length) throw new Error(result.userErrors[0].message)
+        if (result?.cart) syncFromCart(this, result.cart)
       } catch {
         item.quantity = oldQty
       } finally {

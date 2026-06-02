@@ -23,13 +23,11 @@ onMounted(() => {
     }, 350)
   }, 2200)
 
-  const tl = gsap.timeline({ delay: 0.4 })
-  tl.fromTo('.hero-label', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' })
-    .fromTo('.hero-title', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.7, ease: 'power2.out' }, '-=0.3')
-    .fromTo('.hero-sub', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' }, '-=0.3')
-    .fromTo('.hero-tagline', { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' }, '-=0.2')
-    .fromTo('.hero-ctas', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' }, '-=0.3')
-    .fromTo('.hero-image', { opacity: 0 }, { opacity: 1, duration: 0.8, ease: 'power2.out' }, '-=0.4')
+  gsap.fromTo(
+    ['.hero-label', '.hero-title', '.hero-sub', '.hero-tagline', '.hero-ctas', '.hero-image'],
+    { opacity: 0, y: 20 },
+    { opacity: 1, y: 0, duration: 0.7, ease: 'power2.out', delay: 0.4 },
+  )
 })
 </script>
 

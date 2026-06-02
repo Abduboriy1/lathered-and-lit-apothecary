@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { Product } from '@/types'
-import ProductCard from './ProductCard.vue'
+import ShopItem from './ShopItem.vue'
 
 defineProps<{
   products: Product[]
@@ -17,7 +17,7 @@ defineProps<{
         : 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4',
     ]"
   >
-    <ProductCard
+    <ShopItem
       v-for="product in products"
       :key="product.id"
       :product="product"

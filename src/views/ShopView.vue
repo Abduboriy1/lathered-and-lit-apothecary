@@ -30,7 +30,6 @@ onMounted(() => productStore.fetchProducts())
   <div class="pt-28 pb-24 px-6 max-w-7xl mx-auto min-h-screen">
     <SectionTitle
       label="the full collection"
-      title="Shop All"
       subtitle="Every candle, soap, and set — handmade with love."
     />
 

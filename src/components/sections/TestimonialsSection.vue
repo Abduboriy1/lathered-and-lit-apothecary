@@ -7,7 +7,7 @@ import GlassCard from '@/components/ui/GlassCard.vue'
 const sectionRef = ref<HTMLElement | null>(null)
 
 useScrollReveal(() => sectionRef.value?.querySelectorAll('.testimonial-card') ?? null, {
-  stagger: 0.15,
+  stagger: 0,
   start: 'top 80%',
 })
 

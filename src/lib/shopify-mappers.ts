@@ -7,6 +7,8 @@ interface ShopifyImage {
 
 interface ShopifyVariant {
   id: string
+  title: string
+  price: { amount: string }
   weight: number
   weightUnit: string
   quantityAvailable: number
@@ -75,11 +77,17 @@ function mapWeight(variant: ShopifyVariant | undefined): string {
 }
 
 export function mapProduct(node: ShopifyProductNode): Product {
-  const variant = node.variants.edges[0]?.node
+  const firstVariant = node.variants.edges[0]?.node
+  const variants = node.variants.edges.map(({ node: v }) => ({
+    id: v.id,
+    title: v.title,
+    price: parseFloat(v.price.amount),
+    stock: v.quantityAvailable,
+  }))
   return {
     id: node.handle,
     name: node.title,
-    price: parseFloat(node.priceRange.minVariantPrice.amount),
+    price: parseFloat(firstVariant?.price.amount ?? node.priceRange.minVariantPrice.amount),
     category: mapCategory(node.productType),
     scent: node.tags.filter((t) => t.startsWith('scent:')).map((t) => t.replace('scent:', '')),
     description: node.description,
@@ -87,16 +95,17 @@ export function mapProduct(node: ShopifyProductNode): Product {
     imageUrl: node.images.edges[0]?.node.url ?? '',
     hoverImageUrl: node.images.edges[1]?.node.url,
     burnTime: node.burnTime?.value,
-    weight: mapWeight(variant),
+    weight: mapWeight(firstVariant),
     featured: node.tags.includes('featured'),
-    stock: variant?.quantityAvailable ?? 0,
+    stock: firstVariant?.quantityAvailable ?? 0,
     badges: mapBadges(node.tags),
-    variantId: variant?.id,
+    variantId: firstVariant?.id,
+    variants,
   }
 }
 
 export function mapCartLines(lines: ShopifyCartResponse['lines']): CartItem[] {
-  return lines.edges.map(({ node }) => {
+  return lines.edges.filter(({ node }) => node.quantity > 0).map(({ node }) => {
     const { product, id: variantId } = node.merchandise
     return {
       lineId: node.id,

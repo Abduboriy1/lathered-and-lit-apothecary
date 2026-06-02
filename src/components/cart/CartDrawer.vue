@@ -68,6 +68,11 @@ function handleCheckout() {
       </button>
     </div>
 
+    <!-- Error banner -->
+    <div v-if="cart.error" class="mx-6 mt-4 px-4 py-2.5 bg-red-50 border border-red-200 rounded-xl text-xs text-red-600 font-body">
+      {{ cart.error }}
+    </div>
+
     <!-- Empty state -->
     <div v-if="cart.isEmpty" class="flex-1 flex flex-col items-center justify-center text-center px-6">
       <svg class="w-16 h-16 text-blush/30 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -85,7 +90,7 @@ function handleCheckout() {
 
     <!-- Cart items -->
     <div v-else class="flex-1 overflow-y-auto scrollbar-hide px-6">
-      <CartItem v-for="item in cart.items" :key="item.product.id" :item="item" />
+      <CartItem v-for="item in cart.items" :key="item.product.variantId ?? item.product.id" :item="item" />
     </div>
 
     <!-- Summary -->

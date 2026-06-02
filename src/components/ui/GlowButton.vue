@@ -18,7 +18,7 @@ defineEmits<{ click: [] }>()
         ? 'border-2 border-blush text-blush hover:bg-blush hover:text-white hover:shadow-glow'
         : variant === 'ghost'
           ? 'text-gold underline-offset-4 hover:underline'
-          : 'bg-blush text-white shadow-glow animate-glow-pulse hover:bg-blush/90 hover:shadow-glow-lg',
+          : 'bg-blush text-white shadow-glow animate-glow-pulse hover:brightness-90',
     ]"
     @click="$emit('click')"
   >

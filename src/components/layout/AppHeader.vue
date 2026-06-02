@@ -3,7 +3,6 @@ import { ref, onMounted } from 'vue'
 import { gsap } from 'gsap'
 import { RouterLink } from 'vue-router'
 import { useCartStore } from '@/stores/cart'
-import GlowButton from '@/components/ui/GlowButton.vue'
 
 const cart = useCartStore()
 const headerRef = ref<HTMLElement | null>(null)
@@ -19,13 +18,10 @@ onMounted(() => {
 
 <template>
   <header ref="headerRef" class="glass-nav fixed top-0 left-0 right-0 z-50">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <div class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
       <!-- Logo -->
-      <RouterLink to="/" class="flex flex-col leading-none">
-        <span class="font-display font-bold text-2xl uppercase tracking-widest">
-          <span class="text-blush">Lathered</span>
-          <span class="text-teal"> &amp; Lit</span>
-        </span>
+      <RouterLink to="/" class="flex items-center">
+        <img src="@/assets/logo.png" alt="Lathered & Lit" class="h-16 w-auto" />
       </RouterLink>
 
       <!-- Nav links -->
@@ -70,7 +66,6 @@ onMounted(() => {
         >
           {{ cart.totalItems }}
         </span>
-        <GlowButton size="sm" class="hidden md:inline-flex">Bag</GlowButton>
       </button>
     </div>
   </header>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import { RouterLink } from 'vue-router'
 import type { Product } from '@/types'
 import BadgeTag from '@/components/ui/BadgeTag.vue'
@@ -7,6 +7,7 @@ import BadgeTag from '@/components/ui/BadgeTag.vue'
 const props = defineProps<{ product: Product }>()
 
 const hovered = ref(false)
+const inStock = computed(() => props.product.stock > 0)
 </script>
 
 <template>
@@ -31,6 +32,17 @@ const hovered = ref(false)
         class="absolute inset-0 w-full h-full object-contain transition-all duration-700"
         :class="hovered ? 'opacity-100' : 'opacity-0'"
       />
+
+      <!-- Out of stock overlay -->
+      <div
+        v-if="!inStock"
+        class="absolute inset-0 bg-white/60 flex items-center justify-center"
+      >
+        <span class="text-xs font-body font-semibold text-gray-400 uppercase tracking-widest">
+          Out of Stock
+        </span>
+      </div>
+
       <!-- Badges -->
       <div v-if="product.badges?.length" class="absolute top-3 left-3 flex flex-wrap gap-1">
         <BadgeTag v-for="badge in product.badges" :key="badge" :type="badge" />

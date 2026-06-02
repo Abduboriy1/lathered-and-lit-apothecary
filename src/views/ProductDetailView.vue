@@ -22,41 +22,29 @@ watch(() => props.id, (id) => load(id))
 </script>
 
 <template>
-  <div class="pt-28 pb-24 px-6 max-w-7xl mx-auto min-h-screen">
+  <div class="min-h-screen flex flex-col px-6">
     <!-- Loading skeleton -->
-    <div v-if="productStore.loading" class="animate-pulse">
-      <div class="flex gap-2 mb-10">
-        <div class="h-3 w-10 bg-blush/10 rounded" />
-        <div class="h-3 w-3 bg-blush/10 rounded" />
-        <div class="h-3 w-10 bg-blush/10 rounded" />
-        <div class="h-3 w-3 bg-blush/10 rounded" />
-        <div class="h-3 w-24 bg-blush/10 rounded" />
-      </div>
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
-        <div class="aspect-square bg-blush/10 rounded-2xl" />
-        <div class="space-y-4">
-          <div class="h-8 bg-blush/10 rounded w-2/3" />
-          <div class="h-5 bg-blush/10 rounded w-1/4" />
-          <div class="h-24 bg-blush/10 rounded" />
-          <div class="h-12 bg-blush/10 rounded-full w-40" />
+    <div v-if="productStore.loading" class="flex-1 flex items-center justify-center pt-28 pb-24 max-w-7xl mx-auto w-full">
+      <div class="animate-pulse w-full">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <div class="aspect-square bg-blush/10 rounded-2xl" />
+          <div class="space-y-4">
+            <div class="h-8 bg-blush/10 rounded w-2/3" />
+            <div class="h-5 bg-blush/10 rounded w-1/4" />
+            <div class="h-24 bg-blush/10 rounded" />
+            <div class="h-12 bg-blush/10 rounded-full w-40" />
+          </div>
         </div>
       </div>
     </div>
 
     <template v-else-if="productStore.currentProduct">
-      <!-- Breadcrumb -->
-      <nav class="flex gap-2 text-xs text-gray-400 font-body mb-10">
-        <RouterLink to="/" class="hover:text-blush transition-colors">Home</RouterLink>
-        <span>/</span>
-        <RouterLink to="/shop" class="hover:text-blush transition-colors">Shop</RouterLink>
-        <span>/</span>
-        <span class="text-gray-600">{{ productStore.currentProduct.name }}</span>
-      </nav>
-
-      <ProductDetail :product="productStore.currentProduct" />
+      <div class="flex-1 flex items-center justify-center pt-28 pb-12 max-w-7xl mx-auto w-full">
+        <ProductDetail :product="productStore.currentProduct" class="w-full" />
+      </div>
 
       <!-- Related products -->
-      <div v-if="productStore.relatedProducts.length" class="mt-24">
+      <div v-if="productStore.relatedProducts.length" class="pb-24 max-w-7xl mx-auto w-full">
         <SectionTitle label="you may also like" title="More to Love" align="left" />
         <ProductGrid :products="productStore.relatedProducts" />
       </div>
