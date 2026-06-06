@@ -36,6 +36,7 @@ export interface ShopifyProductNode {
 
 interface ShopifyCartLineMerchandise {
   id: string
+  title: string
   product: {
     handle: string
     title: string
@@ -60,8 +61,9 @@ export interface ShopifyCartResponse {
 function mapCategory(productType: string): Product['category'] {
   const t = productType.toLowerCase()
   if (t === 'soap') return 'soap'
+  if (t === 'body') return 'body'
   if (t === 'set') return 'set'
-  return 'candle'
+  return 'soap'
 }
 
 function mapBadges(tags: string[]): Product['badges'] {
@@ -106,15 +108,17 @@ export function mapProduct(node: ShopifyProductNode): Product {
 
 export function mapCartLines(lines: ShopifyCartResponse['lines']): CartItem[] {
   return lines.edges.filter(({ node }) => node.quantity > 0).map(({ node }) => {
-    const { product, id: variantId } = node.merchandise
+    const { product, id: variantId, title: variantTitle } = node.merchandise
+    const normalizedTitle = variantTitle === 'Default Title' ? undefined : variantTitle
     return {
       lineId: node.id,
       quantity: node.quantity,
+      variantTitle: normalizedTitle,
       product: {
         id: product.handle,
         name: product.title,
         price: parseFloat(node.cost.amountPerQuantity.amount),
-        category: 'candle' as const,
+        category: 'soap' as const,
         scent: product.tags.filter((t) => t.startsWith('scent:')).map((t) => t.replace('scent:', '')),
         description: '',
         shortDescription: '',

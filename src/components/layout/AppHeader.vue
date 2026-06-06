@@ -21,7 +21,10 @@ onMounted(() => {
     <div class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
       <!-- Logo -->
       <RouterLink to="/" class="flex items-center">
-        <img src="@/assets/logo.png" alt="Lathered & Lit" class="h-16 w-auto" />
+        <div class="font-display font-bold uppercase tracking-wide leading-tight">
+          <span class="text-teal block text-2xl">Lathered</span>
+          <span class="text-blush text-lg">&amp; Lit</span>
+        </div>
       </RouterLink>
 
       <!-- Nav links -->

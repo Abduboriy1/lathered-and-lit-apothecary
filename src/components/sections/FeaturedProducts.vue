@@ -52,7 +52,7 @@ onUnmounted(() => scrollTriggerInstance?.kill())
 
 <template>
   <section class="py-24 px-6 max-w-7xl mx-auto">
-    <SectionTitle label="our collection" title="Featured Candles" subtitle="Poured with intention, designed for everyday ritual." />
+    <SectionTitle label="our collection" title="Featured Soaps" subtitle="Crafted with intention, designed for everyday ritual." />
 
     <!-- Loading skeleton -->
     <div v-if="productStore.loading && !productStore.products.length" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

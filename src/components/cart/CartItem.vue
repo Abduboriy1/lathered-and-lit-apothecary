@@ -5,6 +5,10 @@ import { useCartStore } from '@/stores/cart'
 defineProps<{ item: CartItem }>()
 
 const cart = useCartStore()
+
+function formatVariantTitle(title: string): string {
+  return /^\d+(\.\d+)?$/.test(title.trim()) ? `${title.trim()} oz` : title
+}
 </script>
 
 <template>
@@ -19,7 +23,11 @@ const cart = useCartStore()
     <!-- Info -->
     <div class="flex-1 min-w-0">
       <p class="font-display text-sm text-gray-800 truncate leading-tight">{{ item.product.name }}</p>
-      <p class="text-xs text-gray-400 mt-0.5 font-body">{{ item.product.scent.slice(0, 2).join(', ') }}</p>
+      <p class="text-xs text-gray-400 mt-0.5 font-body">
+        <span v-if="item.variantTitle">{{ formatVariantTitle(item.variantTitle) }}</span>
+        <span v-if="item.variantTitle && item.product.scent.length"> · </span>
+        <span>{{ item.product.scent.slice(0, 2).join(', ') }}</span>
+      </p>
 
       <!-- Qty controls -->
       <div class="flex items-center gap-2 mt-2">

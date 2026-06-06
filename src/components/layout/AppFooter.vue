@@ -11,11 +11,25 @@ const email = ref('')
       <!-- Brand -->
       <div>
         <div class="mb-4">
-          <img src="@/assets/logo.png" alt="Lathered & Lit" class="h-36 w-auto" />
+          <div class="font-display font-bold uppercase tracking-wide leading-tight">
+            <span class="text-teal block text-4xl">Lathered</span>
+            <span class="text-blush text-3xl">&amp; Lit</span>
+          </div>
         </div>
-        <p class="text-sm text-gray-500 leading-relaxed max-w-xs">
-          Handcrafted with love. Every candle and bar is made in small batches using clean, skin-loving ingredients.
-        </p>
+        <div class="flex flex-col gap-2 mt-1">
+          <div class="flex items-center gap-2 text-xs text-gray-500 font-body">
+            <svg class="w-3.5 h-3.5 text-mint flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3C7 3 3 7.5 3 12c0 2 .8 3.8 2 5.2M12 3c5 0 9 4.5 9 9 0 2-.8 3.8-2 5.2M12 3v18"/></svg>
+            Natural Ingredients
+          </div>
+          <div class="flex items-center gap-2 text-xs text-gray-500 font-body">
+            <svg class="w-3.5 h-3.5 text-blush flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            Made with Love
+          </div>
+          <div class="flex items-center gap-2 text-xs text-gray-500 font-body">
+            <svg class="w-3.5 h-3.5 text-mint flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Gentle &amp; Nourishing
+          </div>
+        </div>
       </div>
 
       <!-- Navigation -->
@@ -36,7 +50,7 @@ const email = ref('')
 
       <!-- Newsletter -->
       <div>
-        <h4 class="font-display text-gray-700 font-medium mb-4">Stay in the glow</h4>
+        <h4 class="font-display text-gray-700 font-medium mb-4">Stay in the lather</h4>
         <p class="text-sm text-gray-500 mb-4">New drops, rituals & exclusive offers.</p>
         <form class="flex gap-2" @submit.prevent>
           <input
@@ -56,7 +70,7 @@ const email = ref('')
     </div>
 
     <div class="border-t border-blush/10 py-6 text-center text-xs text-gray-400 font-body">
-      © {{ new Date().getFullYear() }} Lathered & Lit — Made with care.
+      © {{ new Date().getFullYear() }} Lathered & Lit Soap Co., LLC — Handcrafted with care.
     </div>
   </footer>
 </template>

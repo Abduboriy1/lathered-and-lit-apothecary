@@ -41,16 +41,16 @@ function handleCheckout() {
   <!-- Backdrop -->
   <div
     ref="backdropRef"
-    class="fixed inset-0 bg-black/20 backdrop-blur-xs z-60 hidden"
-    style="display: none"
+    class="fixed inset-0 bg-black/20 backdrop-blur-xs hidden"
+    style="display: none; z-index: 9998"
     @click="cart.closeDrawer()"
   />
 
   <!-- Drawer panel -->
   <div
     ref="drawerRef"
-    class="fixed right-0 top-0 h-full w-80 sm:w-96 bg-ivory/98 backdrop-blur-xl z-70 flex flex-col shadow-2xl"
-    style="transform: translateX(100%)"
+    class="fixed right-0 top-0 h-full w-80 sm:w-96 bg-ivory/98 backdrop-blur-xl flex flex-col shadow-2xl"
+    style="transform: translateX(100%); z-index: 9999"
   >
     <!-- Header -->
     <div class="flex items-center justify-between px-6 py-5 border-b border-blush/15">

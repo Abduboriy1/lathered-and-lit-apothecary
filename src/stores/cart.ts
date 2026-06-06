@@ -91,7 +91,9 @@ export const useCartStore = defineStore('cart', {
       if (existing) {
         existing.quantity += quantity
       } else {
-        this.items.push({ product, quantity })
+        const selectedVariant = product.variants?.find((v) => v.id === product.variantId)
+        const variantTitle = selectedVariant?.title === 'Default Title' ? undefined : selectedVariant?.title
+        this.items.push({ product, quantity, variantTitle })
       }
 
       this.loading = true

@@ -5,15 +5,15 @@ import { useProductsStore } from '@/stores/products'
 import SectionTitle from '@/components/ui/SectionTitle.vue'
 import ProductGrid from '@/components/product/ProductGrid.vue'
 
-type Category = 'all' | 'candle' | 'soap' | 'set'
+type Category = 'all' | 'soap' | 'body' | 'set'
 
 const productStore = useProductsStore()
 const activeCategory = ref<Category>('all')
 
 const filters: { key: Category; label: string }[] = [
   { key: 'all', label: 'All' },
-  { key: 'candle', label: 'Candles' },
-  { key: 'soap', label: 'Soaps' },
+  { key: 'soap', label: 'Bar Soaps' },
+  { key: 'body', label: 'Body Care' },
   { key: 'set', label: 'Gift Sets' },
 ]
 
@@ -30,7 +30,7 @@ onMounted(() => productStore.fetchProducts())
   <div class="pt-28 pb-24 px-6 max-w-7xl mx-auto min-h-screen">
     <SectionTitle
       label="the full collection"
-      subtitle="Every candle, soap, and set — handmade with love."
+      subtitle="Every bar, body care, and set — handcrafted in small batches."
     />
 
     <!-- Filters -->

@@ -52,6 +52,7 @@ const CART_LINE_FIELDS = `
   merchandise {
     ... on ProductVariant {
       id
+      title
       product {
         handle
         title

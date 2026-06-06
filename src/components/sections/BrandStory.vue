@@ -35,14 +35,14 @@ useScrollReveal(() => textRef.value, {
                     style="
                         background: radial-gradient(
                             circle,
-                            #f6b7c1,
+                            #C27080,
                             transparent 70%
                         );
                     "
                 />
                 <img
                     :src="candle"
-                    alt="Artisan candles"
+                    alt="Artisan soaps"
                     class="w-full rounded-3xl object-cover aspect-[4/5] shadow-lg relative z-10"
                 />
                 <!-- Floating badge -->
@@ -53,7 +53,7 @@ useScrollReveal(() => textRef.value, {
                     <p
                         class="text-[10px] uppercase tracking-widest text-gray-500 font-body"
                     >
-                        Clean Burning
+                        Natural
                     </p>
                 </div>
             </div>
@@ -71,16 +71,16 @@ useScrollReveal(() => textRef.value, {
                 <div class="w-10 h-0.5 bg-gold-light rounded-full mb-6" />
 
                 <p class="text-gray-500 font-body leading-relaxed mb-4">
-                    Every candle we pour starts with the same intention: to
-                    create a moment of calm in a busy day. We hand-pour each
-                    batch in small quantities using coconut wax, cotton wicks,
-                    and clean fragrance oils — because what you breathe in
+                    Every bar we make starts with the same intention: to
+                    create a moment of calm in a busy day. We cold-process each
+                    batch in small quantities using natural oils, botanicals,
+                    and clean fragrance — because what touches your skin
                     matters.
                 </p>
                 <p class="text-gray-500 font-body leading-relaxed mb-8">
-                    Our soaps are cold-processed with skin-loving ingredients,
-                    each bar a little work of art. We believe self-care should
-                    feel luxurious, not guilty.
+                    Each bar is a little work of art, cured slowly and crafted
+                    with care. We believe self-care should feel luxurious, not
+                    guilty.
                 </p>
 
                 <RouterLink to="/shop">

@@ -9,7 +9,7 @@ export interface Product {
   id: string
   name: string
   price: number
-  category: 'candle' | 'soap' | 'set'
+  category: 'soap' | 'body' | 'set'
   scent: string[]
   description: string
   shortDescription: string
@@ -28,4 +28,5 @@ export interface CartItem {
   product: Product
   quantity: number
   lineId?: string
+  variantTitle?: string
 }

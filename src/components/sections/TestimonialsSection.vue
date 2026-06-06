@@ -14,7 +14,7 @@ useScrollReveal(() => sectionRef.value?.querySelectorAll('.testimonial-card') ??
 const testimonials = [
   {
     stars: 5,
-    quote: 'The Velvet Rose & Amber is absolutely divine. My whole apartment smells like a luxury spa. I\'ve ordered three times already.',
+    quote: 'The Honey Oat bar is absolutely divine. My skin has never felt softer. I\'ve ordered three times already.',
     name: 'Sofia R.',
     location: 'New York',
   },
@@ -26,7 +26,7 @@ const testimonials = [
   },
   {
     stars: 5,
-    quote: 'I\'m a candle snob and these are genuinely the best I\'ve ever burned. Even burn, no tunneling. Worth every penny.',
+    quote: 'I\'m a soap snob and these are genuinely the best bars I\'ve ever used. Rich lather, no drying out. Worth every penny.',
     name: 'Chloe B.',
     location: 'Chicago',
   },
