@@ -1,4 +1,4 @@
-# Lathered & Lit — Shopify Field Mapping Reference
+# Lathered & Lit Apothecary — Shopify Field Mapping Reference
 
 This doc covers every Shopify field the UI reads and exactly where/how to set it in your Shopify admin.
 

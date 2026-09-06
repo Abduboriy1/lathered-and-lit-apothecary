@@ -11,7 +11,7 @@ interface Sparkle {
 }
 
 const sparkles = ref<Sparkle[]>([])
-const colors = ['#f6b7c1', '#c9a96e', '#b7d8d0', '#f6b7c1', '#f0e0b8']
+const colors = ['#E7B3BD', '#c9a96e', '#F2D8DC', '#E7B3BD', '#f0e0b8']
 
 onMounted(() => {
   sparkles.value = Array.from({ length: 30 }, (_, i) => ({

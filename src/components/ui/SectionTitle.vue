@@ -1,15 +1,28 @@
 <script setup lang="ts">
 defineProps<{
   label?: string
+  title?: string
   subtitle?: string
   align?: 'left' | 'center'
 }>()
 </script>
 
 <template>
-  <div :class="['mb-10', align === 'left' ? 'text-left' : 'text-center']">
-    <h2 v-if="label" class="font-script text-gold text-lg italic mb-1">{{ label }}</h2>
-    <p v-if="subtitle" class="mt-2 text-gray-500 text-sm font-body">{{ subtitle }}</p>
-    <div :class="['mt-3 h-0.5 bg-gold-light rounded-full', align === 'left' ? 'w-10' : 'w-10 mx-auto']" />
+  <div :class="['mb-12', align === 'left' ? 'text-left' : 'text-center']">
+    <p v-if="label" class="font-script text-gold text-xl md:text-2xl italic mb-1 tracking-wide">
+      {{ label }}
+    </p>
+    <h2
+      v-if="title"
+      class="font-display text-3xl md:text-[2.75rem] leading-[1.15] text-ink font-medium"
+    >
+      {{ title }}
+    </h2>
+    <p v-if="subtitle" class="mt-3 text-ink-soft text-sm md:text-base font-body max-w-xl" :class="align === 'left' ? '' : 'mx-auto'">
+      {{ subtitle }}
+    </p>
+    <div :class="['gold-rule mt-5', align === 'left' ? 'justify-start' : 'justify-center']">
+      <span />
+    </div>
   </div>
 </template>

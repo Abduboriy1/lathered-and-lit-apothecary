@@ -18,6 +18,12 @@ export default {
         bark: '#8B7355',
         stone: '#C4B5A5',
         sage: '#7A9470',
+        'blush-deep': '#A85868',
+        'blush-soft': '#E7B3BD',
+        'rose-gold': '#D9A08F',
+        ink: '#3A2E2B',
+        'ink-soft': '#6B5B55',
+        'ink-muted': '#8F7D74',
       },
       fontFamily: {
         script: ['"Cormorant Garamond"', 'cursive'],
@@ -30,12 +36,18 @@ export default {
         'glow-mint': '0 0 18px 3px rgba(58,90,54,0.25)',
         'glow-gold': '0 0 16px 2px rgba(201,169,110,0.35)',
         farmhouse: '2px 4px 14px rgba(139,115,85,0.14)',
+        luxe: '0 10px 30px -8px rgba(139,115,85,0.22), 0 0 0 1px rgba(196,181,165,0.25)',
+        'luxe-hover': '0 22px 44px -12px rgba(194,112,128,0.35), 0 0 0 1px rgba(194,112,128,0.25)',
+        'btn-gloss': 'inset 0 1px 0 rgba(255,255,255,0.45), inset 0 -2px 0 rgba(120,50,65,0.25), 0 8px 22px -6px rgba(194,112,128,0.55)',
       },
       backgroundImage: {
         'pearl-gradient': 'linear-gradient(135deg, #FAF4EE 0%, #F2EAE0 40%, #E8EDE6 100%)',
         'hero-gradient': 'linear-gradient(160deg, #F2D8DC 0%, #FAF4EE 55%, #E8EDE6 100%)',
         'card-gradient': 'linear-gradient(145deg, rgba(250,244,238,0.9), rgba(194,112,128,0.06))',
         'gold-shimmer': 'linear-gradient(90deg, transparent, rgba(201,169,110,0.3), transparent)',
+        'rose-gradient': 'linear-gradient(135deg, #D48A98 0%, #C27080 45%, #A85868 100%)',
+        'rosegold-text': 'linear-gradient(100deg, #A85868 0%, #C27080 30%, #E4A9B5 50%, #C9A96E 75%, #A85868 100%)',
+        'rosegold-line': 'linear-gradient(90deg, transparent, #C9A96E 20%, #C27080 50%, #C9A96E 80%, transparent)',
         'linen-texture': "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E\")",
       },
       animation: {
@@ -47,6 +59,8 @@ export default {
         shimmer: 'shimmer 2.5s linear infinite',
         'bubble-rise': 'bubbleRise 8s ease-in infinite',
         'fade-up': 'fadeUp 0.7s ease forwards',
+        twinkle: 'twinkle 2.8s ease-in-out infinite',
+        'shimmer-slow': 'shimmer 6s linear infinite',
       },
       keyframes: {
         float: {
@@ -78,6 +92,10 @@ export default {
           '10%': { opacity: '0.6' },
           '90%': { opacity: '0.3' },
           '100%': { transform: 'translateY(-10vh) scale(1.1)', opacity: '0' },
+        },
+        twinkle: {
+          '0%, 100%': { opacity: '0', transform: 'scale(0.4) rotate(0deg)' },
+          '50%': { opacity: '1', transform: 'scale(1) rotate(20deg)' },
         },
         fadeUp: {
           '0%': { opacity: '0', transform: 'translateY(30px)' },

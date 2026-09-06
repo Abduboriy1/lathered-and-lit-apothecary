@@ -18,9 +18,10 @@
     "vite": "^8.0.10"
   },
   "dependencies": {
-    "@shopify/storefront-api-client": "^1.0.10",
+    "@fontsource/cormorant-garamond": "^5.3.0",
+    "@fontsource/dm-sans": "^5.3.0",
+    "@fontsource/playfair-display": "^5.3.0",
     "@vitejs/plugin-vue": "^6.0.6",
-    "gsap": "^3.15.0",
     "pinia": "^3.0.4",
     "vue": "^3.5.33",
     "vue-router": "^4.6.4"

@@ -1,4 +1,16 @@
-import type { Product, CartItem } from '@/types'
+import type { Product, CartItem } from "@/types"
+
+// Ask the Shopify CDN for a resized rendition instead of the multi-MB original.
+function sized(url: string | undefined, width: number): string | undefined {
+  if (!url) return url
+  try {
+    const u = new URL(url)
+    u.searchParams.set("width", String(width))
+    return u.toString()
+  } catch {
+    return url
+  }
+}
 
 interface ShopifyImage {
   url: string
@@ -94,8 +106,8 @@ export function mapProduct(node: ShopifyProductNode): Product {
     scent: node.tags.filter((t) => t.startsWith('scent:')).map((t) => t.replace('scent:', '')),
     description: node.description,
     shortDescription: node.shortDescription?.value ?? node.description.slice(0, 80),
-    imageUrl: node.images.edges[0]?.node.url ?? '',
-    hoverImageUrl: node.images.edges[1]?.node.url,
+    imageUrl: sized(node.images.edges[0]?.node.url, 900) ?? '',
+    hoverImageUrl: sized(node.images.edges[1]?.node.url, 900),
     burnTime: node.burnTime?.value,
     weight: mapWeight(firstVariant),
     featured: node.tags.includes('featured'),
@@ -122,7 +134,7 @@ export function mapCartLines(lines: ShopifyCartResponse['lines']): CartItem[] {
         scent: product.tags.filter((t) => t.startsWith('scent:')).map((t) => t.replace('scent:', '')),
         description: '',
         shortDescription: '',
-        imageUrl: product.images.edges[0]?.node.url ?? '',
+        imageUrl: sized(product.images.edges[0]?.node.url, 300) ?? '',
         weight: '',
         featured: false,
         stock: 0,

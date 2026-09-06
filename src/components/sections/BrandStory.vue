@@ -1,30 +1,30 @@
 <script setup lang="ts">
-import { ref } from "vue";
-import { RouterLink } from "vue-router";
-import { useScrollReveal } from "@/composables/useGsap";
+import {ref} from "vue";
+import {RouterLink} from "vue-router";
+import {useScrollReveal} from "@/composables/useReveal";
 import GlowButton from "@/components/ui/GlowButton.vue";
-import candle from "@/assets/LatheredAndLit.png";
+import storyImage from "@/assets/our-story-cover.webp";
 
 const imgRef = ref<HTMLElement | null>(null);
 const textRef = ref<HTMLElement | null>(null);
 
 useScrollReveal(() => imgRef.value, {
-    from: { opacity: 0, x: -60 },
-    to: { opacity: 1, x: 0 },
+    from: {opacity: 0, x: -60},
+    to: {opacity: 1, x: 0},
     stagger: 0,
     start: "top 75%",
 });
 
 useScrollReveal(() => textRef.value, {
-    from: { opacity: 0, x: 60 },
-    to: { opacity: 1, x: 0 },
+    from: {opacity: 0, x: 60},
+    to: {opacity: 1, x: 0},
     stagger: 0,
     start: "top 75%",
 });
 </script>
 
 <template>
-    <section class="py-24 bg-pearl-gradient overflow-hidden">
+    <section id="our-story" class="py-24 bg-pearl-gradient overflow-hidden scroll-mt-24">
         <div
             class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
         >
@@ -40,18 +40,26 @@ useScrollReveal(() => textRef.value, {
                         );
                     "
                 />
+                <!-- Rose-gold frame -->
+                <div class="absolute -inset-2.5 rounded-[1.9rem] pointer-events-none z-0"
+                     style="background: linear-gradient(135deg, #C9A96E, #F2D8DC 40%, #C27080 70%, #C9A96E); opacity: 0.85" />
+                <div class="absolute -inset-1 rounded-[1.7rem] bg-ivory pointer-events-none z-0" />
                 <img
-                    :src="candle"
-                    alt="Artisan soaps"
-                    class="w-full rounded-3xl object-cover aspect-[4/5] shadow-lg relative z-10"
+                    :src="storyImage"
+                    alt="Lathered & Lit Apothecary handcrafted soap bars"
+                    width="1040"
+                    height="774"
+                    loading="lazy"
+                    decoding="async"
+                    class="w-full rounded-3xl object-cover object-center aspect-[4/3] shadow-luxe relative z-10"
                 />
                 <!-- Floating badge -->
                 <div
-                    class="absolute -bottom-4 -right-4 z-20 glass rounded-2xl px-5 py-3 text-center shadow-glow"
+                    class="absolute -bottom-5 -right-3 md:-right-6 z-20 glass-card rounded-2xl px-6 py-3.5 text-center shadow-glow-gold"
                 >
-                    <p class="font-script text-blush text-2xl">100%</p>
+                    <p class="font-script italic text-rosegold text-3xl leading-none">100%</p>
                     <p
-                        class="text-[10px] uppercase tracking-widest text-gray-500 font-body"
+                        class="text-[10px] uppercase tracking-widest text-ink-soft font-body"
                     >
                         Natural
                     </p>
@@ -60,33 +68,39 @@ useScrollReveal(() => textRef.value, {
 
             <!-- Text -->
             <div ref="textRef" style="opacity: 0">
-                <p class="font-script text-gold text-xl italic mb-2">
+                <p class="font-script text-gold text-2xl italic mb-2">
                     our story
                 </p>
                 <h2
-                    class="font-display text-3xl md:text-4xl text-gray-800 font-medium leading-tight mb-4"
+                    class="font-display text-3xl md:text-[2.75rem] text-ink font-medium leading-[1.15] mb-5"
                 >
-                    Born from a love of<br />the quiet rituals
+                    The Heart Behind<br/><i class="text-rosegold">Lathered & Lit Apothecary</i>
                 </h2>
-                <div class="w-10 h-0.5 bg-gold-light rounded-full mb-6" />
+                <div class="gold-rule justify-start mb-7"><span /></div>
 
-                <p class="text-gray-500 font-body leading-relaxed mb-4">
-                    Every bar we make starts with the same intention: to
-                    create a moment of calm in a busy day. We cold-process each
-                    batch in small quantities using natural oils, botanicals,
-                    and clean fragrance — because what touches your skin
-                    matters.
+                <p class="text-ink-soft font-body leading-relaxed mb-4">
+                    <b><i class="text-blush-deep">Lathered & Lit Apothecary</i></b> was born out of a love for handmade quality, family traditions, and the
+                    peaceful hustle of farm life.
                 </p>
-                <p class="text-gray-500 font-body leading-relaxed mb-8">
-                    Each bar is a little work of art, cured slowly and crafted
-                    with care. We believe self-care should feel luxurious, not
-                    guilty.
+                <p class="text-ink-soft font-body leading-relaxed mb-8">
+                    Based on our family farm—where I’m lucky enough to live and work alongside my husband and our animal
+                    menagerie—this business is a true labor of love.
+                    <b>We are incredibly proud to be supported in this adventure by both sides of our family, with my
+                        parents and my husband’s parents cheering us on and helping us grow.</b>
                 </p>
+                <p class="text-ink-soft font-body leading-relaxed mb-8">
+                    I started making body care because I believe the products we use every day should do more than just
+                    clean; they should make us feel good. Every batch we make is crafted with premium ingredients and a
+                    genuine desire to put a smile on your face.
+                </p>
+                <p class="text-ink-soft font-body leading-relaxed mb-8">
+                    When you buy from <b><i class="text-blush-deep">Lathered & Lit Apothecary</i></b>, you aren't just getting great soap. You're getting a
+                    piece of our handmade, farm-fresh happiness.
+                </p>
+
 
                 <RouterLink to="/shop">
-                    <GlowButton variant="outline" size="lg"
-                        >Explore the Collection</GlowButton
-                    >
+                    <GlowButton variant="outline" size="lg">Explore the Collection</GlowButton>
                 </RouterLink>
             </div>
         </div>

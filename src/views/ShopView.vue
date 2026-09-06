@@ -5,7 +5,7 @@ import { useProductsStore } from '@/stores/products'
 import SectionTitle from '@/components/ui/SectionTitle.vue'
 import ProductGrid from '@/components/product/ProductGrid.vue'
 
-type Category = 'all' | 'soap' | 'body' | 'set'
+type Category = 'all' | 'soap' | 'body' | 'set' | 'bath' | 'outdoor' | 'wax_melts' | 'pet'
 
 const productStore = useProductsStore()
 const activeCategory = ref<Category>('all')
@@ -15,6 +15,10 @@ const filters: { key: Category; label: string }[] = [
   { key: 'soap', label: 'Bar Soaps' },
   { key: 'body', label: 'Body Care' },
   { key: 'set', label: 'Gift Sets' },
+  { key: 'bath', label: 'Bath' },
+  { key: 'outdoor', label: 'Outdoor' },
+  { key: 'wax_melts', label: 'Wax Melts' },
+  { key: 'pet', label: 'Pet' },
 ]
 
 const filtered = computed<Product[]>(() =>
@@ -27,54 +31,60 @@ onMounted(() => productStore.fetchProducts())
 </script>
 
 <template>
-  <div class="pt-28 pb-24 px-6 max-w-7xl mx-auto min-h-screen">
-    <SectionTitle
-      label="the full collection"
-      subtitle="Every bar, body care, and set — handcrafted in small batches."
-    />
+  <div class="relative overflow-hidden">
+    <!-- Soft rose glow at the top of the shop page -->
+    <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[50rem] h-[24rem] rounded-full opacity-40 blur-3xl pointer-events-none"
+         style="background: radial-gradient(ellipse, #F2D8DC, transparent 70%)" />
 
-    <!-- Filters -->
-    <div class="flex gap-3 flex-wrap mb-10 justify-center">
-      <button
-        v-for="f in filters"
-        :key="f.key"
-        :class="[
-          'px-5 py-2 rounded-full text-sm font-body transition-all duration-200 cursor-pointer',
-          activeCategory === f.key
-            ? 'bg-blush text-white shadow-glow'
-            : 'border border-blush/30 text-gray-500 hover:border-blush hover:text-blush',
-        ]"
-        @click="activeCategory = f.key"
-      >
-        {{ f.label }}
-      </button>
-    </div>
+    <div class="relative pt-32 pb-24 px-6 max-w-7xl mx-auto min-h-screen">
+      <SectionTitle
+        label="the full collection"
+        title="Shop the Apothecary"
+        subtitle="Every bar, body care, and set — handcrafted in small batches."
+      />
 
-    <!-- Loading skeleton -->
-    <div v-if="productStore.loading" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      <div v-for="n in 8" :key="n" class="glass-card overflow-hidden animate-pulse">
-        <div class="aspect-square bg-blush/10 rounded-t-2xl" />
-        <div class="p-4 space-y-2">
-          <div class="h-4 bg-blush/10 rounded w-3/4" />
-          <div class="h-3 bg-blush/10 rounded w-1/2" />
-          <div class="h-8 bg-blush/10 rounded-full w-1/3 mt-3" />
+      <!-- Filters -->
+      <div class="flex gap-2.5 flex-wrap mb-12 justify-center">
+        <button
+          v-for="f in filters"
+          :key="f.key"
+          :class="[
+            'px-5 py-2 rounded-full text-xs uppercase tracking-[0.14em] font-body font-medium transition-all duration-300 cursor-pointer',
+            activeCategory === f.key
+              ? 'bg-rose-gradient text-white shadow-btn-gloss'
+              : 'border border-stone/70 bg-white/40 text-ink-soft hover:border-blush hover:text-blush-deep hover:bg-white/80',
+          ]"
+          @click="activeCategory = f.key"
+        >
+          {{ f.label }}
+        </button>
+      </div>
+
+      <!-- Loading skeleton -->
+      <div v-if="productStore.loading" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div v-for="n in 8" :key="n" class="glass-card overflow-hidden animate-pulse">
+          <div class="aspect-square bg-blush/10" />
+          <div class="p-4 space-y-2">
+            <div class="h-4 bg-blush/10 rounded w-3/4 mx-auto" />
+            <div class="h-3 bg-blush/10 rounded w-1/3 mx-auto" />
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Error -->
-    <p v-else-if="productStore.error" class="text-center text-rose-400 font-body mt-16">
-      {{ productStore.error }}
-      <button class="block mx-auto mt-3 text-blush underline" @click="productStore.fetchProducts()">
-        Try again
-      </button>
-    </p>
-
-    <template v-else>
-      <ProductGrid :products="filtered" />
-      <p v-if="filtered.length === 0" class="text-center text-gray-400 font-body mt-16">
-        No products in this category yet — check back soon!
+      <!-- Error -->
+      <p v-else-if="productStore.error" class="text-center text-blush-deep font-body mt-16">
+        {{ productStore.error }}
+        <button class="block mx-auto mt-3 text-blush-deep underline underline-offset-4 cursor-pointer" @click="productStore.fetchProducts()">
+          Try again
+        </button>
       </p>
-    </template>
+
+      <template v-else>
+        <ProductGrid :products="filtered" />
+        <p v-if="filtered.length === 0" class="text-center text-ink-muted font-body mt-16">
+          No products in this category yet — check back soon!
+        </p>
+      </template>
+    </div>
   </div>
 </template>

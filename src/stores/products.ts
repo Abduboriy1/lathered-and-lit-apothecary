@@ -41,9 +41,19 @@ export const useProductsStore = defineStore('products', {
           variables: { first: 8, query: 'tag:featured' },
         })
         if (errors) throw new Error(String(errors))
-        this.products = ((data as any)?.products?.edges ?? []).map(
+        let featured: Product[] = ((data as any)?.products?.edges ?? []).map(
           (e: { node: ShopifyProductNode }) => mapProduct(e.node),
         )
+        // No products tagged "featured" yet — show the newest ones instead of an empty section.
+        if (!featured.length) {
+          const fallback = await shopifyClient.request(GET_PRODUCTS, {
+            variables: { first: 4, query: undefined },
+          })
+          featured = ((fallback.data as any)?.products?.edges ?? []).map(
+            (e: { node: ShopifyProductNode }) => mapProduct(e.node),
+          )
+        }
+        this.products = featured
       } catch (err) {
         this.error = err instanceof Error ? err.message : 'Failed to load featured products'
       } finally {

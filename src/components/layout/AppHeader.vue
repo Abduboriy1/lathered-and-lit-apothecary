@@ -1,45 +1,32 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
-import { gsap } from 'gsap'
 import { RouterLink } from 'vue-router'
 import { useCartStore } from '@/stores/cart'
+import BrandLogo from '@/components/ui/BrandLogo.vue'
 
 const cart = useCartStore()
-const headerRef = ref<HTMLElement | null>(null)
-
-onMounted(() => {
-  gsap.fromTo(
-    headerRef.value,
-    { y: -80, opacity: 0 },
-    { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out', delay: 0.1 },
-  )
-})
 </script>
 
 <template>
-  <header ref="headerRef" class="glass-nav fixed top-0 left-0 right-0 z-50">
-    <div class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
+  <header class="glass-nav enter-down fixed top-0 left-0 right-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3.5 md:py-5 flex items-center justify-between gap-4">
       <!-- Logo -->
-      <RouterLink to="/" class="flex items-center">
-        <div class="font-display font-bold uppercase tracking-wide leading-tight">
-          <span class="text-teal block text-2xl">Lathered</span>
-          <span class="text-blush text-lg">&amp; Lit</span>
-        </div>
+      <RouterLink to="/" class="flex items-center" aria-label="Lathered & Lit Apothecary home">
+        <BrandLogo size="sm" />
       </RouterLink>
 
       <!-- Nav links -->
-      <nav class="hidden md:flex items-center gap-8">
+      <nav class="flex items-center gap-5 sm:gap-8 md:gap-10">
         <RouterLink
           to="/"
-          class="soap-nav text-base font-body text-gray-600 hover:text-blush transition-colors"
-          active-class="text-blush"
+          class="soap-nav text-xs sm:text-sm uppercase tracking-[0.18em] font-body font-medium text-ink-soft hover:text-blush-deep transition-colors"
+          active-class="is-active text-blush-deep"
         >
           Home
         </RouterLink>
         <RouterLink
           to="/shop"
-          class="soap-nav text-base font-body text-gray-600 hover:text-blush transition-colors"
-          active-class="text-blush"
+          class="soap-nav text-xs sm:text-sm uppercase tracking-[0.18em] font-body font-medium text-ink-soft hover:text-blush-deep transition-colors"
+          active-class="is-active text-blush-deep"
         >
           Shop
         </RouterLink>
@@ -47,11 +34,12 @@ onMounted(() => {
 
       <!-- Cart button -->
       <button
-        class="relative flex items-center gap-2 cursor-pointer"
+        class="group relative flex items-center justify-center w-10 h-10 rounded-full border border-transparent hover:border-blush/30 hover:bg-blush-light/40 transition-all cursor-pointer"
+        aria-label="Open bag"
         @click="cart.openDrawer()"
       >
         <svg
-          class="w-6 h-6 text-gray-600 hover:text-blush transition-colors"
+          class="w-[22px] h-[22px] text-ink-soft group-hover:text-blush-deep transition-colors"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -65,7 +53,7 @@ onMounted(() => {
         </svg>
         <span
           v-if="cart.totalItems > 0"
-          class="absolute -top-2 -right-2 w-5 h-5 bg-blush text-white text-[10px] font-bold rounded-full flex items-center justify-center"
+          class="absolute -top-1 -right-1 min-w-[20px] h-5 px-1 bg-rose-gradient text-white text-[10px] font-bold rounded-full flex items-center justify-center shadow-glow"
         >
           {{ cart.totalItems }}
         </span>
@@ -78,20 +66,22 @@ onMounted(() => {
 .soap-nav {
   position: relative;
   display: inline-block;
+  padding-bottom: 2px;
 }
 .soap-nav::after {
   content: '';
   position: absolute;
-  inset: -6px -12px;
-  border: 1.5px solid #f6b7c1;
-  border-radius: 45% 55% 52% 48% / 48% 52% 48% 52%;
-  opacity: 0;
-  transform: scale(0.85);
-  transition: transform 0.2s ease, opacity 0.2s ease;
-  pointer-events: none;
+  left: 0;
+  right: 0;
+  bottom: -4px;
+  height: 1.5px;
+  background: linear-gradient(90deg, #c9a96e, #c27080);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
 }
-.soap-nav:hover::after {
-  transform: scale(1);
-  opacity: 1;
+.soap-nav:hover::after,
+.soap-nav.is-active::after {
+  transform: scaleX(1);
 }
 </style>

@@ -7,8 +7,8 @@ defineProps<{
 <template>
   <span
     :class="[
-      'inline-block text-xs font-semibold rounded-full px-2.5 py-0.5 uppercase tracking-wide',
-      type === 'bestseller' ? 'bg-blush/30 text-blush' : type === 'new' ? 'bg-mint/40 text-teal' : 'bg-gold-light/60 text-gold',
+      'inline-block text-[10px] font-semibold rounded-full px-2.5 py-1 uppercase tracking-[0.14em] shadow-sm backdrop-blur-sm',
+      type === 'bestseller' ? 'bg-rose-gradient text-white' : type === 'new' ? 'bg-mint text-white' : 'bg-gradient-to-r from-gold to-gold-light text-ink',
     ]"
   >
     {{ type === 'bestseller' ? 'Best Seller' : type === 'new' ? 'New' : 'Limited' }}

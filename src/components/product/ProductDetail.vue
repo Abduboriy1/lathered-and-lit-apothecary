@@ -49,11 +49,14 @@ function addToCart() {
 <template>
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
     <!-- Image -->
-    <div class="bg-[#f5f0eb] rounded-2xl p-8 aspect-square flex items-center justify-center">
+    <div class="relative rounded-3xl p-8 aspect-square flex items-center justify-center bg-gradient-to-br from-pearl via-ivory to-blush-light/40 shadow-luxe overflow-hidden">
+      <div class="absolute -top-20 -right-20 w-72 h-72 rounded-full blur-3xl opacity-50 pointer-events-none" style="background: radial-gradient(circle, #E7B3BD, transparent 70%)" />
       <img
         :src="product.imageUrl"
         :alt="product.name"
-        class="w-full h-full object-contain"
+        fetchpriority="high"
+        decoding="async"
+        class="relative w-full h-full object-contain drop-shadow-[0_18px_28px_rgba(139,115,85,0.25)]"
       />
     </div>
 
@@ -63,17 +66,17 @@ function addToCart() {
         <BadgeTag v-for="badge in product.badges" :key="badge" :type="badge" />
       </div>
 
-      <h1 class="font-display text-3xl md:text-4xl text-gray-800 leading-tight mb-2">
+      <h1 class="font-display text-3xl md:text-4xl text-ink leading-tight mb-2">
         {{ product.name }}
       </h1>
 
-      <p class="font-script text-gold text-4xl italic mb-6">${{ displayPrice.toFixed(2) }}</p>
+      <p class="font-script text-rosegold text-5xl italic mb-6 leading-none">${{ displayPrice.toFixed(2) }}</p>
 
       <div class="flex flex-wrap gap-2 mb-4">
         <span
           v-for="scent in product.scent"
           :key="scent"
-          class="text-xs font-body text-teal bg-mint/20 rounded-full px-3 py-1"
+          class="text-xs font-body text-teal bg-mint/20 border border-mint/30 rounded-full px-3 py-1"
         >
           {{ scent }}
         </span>
@@ -81,7 +84,7 @@ function addToCart() {
 
       <!-- Size selector -->
       <div v-if="product.variants && product.variants.length > 1" class="mb-6">
-        <p class="text-xs uppercase tracking-wide text-gray-400 font-body mb-2">Size</p>
+        <p class="text-xs uppercase tracking-wide text-ink-muted font-body mb-2">Size</p>
         <div class="flex flex-wrap gap-2">
           <button
             v-for="variant in product.variants"
@@ -89,8 +92,8 @@ function addToCart() {
             class="px-4 py-1.5 rounded-full border font-body text-sm transition-colors cursor-pointer"
             :class="
               selectedVariant?.id === variant.id
-                ? 'border-blush bg-blush text-white'
-                : 'border-blush/30 text-gray-600 hover:border-blush/60'
+                ? 'border-transparent bg-rose-gradient text-white shadow-btn-gloss'
+                : 'border-blush/30 text-ink-soft hover:border-blush/60'
             "
             @click="selectedVariant = variant"
           >
@@ -99,16 +102,16 @@ function addToCart() {
         </div>
       </div>
 
-      <p class="text-gray-600 font-body leading-relaxed text-sm mb-6">{{ product.description }}</p>
+      <p class="text-ink-soft font-body leading-relaxed text-sm mb-6">{{ product.description }}</p>
 
-      <div class="flex gap-6 text-sm text-gray-500 font-body mb-8 pb-6 border-b border-blush/15">
+      <div class="flex gap-6 text-sm text-ink-soft font-body mb-8 pb-6 border-b border-blush/15">
         <div v-if="product.burnTime">
-          <span class="text-xs uppercase tracking-wide text-gray-400">Burn Time</span>
-          <p class="text-gray-700 mt-0.5">{{ product.burnTime }}</p>
+          <span class="text-xs uppercase tracking-wide text-ink-muted">Burn Time</span>
+          <p class="text-ink mt-0.5">{{ product.burnTime }}</p>
         </div>
         <div>
-          <span class="text-xs uppercase tracking-wide text-gray-400">In Stock</span>
-          <p class="text-gray-700 mt-0.5">{{ selectedVariant?.stock ?? product.stock }} left</p>
+          <span class="text-xs uppercase tracking-wide text-ink-muted">In Stock</span>
+          <p class="text-ink mt-0.5">{{ selectedVariant?.stock ?? product.stock }} left</p>
         </div>
       </div>
 
@@ -123,7 +126,7 @@ function addToCart() {
           >
             −
           </button>
-          <span class="font-body text-gray-800 w-4 text-center">{{ quantity }}</span>
+          <span class="font-body text-ink w-4 text-center">{{ quantity }}</span>
           <button
             class="transition-colors cursor-pointer"
             :class="quantity < maxStock ? 'text-blush hover:text-blush/70' : 'text-blush/30 cursor-not-allowed'"
