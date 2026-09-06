@@ -25,5 +25,9 @@
     "pinia": "^3.0.4",
     "vue": "^3.5.33",
     "vue-router": "^4.6.4"
+  },
+  "optionalDependencies": {
+    "@emnapi/core": "^1.11.3",
+    "@emnapi/runtime": "^1.11.3"
   }
 }
