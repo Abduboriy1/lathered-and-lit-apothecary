@@ -35,11 +35,11 @@ onUnmounted(() => cleanupReveal?.())
 </script>
 
 <template>
-  <section class="py-24 px-6 max-w-7xl mx-auto">
+  <section class="py-16 md:py-24 px-5 sm:px-6 max-w-7xl mx-auto">
     <SectionTitle label="our collection" title="Fan Favorites" subtitle="Crafted with intention, designed for everyday ritual." />
 
     <!-- Loading skeleton -->
-    <div v-if="productStore.loading && !productStore.products.length" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div v-if="productStore.loading && !productStore.products.length" class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
       <div v-for="n in 4" :key="n" class="glass-card overflow-hidden animate-pulse">
         <div class="aspect-square bg-blush/10" />
         <div class="p-4 space-y-2">
@@ -49,7 +49,7 @@ onUnmounted(() => cleanupReveal?.())
       </div>
     </div>
 
-    <div v-else ref="sectionRef" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div v-else ref="sectionRef" class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
       <div
         v-for="product in productStore.products"
         :key="product.id"
@@ -60,7 +60,7 @@ onUnmounted(() => cleanupReveal?.())
       </div>
     </div>
 
-    <div class="text-center mt-14">
+    <div class="text-center mt-10 md:mt-14">
       <RouterLink to="/shop">
         <GlowButton variant="outline" size="lg">
           View All Products

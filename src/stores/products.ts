@@ -3,6 +3,7 @@ import type { Product } from '@/types'
 import { shopifyClient } from '@/lib/shopify'
 import { GET_PRODUCTS, GET_PRODUCT_BY_HANDLE } from '@/lib/shopify-queries'
 import { mapProduct, type ShopifyProductNode } from '@/lib/shopify-mappers'
+import { track } from '@/lib/pixel'
 
 export const useProductsStore = defineStore('products', {
   state: () => ({
@@ -73,6 +74,14 @@ export const useProductsStore = defineStore('products', {
         const node = (data as any)?.product
         this.currentProduct = node ? mapProduct(node) : null
         if (this.currentProduct) {
+          track('ViewContent', {
+            content_ids: [this.currentProduct.id],
+            content_name: this.currentProduct.name,
+            content_type: 'product',
+            content_category: this.currentProduct.category,
+            value: this.currentProduct.price,
+            currency: 'USD',
+          })
           await this.fetchRelatedProducts(this.currentProduct)
         }
       } catch (err) {

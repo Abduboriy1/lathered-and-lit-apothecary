@@ -4,11 +4,15 @@ import router from '@/router'
 import App from '@/App.vue'
 import './style.css'
 import { useCartStore } from '@/stores/cart'
+import { initPixel, trackPageView } from '@/lib/pixel'
 
 const pinia = createPinia()
 const app = createApp(App)
 app.use(pinia)
 app.use(router)
 app.mount('#app')
+
+initPixel()
+router.afterEach(() => trackPageView())
 
 useCartStore().hydrateCart()

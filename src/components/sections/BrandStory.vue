@@ -10,23 +10,21 @@ const textRef = ref<HTMLElement | null>(null);
 
 useScrollReveal(() => imgRef.value, {
     from: {opacity: 0, x: -60},
-    to: {opacity: 1, x: 0},
     stagger: 0,
     start: "top 75%",
 });
 
 useScrollReveal(() => textRef.value, {
     from: {opacity: 0, x: 60},
-    to: {opacity: 1, x: 0},
     stagger: 0,
     start: "top 75%",
 });
 </script>
 
 <template>
-    <section id="our-story" class="py-24 bg-pearl-gradient overflow-hidden scroll-mt-24">
+    <section id="our-story" class="py-16 md:py-24 bg-pearl-gradient overflow-hidden scroll-mt-20 md:scroll-mt-24">
         <div
-            class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
+            class="max-w-7xl mx-auto px-5 sm:px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center"
         >
             <!-- Image -->
             <div ref="imgRef" class="relative" style="opacity: 0">
@@ -55,7 +53,7 @@ useScrollReveal(() => textRef.value, {
                 />
                 <!-- Floating badge -->
                 <div
-                    class="absolute -bottom-5 -right-3 md:-right-6 z-20 glass-card rounded-2xl px-6 py-3.5 text-center shadow-glow-gold"
+                    class="absolute -bottom-5 right-2 md:-right-6 z-20 glass-card rounded-2xl px-5 py-3 md:px-6 md:py-3.5 text-center shadow-glow-gold"
                 >
                     <p class="font-script italic text-rosegold text-3xl leading-none">100%</p>
                     <p
@@ -67,14 +65,14 @@ useScrollReveal(() => textRef.value, {
             </div>
 
             <!-- Text -->
-            <div ref="textRef" style="opacity: 0">
+            <div ref="textRef" class="pt-2 lg:pt-0" style="opacity: 0">
                 <p class="font-script text-gold text-2xl italic mb-2">
                     our story
                 </p>
                 <h2
-                    class="font-display text-3xl md:text-[2.75rem] text-ink font-medium leading-[1.15] mb-5"
+                    class="font-display text-[1.85rem] sm:text-3xl md:text-[2.75rem] text-ink font-medium leading-[1.15] mb-5"
                 >
-                    The Heart Behind<br/><i class="text-rosegold">Lathered & Lit Apothecary</i>
+                    The Heart Behind<br/><i><span class="text-teal">Lathered</span> <span class="text-rosegold">&amp; Lit</span> <span class="text-teal">Apothecary</span></i>
                 </h2>
                 <div class="gold-rule justify-start mb-7"><span /></div>
 
@@ -99,8 +97,8 @@ useScrollReveal(() => textRef.value, {
                 </p>
 
 
-                <RouterLink to="/shop">
-                    <GlowButton variant="outline" size="lg">Explore the Collection</GlowButton>
+                <RouterLink to="/shop" class="flex sm:inline-flex">
+                    <GlowButton variant="outline" size="lg" class="w-full sm:w-auto">Explore the Collection</GlowButton>
                 </RouterLink>
             </div>
         </div>

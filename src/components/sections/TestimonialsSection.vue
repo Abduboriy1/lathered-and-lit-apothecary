@@ -34,14 +34,14 @@ const testimonials = [
     location: 'Seattle',
   },
   {
-    stars: 5,
-    quote: 'Sensitive skin here and zero irritation. Finally a bar that doesn\'t leave me itchy and tight afterward.',
+    stars: 4,
+    quote: 'Sensitive skin here and zero irritation. Finally a bar that doesn\'t leave me itchy and tight afterward. Wish it came in a bigger size.',
     name: 'Daniel M.',
     location: 'Denver',
   },
   {
-    stars: 5,
-    quote: 'Lasts so much longer than the drugstore stuff. One bar got me through nearly two months of daily use.',
+    stars: 4,
+    quote: 'Lasts so much longer than the drugstore stuff. One bar got me through nearly two months of daily use. Shipping took a bit, but worth the wait.',
     name: 'Olivia T.',
     location: 'Portland',
   },
@@ -64,8 +64,8 @@ const testimonials = [
     location: 'Miami',
   },
   {
-    stars: 5,
-    quote: 'My partner is picky about scents and even he asked me to reorder the Cedar bar. That never happens.',
+    stars: 4,
+    quote: 'My partner is picky about scents and even he asked me to reorder the Cedar bar. That never happens. Scent fades a touch faster than I\'d like.',
     name: 'Renee P.',
     location: 'Nashville',
   },
@@ -76,8 +76,8 @@ const testimonials = [
     location: 'San Francisco',
   },
   {
-    stars: 5,
-    quote: 'Travel-friendly, no leaks, no TSA drama. These bars come with me everywhere now.',
+    stars: 4,
+    quote: 'Travel-friendly, no leaks, no TSA drama. These bars come with me everywhere now. Would love a little travel tin to go with them.',
     name: 'Tomas G.',
     location: 'Phoenix',
   },
@@ -100,9 +100,9 @@ const track = [...testimonials, ...testimonials]
 </script>
 
 <template>
-  <section class="relative pt-24 pb-28 bg-blush-light/30 overflow-hidden">
+  <section class="relative pt-16 pb-20 md:pt-24 md:pb-28 bg-blush-light/30 overflow-hidden">
     <div class="absolute inset-x-0 top-0 h-px bg-rosegold-line opacity-70" aria-hidden="true" />
-    <div class="px-6 max-w-7xl mx-auto">
+    <div class="px-5 sm:px-6 max-w-7xl mx-auto">
       <SectionTitle label="love letters" title="What Our Customers Say" />
     </div>
 
@@ -111,7 +111,7 @@ const track = [...testimonials, ...testimonials]
         <div
           v-for="(t, i) in track"
           :key="i"
-          class="marquee-item w-[300px] sm:w-[340px]"
+          class="marquee-item w-[280px] sm:w-[340px]"
           aria-hidden="false"
         >
           <GlassCard class="h-full flex flex-col">
@@ -119,9 +119,10 @@ const track = [...testimonials, ...testimonials]
             <!-- Stars -->
             <div class="flex gap-0.5 mb-4">
               <svg
-                v-for="s in t.stars"
+                v-for="s in 5"
                 :key="s"
-                class="w-4 h-4 text-gold"
+                class="w-4 h-4"
+                :class="s <= t.stars ? 'text-gold' : 'text-stone/50'"
                 fill="currentColor"
                 viewBox="0 0 20 20"
               >

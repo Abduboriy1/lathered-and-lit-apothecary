@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "npm run build && wrangler pages deploy dist --project-name lathered-lit-apothecary"
   },
   "devDependencies": {
     "@emnapi/core": "^1.11.3",
@@ -17,7 +18,8 @@
     "postcss": "^8.5.13",
     "tailwindcss": "^3.4.19",
     "typescript": "~6.0.2",
-    "vite": "^8.0.10"
+    "vite": "^8.0.10",
+    "wrangler": "^4.129.0"
   },
   "dependencies": {
     "@fontsource/cormorant-garamond": "^5.3.0",

@@ -15,7 +15,7 @@ const showImage = computed(() => !!props.product.imageUrl && !imgFailed.value)
 <template>
   <RouterLink
     :to="`/product/${product.id}`"
-    class="group flex flex-col rounded-2xl overflow-hidden bg-white/90 shadow-luxe transition-all duration-500 hover:-translate-y-1.5 hover:shadow-luxe-hover"
+    class="group flex flex-col rounded-xl sm:rounded-2xl overflow-hidden bg-white/90 shadow-luxe transition-all duration-500 hover:-translate-y-1.5 hover:shadow-luxe-hover"
     @mouseenter="hovered = true"
     @mouseleave="hovered = false"
   >
@@ -67,18 +67,18 @@ const showImage = computed(() => !!props.product.imageUrl && !imgFailed.value)
       </div>
 
       <!-- Badges -->
-      <div v-if="product.badges?.length" class="absolute top-3 left-3 flex flex-wrap gap-1">
+      <div v-if="product.badges?.length" class="absolute top-2 left-2 sm:top-3 sm:left-3 flex flex-wrap gap-1">
         <BadgeTag v-for="badge in product.badges" :key="badge" :type="badge" />
       </div>
     </div>
 
     <!-- Info -->
-    <div class="px-4 pt-4 pb-5 text-center flex flex-col items-center gap-1.5">
-      <h3 class="font-display text-ink text-sm tracking-[0.14em] uppercase leading-snug line-clamp-2 min-h-[2.6em] group-hover:text-blush-deep transition-colors">
+    <div class="px-2.5 sm:px-4 pt-3 sm:pt-4 pb-4 sm:pb-5 text-center flex flex-col items-center gap-1 sm:gap-1.5">
+      <h3 class="font-display text-ink text-[11px] sm:text-sm tracking-[0.08em] sm:tracking-[0.14em] uppercase leading-snug line-clamp-2 min-h-[2.6em] group-hover:text-blush-deep transition-colors">
         {{ product.name }}
       </h3>
-      <span class="font-script italic text-gold text-2xl leading-none">${{ product.price }}</span>
-      <span class="mt-1 text-[11px] font-body uppercase tracking-[0.2em] text-blush-deep opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+      <span class="font-script italic text-gold text-xl sm:text-2xl leading-none">${{ product.price }}</span>
+      <span class="mt-1 hidden sm:inline text-[11px] font-body uppercase tracking-[0.2em] text-blush-deep opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
         View details →
       </span>
     </div>

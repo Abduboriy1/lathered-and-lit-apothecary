@@ -47,9 +47,9 @@ function addToCart() {
 </script>
 
 <template>
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
     <!-- Image -->
-    <div class="relative rounded-3xl p-8 aspect-square flex items-center justify-center bg-gradient-to-br from-pearl via-ivory to-blush-light/40 shadow-luxe overflow-hidden">
+    <div class="relative rounded-2xl sm:rounded-3xl p-5 sm:p-8 aspect-square flex items-center justify-center bg-gradient-to-br from-pearl via-ivory to-blush-light/40 shadow-luxe overflow-hidden">
       <div class="absolute -top-20 -right-20 w-72 h-72 rounded-full blur-3xl opacity-50 pointer-events-none" style="background: radial-gradient(circle, #E7B3BD, transparent 70%)" />
       <img
         :src="product.imageUrl"
@@ -61,16 +61,16 @@ function addToCart() {
     </div>
 
     <!-- Info -->
-    <div class="py-4">
+    <div class="py-0 lg:py-4">
       <div class="flex flex-wrap gap-2 mb-4">
         <BadgeTag v-for="badge in product.badges" :key="badge" :type="badge" />
       </div>
 
-      <h1 class="font-display text-3xl md:text-4xl text-ink leading-tight mb-2">
+      <h1 class="font-display text-2xl sm:text-3xl md:text-4xl text-ink leading-tight mb-2">
         {{ product.name }}
       </h1>
 
-      <p class="font-script text-rosegold text-5xl italic mb-6 leading-none">${{ displayPrice.toFixed(2) }}</p>
+      <p class="font-script text-rosegold text-4xl md:text-5xl italic mb-5 md:mb-6 leading-none">${{ displayPrice.toFixed(2) }}</p>
 
       <div class="flex flex-wrap gap-2 mb-4">
         <span
@@ -104,7 +104,7 @@ function addToCart() {
 
       <p class="text-ink-soft font-body leading-relaxed text-sm mb-6">{{ product.description }}</p>
 
-      <div class="flex gap-6 text-sm text-ink-soft font-body mb-8 pb-6 border-b border-blush/15">
+      <div class="flex flex-wrap gap-6 text-sm text-ink-soft font-body mb-6 md:mb-8 pb-6 border-b border-blush/15">
         <div v-if="product.burnTime">
           <span class="text-xs uppercase tracking-wide text-ink-muted">Burn Time</span>
           <p class="text-ink mt-0.5">{{ product.burnTime }}</p>
@@ -116,10 +116,10 @@ function addToCart() {
       </div>
 
       <!-- Qty + CTA -->
-      <div class="flex items-center gap-4">
-        <div class="flex items-center gap-3 border border-blush/30 rounded-full px-4 py-2.5">
+      <div class="flex flex-wrap items-center gap-3 sm:gap-4">
+        <div class="flex items-center gap-2 border border-blush/30 rounded-full px-3 py-2.5">
           <button
-            class="transition-colors cursor-pointer"
+            class="w-8 h-8 -my-1 flex items-center justify-center text-lg transition-colors cursor-pointer"
             :class="quantity > 1 ? 'text-blush hover:text-blush/70' : 'text-blush/30 cursor-not-allowed'"
             :disabled="quantity <= 1"
             @click="quantity = quantity - 1"
@@ -128,7 +128,7 @@ function addToCart() {
           </button>
           <span class="font-body text-ink w-4 text-center">{{ quantity }}</span>
           <button
-            class="transition-colors cursor-pointer"
+            class="w-8 h-8 -my-1 flex items-center justify-center text-lg transition-colors cursor-pointer"
             :class="quantity < maxStock ? 'text-blush hover:text-blush/70' : 'text-blush/30 cursor-not-allowed'"
             :disabled="quantity >= maxStock"
             @click="quantity = quantity + 1"
@@ -137,7 +137,7 @@ function addToCart() {
           </button>
         </div>
 
-        <GlowButton size="lg" @click="addToCart">
+        <GlowButton size="lg" class="flex-1 sm:flex-none" @click="addToCart">
           {{ added ? '✓ Added to Bag' : 'Add to Bag' }}
         </GlowButton>
       </div>

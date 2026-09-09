@@ -13,7 +13,7 @@ defineEmits<{ click: [] }>()
     :type="type ?? 'button'"
     :class="[
       'inline-flex items-center justify-center rounded-full font-body font-medium tracking-wide transition-all duration-300 cursor-pointer',
-      size === 'sm' ? 'px-5 py-2 text-sm' : size === 'lg' ? 'px-10 py-4 text-base' : 'px-7 py-3 text-sm',
+      size === 'sm' ? 'px-5 py-2 text-sm' : size === 'lg' ? 'px-8 py-3.5 text-[15px] sm:px-10 sm:py-4 sm:text-base' : 'px-7 py-3 text-sm',
       variant === 'outline'
         ? 'btn-gloss border-[1.5px] border-blush text-blush-deep bg-white/30 hover:bg-rose-gradient hover:border-transparent hover:text-white hover:shadow-btn-gloss hover:-translate-y-0.5'
         : variant === 'ghost'

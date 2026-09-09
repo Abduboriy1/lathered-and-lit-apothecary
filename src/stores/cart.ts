@@ -9,6 +9,7 @@ import {
   GET_CART,
 } from '@/lib/shopify-queries'
 import { mapCartState, type ShopifyCartResponse } from '@/lib/shopify-mappers'
+import { track } from '@/lib/pixel'
 
 const CART_KEY = 'lathered_cart_id'
 
@@ -85,6 +86,15 @@ export const useCartStore = defineStore('cart', {
         console.warn('Product missing variantId — cannot add to Shopify cart:', product.id)
         return
       }
+
+      track('AddToCart', {
+        content_ids: [product.id],
+        content_name: product.name,
+        content_type: 'product',
+        value: product.price * quantity,
+        currency: 'USD',
+        num_items: quantity,
+      })
 
       // Optimistic update
       const existing = this.items.find((i) => i.product.variantId === product.variantId)

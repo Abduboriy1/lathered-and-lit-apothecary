@@ -1,9 +1,10 @@
 <script setup lang="ts">
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed, onMounted, watch } from 'vue'
 import type { Product } from '@/types'
 import { useProductsStore } from '@/stores/products'
 import SectionTitle from '@/components/ui/SectionTitle.vue'
 import ProductGrid from '@/components/product/ProductGrid.vue'
+import { trackCustom } from '@/lib/pixel'
 
 type Category = 'all' | 'soap' | 'body' | 'set' | 'bath' | 'outdoor' | 'wax_melts' | 'pet'
 
@@ -21,6 +22,8 @@ const filters: { key: Category; label: string }[] = [
   { key: 'pet', label: 'Pet' },
 ]
 
+watch(activeCategory, (category) => trackCustom('FilterCategory', { category }))
+
 const filtered = computed<Product[]>(() =>
   activeCategory.value === 'all'
     ? productStore.products
@@ -36,7 +39,7 @@ onMounted(() => productStore.fetchProducts())
     <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[50rem] h-[24rem] rounded-full opacity-40 blur-3xl pointer-events-none"
          style="background: radial-gradient(ellipse, #F2D8DC, transparent 70%)" />
 
-    <div class="relative pt-32 pb-24 px-6 max-w-7xl mx-auto min-h-screen">
+    <div class="relative pt-24 md:pt-32 pb-16 md:pb-24 px-5 sm:px-6 max-w-7xl mx-auto min-h-screen">
       <SectionTitle
         label="the full collection"
         title="Shop the Apothecary"
@@ -44,12 +47,12 @@ onMounted(() => productStore.fetchProducts())
       />
 
       <!-- Filters -->
-      <div class="flex gap-2.5 flex-wrap mb-12 justify-center">
+      <div class="flex gap-2 sm:gap-2.5 flex-wrap mb-8 md:mb-12 justify-center">
         <button
           v-for="f in filters"
           :key="f.key"
           :class="[
-            'px-5 py-2 rounded-full text-xs uppercase tracking-[0.14em] font-body font-medium transition-all duration-300 cursor-pointer',
+            'px-4 sm:px-5 py-2 rounded-full text-[11px] sm:text-xs uppercase tracking-[0.12em] sm:tracking-[0.14em] font-body font-medium transition-all duration-300 cursor-pointer',
             activeCategory === f.key
               ? 'bg-rose-gradient text-white shadow-btn-gloss'
               : 'border border-stone/70 bg-white/40 text-ink-soft hover:border-blush hover:text-blush-deep hover:bg-white/80',
@@ -61,7 +64,7 @@ onMounted(() => productStore.fetchProducts())
       </div>
 
       <!-- Loading skeleton -->
-      <div v-if="productStore.loading" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div v-if="productStore.loading" class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
         <div v-for="n in 8" :key="n" class="glass-card overflow-hidden animate-pulse">
           <div class="aspect-square bg-blush/10" />
           <div class="p-4 space-y-2">

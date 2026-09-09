@@ -3,6 +3,7 @@ import { useRouter } from 'vue-router'
 import { useCartStore } from '@/stores/cart'
 import CartItem from './CartItem.vue'
 import CartSummary from './CartSummary.vue'
+import { track } from '@/lib/pixel'
 
 const cart = useCartStore()
 const router = useRouter()
@@ -13,6 +14,13 @@ function browseShop() {
 }
 
 function handleCheckout() {
+  track('InitiateCheckout', {
+    content_ids: cart.items.map((i) => i.product.id),
+    content_type: 'product',
+    value: cart.subtotal,
+    currency: 'USD',
+    num_items: cart.totalItems,
+  })
   cart.closeDrawer()
   if (cart.checkoutUrl) {
     window.location.href = cart.checkoutUrl
@@ -25,7 +33,7 @@ function handleCheckout() {
   <Transition name="fade">
     <div
       v-show="cart.isDrawerOpen"
-      class="fixed inset-0 bg-black/20 backdrop-blur-xs"
+      class="fixed inset-0 bg-black/20 backdrop-blur-sm"
       style="z-index: 9998"
       @click="cart.closeDrawer()"
     />
@@ -33,19 +41,20 @@ function handleCheckout() {
 
   <!-- Drawer panel -->
   <div
-    class="fixed right-0 top-0 h-full w-80 sm:w-96 bg-ivory/98 backdrop-blur-xl flex flex-col shadow-2xl border-l border-gold/30 transition-transform duration-[400ms] ease-[cubic-bezier(0.22,0.61,0.36,1)] will-change-transform"
+    class="fixed right-0 top-0 h-[100dvh] w-full max-w-md sm:w-96 bg-ivory flex flex-col shadow-2xl border-l border-gold/30 transition-transform duration-[400ms] ease-[cubic-bezier(0.22,0.61,0.36,1)] will-change-transform"
     :class="cart.isDrawerOpen ? 'translate-x-0' : 'translate-x-full'"
     :aria-hidden="!cart.isDrawerOpen"
     style="z-index: 9999"
   >
     <!-- Header -->
-    <div class="flex items-center justify-between px-6 py-5 border-b border-stone/40">
+    <div class="flex items-center justify-between px-6 py-4 sm:py-5 border-b border-stone/40">
       <div>
         <h3 class="font-display text-ink text-xl">Your Bag</h3>
         <p class="text-xs text-ink-muted font-body mt-0.5">{{ cart.totalItems }} item{{ cart.totalItems !== 1 ? 's' : '' }}</p>
       </div>
       <button
-        class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-blush/10 text-ink-muted hover:text-blush transition-colors cursor-pointer"
+        aria-label="Close bag"
+        class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-blush/10 text-ink-muted hover:text-blush transition-colors cursor-pointer"
         @click="cart.closeDrawer()"
       >
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -80,7 +89,7 @@ function handleCheckout() {
     </div>
 
     <!-- Summary -->
-    <div v-if="!cart.isEmpty" class="px-6 pb-6 pt-2">
+    <div v-if="!cart.isEmpty" class="px-6 pt-2 pb-[max(1.5rem,env(safe-area-inset-bottom))]">
       <CartSummary @checkout="handleCheckout" />
     </div>
   </div>

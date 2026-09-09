@@ -4,8 +4,6 @@ import {RouterLink} from 'vue-router'
 import GlowButton from '@/components/ui/GlowButton.vue'
 import woodTexture from '@/assets/textures/rustic-wood.webp'
 
-const heroRef = ref<HTMLElement | null>(null)
-
 function scrollToStory() {
   document.getElementById('our-story')?.scrollIntoView({ behavior: 'smooth' })
 }
@@ -43,8 +41,7 @@ onMounted(() => {
 
 <template>
     <section
-        ref="heroRef"
-        class="relative min-h-screen flex items-center bg-hero-gradient overflow-hidden pt-28 pb-16"
+        class="relative min-h-[100svh] flex items-center bg-hero-gradient overflow-hidden pt-24 md:pt-28 pb-12 md:pb-16"
     >
         <!-- Wood texture overlay: kept whisper-soft so it reads as warmth, not noise.
              Mask lives on the wrapper and opacity on the child: Chrome ignores opacity
@@ -75,11 +72,11 @@ onMounted(() => {
         <div class="absolute bottom-0 right-1/3 w-64 h-64 rounded-full opacity-15 blur-3xl pointer-events-none"
              style="background: radial-gradient(circle, #7A9470, transparent 70%)"/>
 
-        <div class="max-w-7xl mx-auto px-6 w-full py-10 lg:py-14 flex flex-col items-center">
+        <div class="max-w-7xl mx-auto px-5 sm:px-6 w-full py-6 sm:py-10 lg:py-14 flex flex-col items-center">
             <!-- Wordmark: centered above everything -->
-            <p class="hero-label font-script text-gold text-2xl md:text-3xl font-semibold italic mb-3 enter-up flex items-center justify-center flex-wrap gap-x-2 text-center">
+            <p class="hero-label font-script text-gold text-xl sm:text-2xl md:text-3xl font-semibold italic mb-2 sm:mb-3 enter-up flex items-center justify-center flex-wrap gap-x-2 text-center">
                 <span>Handcrafted soaps,</span>
-                <span class="relative inline-block min-w-[9rem] h-[1.2em] text-left">
+                <span class="relative inline-block min-w-[7.5rem] sm:min-w-[9rem] h-[1.2em] text-left">
                     <Transition name="badge-flip">
                         <span
                             v-if="badgeVisible"
@@ -91,44 +88,44 @@ onMounted(() => {
                 </span>
             </p>
 
-            <h1 class="hero-title font-display font-bold text-[clamp(2.4rem,7.2vw,7.5rem)] uppercase tracking-wide leading-[0.95] mb-10 lg:mb-12 enter-up inline-flex flex-col items-center max-w-full text-center">
+            <h1 class="hero-title font-display font-bold text-[clamp(2.1rem,9.5vw,7.5rem)] uppercase tracking-wide leading-[0.95] mb-8 lg:mb-12 enter-up inline-flex flex-col items-center max-w-full text-center">
                 <span class="flex items-baseline gap-[0.28em] whitespace-nowrap drop-shadow-[0_2px_0_rgba(255,255,255,0.5)]">
                     <span class="text-teal">Lathered</span>
                     <span class="text-rosegold">&amp; Lit</span>
                 </span>
-                <span class="font-body font-medium text-teal text-sm md:text-xl tracking-[0.5em] flex items-center justify-center gap-3 md:gap-4 mt-4 pl-[0.5em]">
-                    <span class="w-2 h-2 md:w-2.5 md:h-2.5 rounded-full bg-blush flex-shrink-0 shadow-glow" aria-hidden="true"/>
+                <span class="font-body font-medium text-teal text-base sm:text-xl md:text-3xl tracking-[0.4em] sm:tracking-[0.5em] flex items-center justify-center gap-3 md:gap-5 mt-3 md:mt-5 pl-[0.4em] sm:pl-[0.5em]">
+                    <span class="w-2.5 h-2.5 md:w-3.5 md:h-3.5 rounded-full bg-blush flex-shrink-0 shadow-glow" aria-hidden="true"/>
                     <span>Apothecary</span>
-                    <span class="w-2 h-2 md:w-2.5 md:h-2.5 rounded-full bg-blush flex-shrink-0 shadow-glow" aria-hidden="true"/>
+                    <span class="w-2.5 h-2.5 md:w-3.5 md:h-3.5 rounded-full bg-blush flex-shrink-0 shadow-glow" aria-hidden="true"/>
                 </span>
             </h1>
 
             <!-- Message + product art -->
-            <div class="w-full grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
+            <div class="w-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                 <div class="flex flex-col items-center text-center lg:items-start lg:text-left lg:pr-6">
-                    <h2 class="hero-sub font-display text-ink text-3xl md:text-4xl xl:text-[2.75rem] leading-[1.15] font-medium mb-5 enter-up max-w-xl">
+                    <h2 class="hero-sub font-display text-ink text-[1.75rem] sm:text-3xl md:text-4xl xl:text-[2.75rem] leading-[1.15] font-medium mb-4 md:mb-5 enter-up max-w-xl">
                         Farm-fresh skincare,<br />
                         <span class="italic text-rosegold">poured with love.</span>
                     </h2>
 
-                    <p class="hero-sub font-body text-ink-soft text-xl md:text-2xl leading-relaxed max-w-xl mb-4 enter-up">
+                    <p class="hero-sub font-body text-ink-soft text-base sm:text-lg md:text-2xl leading-relaxed max-w-xl mb-3 md:mb-4 enter-up">
                         Small-batch artisan soaps and body care, made with natural ingredients and crafted with care on our family farm.
                     </p>
-                    <p class="hero-sub font-script italic text-blush-deep text-3xl md:text-4xl mb-9 enter-up">
+                    <p class="hero-sub font-script italic text-blush-deep text-2xl sm:text-3xl md:text-4xl mb-7 md:mb-9 enter-up">
                         Treat your skin — you deserve it.
                     </p>
 
-                    <div class="hero-ctas flex gap-4 flex-wrap justify-center lg:justify-start enter-up">
-                        <RouterLink to="/shop">
-                            <GlowButton size="lg">
+                    <div class="hero-ctas flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto justify-center lg:justify-start enter-up">
+                        <RouterLink to="/shop" class="flex sm:inline-flex">
+                            <GlowButton size="lg" class="w-full sm:w-auto">
                                 Shop Now
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5-5 5M6 12h12"/></svg>
                             </GlowButton>
                         </RouterLink>
-                        <GlowButton variant="outline" size="lg" @click="scrollToStory">Our Story</GlowButton>
+                        <GlowButton variant="outline" size="lg" class="w-full sm:w-auto" @click="scrollToStory">Our Story</GlowButton>
                     </div>
 
-                    <ul class="hero-trust enter-up mt-10 flex flex-wrap lg:flex-nowrap gap-y-2 items-center justify-center lg:justify-start gap-x-4 xl:gap-x-5 text-[10px] sm:text-[11px] xl:text-xs uppercase tracking-[0.1em] text-ink-soft font-body whitespace-nowrap max-w-full">
+                    <ul class="hero-trust enter-up mt-8 md:mt-10 flex flex-wrap lg:flex-nowrap gap-y-2 items-center justify-center lg:justify-start gap-x-4 xl:gap-x-5 text-[10px] sm:text-[11px] xl:text-xs uppercase tracking-[0.1em] text-ink-soft font-body whitespace-nowrap max-w-full">
                         <li class="flex items-center gap-2">
                             <span class="w-2 h-2 rotate-45 bg-gradient-to-br from-gold-light to-gold shadow-glow-gold flex-shrink-0" aria-hidden="true"/>
                             Free shipping over $50
@@ -145,7 +142,7 @@ onMounted(() => {
                 </div>
 
                 <!-- Hero image: product artwork with transparent background -->
-                <div class="hero-image relative flex justify-center items-center enter-up w-full">
+                <div class="hero-image relative hidden lg:flex justify-center items-center enter-up w-full">
                     <div
                         class="absolute inset-[8%] rounded-full blur-3xl opacity-70 pointer-events-none"
                         style="background: radial-gradient(circle, rgba(242,216,220,0.95) 0%, rgba(231,179,189,0.55) 45%, transparent 72%)"
@@ -176,7 +173,7 @@ onMounted(() => {
 
         <!-- Scroll hint -->
         <div
-            class="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-ink-muted animate-bounce">
+            class="absolute bottom-6 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-1 text-ink-muted animate-bounce">
             <span class="text-[10px] font-body uppercase tracking-widest">Scroll</span>
             <svg class="w-4 h-4 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"/>

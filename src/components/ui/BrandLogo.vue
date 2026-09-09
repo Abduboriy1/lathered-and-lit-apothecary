@@ -23,8 +23,8 @@ const sizes = {
   },
   md: {
     name: 'text-4xl gap-2',
-    sub: 'text-[0.7rem] tracking-[0.42em] gap-2',
-    dot: 'w-1.5 h-1.5',
+    sub: 'text-base tracking-[0.42em] gap-2.5',
+    dot: 'w-2 h-2',
   },
   lg: {
     name: 'text-5xl gap-2',

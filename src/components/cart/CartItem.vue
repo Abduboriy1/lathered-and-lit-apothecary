@@ -26,7 +26,7 @@ function formatVariantTitle(title: string): string {
 
     <!-- Info -->
     <div class="flex-1 min-w-0">
-      <p class="font-display text-sm text-ink truncate leading-tight">{{ item.product.name }}</p>
+      <p class="font-display text-sm text-ink line-clamp-2 leading-tight">{{ item.product.name }}</p>
       <p class="text-xs text-ink-muted mt-0.5 font-body">
         <span v-if="item.variantTitle">{{ formatVariantTitle(item.variantTitle) }}</span>
         <span v-if="item.variantTitle && item.product.scent.length"> · </span>
