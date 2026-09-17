@@ -1,0 +1,117 @@
+{
+  "products": [
+    {
+      "id": "gid://shopify/Product/9272315543683",
+      "handle": "lemongrass-body-butter",
+      "title": "Lemongrass Body Butter",
+      "status": "ACTIVE",
+      "productType": "Skincare",
+      "vendor": "Lathered & Lit Apothecary",
+      "tags": [
+        "generated",
+        "lemongrass",
+        "skincare"
+      ],
+      "price": "15.66",
+      "stock": 25,
+      "descriptionHtml": "<p>Lemongrass Body Butter from Lathered &amp; Lit Apothecary, hand-poured in small batches and free of parabens and synthetic dyes.</p><p>Approx. 200g. Batch #1166.</p>",
+      "images": [
+        "https://cdn.shopify.com/s/files/1/0754/2013/9651/files/lemongrass-body-butter-1.png?v=1789008877"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/9272315707523",
+      "handle": "fig-amber-body-butter",
+      "title": "Fig & Amber Body Butter",
+      "status": "ACTIVE",
+      "productType": "Skincare",
+      "vendor": "Lathered & Lit Apothecary",
+      "tags": [
+        "fig",
+        "generated",
+        "skincare"
+      ],
+      "price": "20.87",
+      "stock": 25,
+      "descriptionHtml": "<p>Fig &amp; Amber Body Butter from Lathered &amp; Lit Apothecary, cured for six weeks for a longer-lasting bar and free of parabens and synthetic dyes.</p><p>Approx. 200g. Batch #5339.</p>",
+      "images": [
+        "https://cdn.shopify.com/s/files/1/0754/2013/9651/files/fig-amber-body-butter-2.png?v=1789008880"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/9272315969667",
+      "handle": "lavender-bar-soap",
+      "title": "Lavender Bar Soap",
+      "status": "ACTIVE",
+      "productType": "Soap",
+      "vendor": "Lathered & Lit Apothecary",
+      "tags": [
+        "generated",
+        "lavender",
+        "soap"
+      ],
+      "price": "8.89",
+      "stock": 25,
+      "descriptionHtml": "<p>Lavender Bar Soap from Lathered &amp; Lit Apothecary, cured for six weeks for a longer-lasting bar and vegan and cruelty-free.</p><p>Approx. 120g. Batch #3525.</p>",
+      "images": [
+        "https://cdn.shopify.com/s/files/1/0754/2013/9651/files/lavender-bar-soap-3.png?v=1789008882"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/9272316067971",
+      "handle": "juniper-bar-soap",
+      "title": "Juniper Bar Soap",
+      "status": "ACTIVE",
+      "productType": "Soap",
+      "vendor": "Lathered & Lit Apothecary",
+      "tags": [
+        "generated",
+        "juniper",
+        "soap"
+      ],
+      "price": "10.50",
+      "stock": 25,
+      "descriptionHtml": "<p>Juniper Bar Soap from Lathered &amp; Lit Apothecary, cured for six weeks for a longer-lasting bar.</p><p>Approx. 120g. Batch #9227.</p>",
+      "images": [
+        "https://cdn.shopify.com/s/files/1/0754/2013/9651/files/juniper-bar-soap-4.png?v=1789008884"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/9272316199043",
+      "handle": "juniper-body-butter",
+      "title": "Juniper Body Butter",
+      "status": "ACTIVE",
+      "productType": "Skincare",
+      "vendor": "Lathered & Lit Apothecary",
+      "tags": [
+        "generated",
+        "juniper",
+        "skincare"
+      ],
+      "price": "21.24",
+      "stock": 25,
+      "descriptionHtml": "<p>Juniper Body Butter from Lathered &amp; Lit Apothecary, vegan and cruelty-free and free of parabens and synthetic dyes.</p><p>Approx. 200g. Batch #7597.</p>",
+      "images": [
+        "https://cdn.shopify.com/s/files/1/0754/2013/9651/files/juniper-body-butter-5.png?v=1789008886"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/9272321540227",
+      "handle": "sea-salt-bath-bomb",
+      "title": "Sea Salt Bath Bomb",
+      "status": "ACTIVE",
+      "productType": "Bath",
+      "vendor": "Lathered & Lit Apothecary",
+      "tags": [
+        "bath",
+        "sea-salt"
+      ],
+      "price": "7.50",
+      "stock": 25,
+      "descriptionHtml": "<p>Fizzing sea salt bath bomb, hand-pressed in small batches.</p>",
+      "images": [
+        "https://cdn.shopify.com/s/files/1/0754/2013/9651/files/sea-salt-bath-bomb-1.png?v=1789008997"
+      ]
+    }
+  ]
+}

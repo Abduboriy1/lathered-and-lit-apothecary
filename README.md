@@ -97,3 +97,32 @@ Make sure **Track quantity** is checked on each variant so the stock check works
 - [ ] Metafield `custom.burn_time` filled in (candles only)
 - [ ] Scent tags added (`scent:<name>`)
 - [ ] Badge tags added if applicable (`featured`, `bestseller`, `new`, `limited`)
+
+## Managing products from JSON
+
+Admin API access comes from the Dev Dashboard app **Product Generator** (client-credentials
+OAuth). Put `SHOPIFY_ADMIN_STORE_DOMAIN`, `SHOPIFY_CLIENT_ID`, `SHOPIFY_CLIENT_SECRET` in `.env`.
+
+```bash
+npm run products:export          # store -> data/products.json
+npm run products:sync            # data/products.json -> store (create new, update existing)
+npm run products:sync -- --dry-run
+npm run products:sync -- --delete   # also delete store products missing from the file
+npm run products:generate -- --count 5 [--active]   # random products with procedural art
+```
+
+`data/products.json` rules:
+
+- **Add**: append an object without `id`. `images` entries may be an `https` URL, a local file
+  path, or the string `"generate"` (procedural brand art).
+- **Edit**: change any field on an existing entry (`title`, `price`, `stock`, `status`, `tags`, ...). `stock` is the on-hand quantity; the site shows "Out of Stock" at 0.
+- **Remove**: delete the object, then run sync with `--delete`.
+- After each sync the file is rewritten with fresh ids, handles and CDN image URLs.
+
+### Storefront token for the site
+
+`VITE_SHOPIFY_STORE_DOMAIN` / `VITE_SHOPIFY_STOREFRONT_TOKEN` point the site at the store.
+The token is minted by the Product Generator app (`npm run products:storefront-token`, which also
+publishes every product to the Online Store channel). The Storefront API only returns products that
+are **ACTIVE** and published to Online Store, so set `"status": "ACTIVE"` in `data/products.json`
+and sync before expecting them on the site.
