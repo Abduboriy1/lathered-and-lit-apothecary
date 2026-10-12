@@ -41,7 +41,7 @@ onMounted(() => {
 
 <template>
     <section
-        class="relative min-h-[100svh] flex items-center bg-hero-gradient overflow-hidden pt-24 md:pt-28 pb-12 md:pb-16"
+        class="relative min-h-[100svh] flex items-center bg-hero-gradient overflow-hidden pt-32 md:pt-36 pb-12 md:pb-16"
     >
         <!-- Wood texture overlay: kept whisper-soft so it reads as warmth, not noise.
              Mask lives on the wrapper and opacity on the child: Chrome ignores opacity
@@ -105,7 +105,7 @@ onMounted(() => {
                 <div class="flex flex-col items-center text-center lg:items-start lg:text-left lg:pr-6">
                     <h2 class="hero-sub font-display text-ink text-[1.75rem] sm:text-3xl md:text-4xl xl:text-[2.75rem] leading-[1.15] font-medium mb-4 md:mb-5 enter-up max-w-xl">
                         Farm-fresh skincare,<br />
-                        <span class="italic text-rosegold">poured with love.</span>
+                        <span class="italic text-rosegold">woman owned.</span>
                     </h2>
 
                     <p class="hero-sub font-body text-ink-soft text-base sm:text-lg md:text-2xl leading-relaxed max-w-xl mb-3 md:mb-4 enter-up">

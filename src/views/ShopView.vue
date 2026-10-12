@@ -39,7 +39,7 @@ onMounted(() => productStore.fetchProducts())
     <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[50rem] h-[24rem] rounded-full opacity-40 blur-3xl pointer-events-none"
          style="background: radial-gradient(ellipse, #F2D8DC, transparent 70%)" />
 
-    <div class="relative pt-24 md:pt-32 pb-16 md:pb-24 px-5 sm:px-6 max-w-7xl mx-auto min-h-screen">
+    <div class="relative pt-32 md:pt-40 pb-16 md:pb-24 px-5 sm:px-6 max-w-7xl mx-auto min-h-screen">
       <SectionTitle
         label="the full collection"
         title="Shop the Apothecary"

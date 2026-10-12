@@ -3,6 +3,7 @@ import { ref, watch, onMounted, onUnmounted } from 'vue'
 import { RouterLink, useRoute } from 'vue-router'
 import { useCartStore } from '@/stores/cart'
 import BrandLogo from '@/components/ui/BrandLogo.vue'
+import AnnouncementBar from '@/components/layout/AnnouncementBar.vue'
 
 const cart = useCartStore()
 const route = useRoute()
@@ -42,6 +43,7 @@ onUnmounted(() => {
 
 <template>
   <header class="glass-nav enter-down fixed top-0 left-0 right-0 z-50">
+    <AnnouncementBar />
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 md:py-5 flex items-center justify-between gap-3 sm:gap-4">
       <!-- Logo -->
       <RouterLink to="/" class="flex items-center shrink-0 min-w-0" aria-label="Lathered & Lit Apothecary home" @click="closeMenu">
@@ -117,7 +119,7 @@ onUnmounted(() => {
       <nav
         v-show="menuOpen"
         id="mobile-menu"
-        class="md:hidden absolute inset-x-0 top-full bg-[#FAF7F4] border-t border-gold/20 shadow-luxe max-h-[calc(100dvh-4.5rem)] overflow-y-auto"
+        class="md:hidden absolute inset-x-0 top-full bg-[#FAF7F4] border-t border-gold/20 shadow-luxe max-h-[calc(100dvh-6.5rem)] overflow-y-auto"
         aria-label="Mobile"
       >
         <ul class="px-6 pt-4 pb-6 flex flex-col">

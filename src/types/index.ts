@@ -12,6 +12,7 @@ export interface Product {
   category: 'soap' | 'body' | 'set'
   scent: string[]
   description: string
+  descriptionHtml?: string
   shortDescription: string
   imageUrl: string
   hoverImageUrl?: string
@@ -19,7 +20,7 @@ export interface Product {
   weight: string
   featured: boolean
   stock: number
-  badges?: ('bestseller' | 'new' | 'limited')[]
+  badges?: ('bestseller' | 'new' | 'limited' | 'presale')[]
   variantId?: string
   variants?: ProductVariant[]
 }

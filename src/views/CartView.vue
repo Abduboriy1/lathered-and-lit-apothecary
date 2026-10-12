@@ -23,7 +23,7 @@ function checkout() {
 </script>
 
 <template>
-  <div class="pt-24 md:pt-28 pb-16 md:pb-24 px-5 sm:px-6 max-w-5xl mx-auto min-h-screen">
+  <div class="pt-32 md:pt-36 pb-16 md:pb-24 px-5 sm:px-6 max-w-5xl mx-auto min-h-screen">
     <h1 class="font-display text-3xl md:text-4xl text-ink mb-2">Your Bag</h1>
     <p class="text-sm text-ink-muted font-body mb-8 md:mb-10">{{ cart.totalItems }} item{{ cart.totalItems !== 1 ? 's' : '' }}</p>
 

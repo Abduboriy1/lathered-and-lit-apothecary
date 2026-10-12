@@ -78,7 +78,7 @@ export async function fetchAllProducts(gql) {
           pageInfo{ hasNextPage endCursor }
           nodes{
             id handle title status productType vendor tags descriptionHtml
-            variants(first:1){ nodes{ id price inventoryQuantity inventoryItem{ id tracked } } }
+            variants(first:20){ nodes{ id title price inventoryQuantity inventoryItem{ id tracked } } }
             media(first:10){ nodes{ id ... on MediaImage { image{ url } } } }
           }
         }

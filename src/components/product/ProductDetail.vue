@@ -13,6 +13,9 @@ const added = ref(false)
 const selectedVariant = ref<ProductVariant | null>(props.product.variants?.[0] ?? null)
 const variantQuantities = ref<Record<string, number>>({})
 
+// Numeric variant titles are sizes in ounces ("4", "8"); anything else ("Set", "Refill") is shown as-is.
+const variantsAreSizes = computed(() => props.product.variants?.every((v) => /^\d+(\.\d+)?$/.test(v.title)) ?? false)
+
 const maxStock = computed(() => selectedVariant.value?.stock ?? props.product.stock)
 
 const quantity = computed({
@@ -84,7 +87,7 @@ function addToCart() {
 
       <!-- Size selector -->
       <div v-if="product.variants && product.variants.length > 1" class="mb-6">
-        <p class="text-xs uppercase tracking-wide text-ink-muted font-body mb-2">Size</p>
+        <p class="text-xs uppercase tracking-wide text-ink-muted font-body mb-2">{{ variantsAreSizes ? 'Size' : 'Option' }}</p>
         <div class="flex flex-wrap gap-2">
           <button
             v-for="variant in product.variants"
@@ -97,12 +100,18 @@ function addToCart() {
             "
             @click="selectedVariant = variant"
           >
-            {{ variant.title }} OZ
+            {{ variant.title }}{{ variantsAreSizes ? ' OZ' : '' }}
           </button>
         </div>
       </div>
 
-      <p class="text-ink-soft font-body leading-relaxed text-sm mb-6">{{ product.description }}</p>
+      <!-- Merchant-authored HTML from our own Shopify admin. -->
+      <div
+        v-if="product.descriptionHtml"
+        class="product-copy text-ink-soft font-body leading-relaxed text-sm mb-6"
+        v-html="product.descriptionHtml"
+      />
+      <p v-else class="text-ink-soft font-body leading-relaxed text-sm mb-6">{{ product.description }}</p>
 
       <div class="flex flex-wrap gap-6 text-sm text-ink-soft font-body mb-6 md:mb-8 pb-6 border-b border-blush/15">
         <div v-if="product.burnTime">
@@ -144,3 +153,38 @@ function addToCart() {
     </div>
   </div>
 </template>
+
+<style scoped>
+.product-copy :deep(p) {
+  margin-bottom: 0.75rem;
+}
+.product-copy :deep(h3) {
+  margin: 1.25rem 0 0.5rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #8f7d74;
+}
+.product-copy :deep(ul) {
+  display: grid;
+  gap: 0.4rem;
+}
+.product-copy :deep(li) {
+  padding-left: 1rem;
+  position: relative;
+}
+.product-copy :deep(li)::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 5px;
+  height: 5px;
+  border-radius: 9999px;
+  background: #c9a96e;
+}
+.product-copy :deep(strong) {
+  color: #3a2e2b;
+  font-weight: 600;
+}
+</style>

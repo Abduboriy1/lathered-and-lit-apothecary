@@ -24,7 +24,7 @@ watch(() => props.id, (id) => load(id))
 <template>
   <div class="min-h-screen flex flex-col px-5 sm:px-6">
     <!-- Loading skeleton -->
-    <div v-if="productStore.loading" class="flex-1 flex items-center justify-center pt-24 md:pt-28 pb-16 md:pb-24 max-w-7xl mx-auto w-full">
+    <div v-if="productStore.loading" class="flex-1 flex items-center justify-center pt-32 md:pt-36 pb-16 md:pb-24 max-w-7xl mx-auto w-full">
       <div class="animate-pulse w-full">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
           <div class="aspect-square bg-blush/10 rounded-2xl" />
@@ -39,7 +39,7 @@ watch(() => props.id, (id) => load(id))
     </div>
 
     <template v-else-if="productStore.currentProduct">
-      <div class="flex-1 flex items-center justify-center pt-24 md:pt-28 pb-20 md:pb-16 max-w-7xl mx-auto w-full">
+      <div class="flex-1 flex items-center justify-center pt-32 md:pt-36 pb-20 md:pb-16 max-w-7xl mx-auto w-full">
         <ProductDetail :product="productStore.currentProduct" class="w-full" />
       </div>
 

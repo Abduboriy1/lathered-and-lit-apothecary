@@ -35,6 +35,7 @@ export interface ShopifyProductNode {
   handle: string
   title: string
   description: string
+  descriptionHtml: string
   productType: string
   tags: string[]
   priceRange: {
@@ -79,7 +80,7 @@ function mapCategory(productType: string): Product['category'] {
 }
 
 function mapBadges(tags: string[]): Product['badges'] {
-  const valid = ['bestseller', 'new', 'limited'] as const
+  const valid = ['bestseller', 'new', 'limited', 'presale'] as const
   const found = tags.filter((t): t is typeof valid[number] => (valid as readonly string[]).includes(t))
   return found.length ? found : undefined
 }
@@ -105,6 +106,7 @@ export function mapProduct(node: ShopifyProductNode): Product {
     category: mapCategory(node.productType),
     scent: node.tags.filter((t) => t.startsWith('scent:')).map((t) => t.replace('scent:', '')),
     description: node.description,
+    descriptionHtml: node.descriptionHtml,
     shortDescription: node.shortDescription?.value ?? node.description.slice(0, 80),
     imageUrl: sized(node.images.edges[0]?.node.url, 900) ?? '',
     hoverImageUrl: sized(node.images.edges[1]?.node.url, 900),

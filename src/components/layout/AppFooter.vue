@@ -116,7 +116,7 @@ const { email, status, message, subscribe } = useNewsletter()
       </div>
       <div class="flex items-center gap-1 sm:gap-2 text-[10px] sm:text-xs text-ink-soft font-body whitespace-nowrap">
         <svg class="w-3 h-3 sm:w-3.5 sm:h-3.5 text-blush flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-        Made with Love
+        Woman Owned
       </div>
       <div class="flex items-center gap-1 sm:gap-2 text-[10px] sm:text-xs text-ink-soft font-body whitespace-nowrap">
         <svg class="w-3 h-3 sm:w-3.5 sm:h-3.5 text-mint flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>

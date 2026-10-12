@@ -9,6 +9,8 @@
 // JSON entry shape (see data/products.json). To ADD a product: append an object WITHOUT "id".
 //   "images": list of  https URL | local file path | "generate"  (procedural brand art)
 //   "stock": on-hand quantity at the primary location (site shows Out of Stock when 0)
+//   "variants": optional [{ title, price, stock }] for multi-option products (e.g. Set / Refill);
+//               overrides price/stock. "optionName" names the option (default "Option").
 // To REMOVE: delete the object and run sync --delete.
 
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs'
@@ -33,6 +35,9 @@ const toEntry = (p) => ({
   stock: p.variants.nodes[0]?.inventoryQuantity ?? 0,
   descriptionHtml: p.descriptionHtml ?? '',
   images: p.media.nodes.map((m) => m.image?.url).filter(Boolean),
+  ...(p.variants.nodes.length > 1 && {
+    variants: p.variants.nodes.map((v) => ({ title: v.title, price: v.price, stock: v.inventoryQuantity })),
+  }),
 })
 
 async function exportCmd() {
@@ -99,19 +104,26 @@ async function syncCmd() {
       { product: { id: e.id, title: e.title, descriptionHtml: e.descriptionHtml, productType: e.productType, vendor: e.vendor, tags: e.tags ?? [], status: e.status } },
     )
     assertNoUserErrors(data.productUpdate, `productUpdate ${e.title}`)
-    const variantId = r.variants.nodes[0]?.id
-    if (variantId && e.price != null && String(e.price) !== String(r.variants.nodes[0].price)) {
-      const v = await gql(
-        `mutation($productId:ID!,$variants:[ProductVariantsBulkInput!]!){
-          productVariantsBulkUpdate(productId:$productId, variants:$variants){ userErrors{ field message } }
-        }`,
-        { productId: e.id, variants: [{ id: variantId, price: String(e.price) }] },
-      )
-      assertNoUserErrors(v.productVariantsBulkUpdate, `price ${e.title}`)
-    }
-    const invItem = r.variants.nodes[0]?.inventoryItem
-    if (invItem && e.stock != null && (Number(e.stock) !== r.variants.nodes[0].inventoryQuantity || !invItem.tracked)) {
-      await setStock(gql, invItem.id, e.stock)
+    // Pair each json variant with the store variant of the same title (single-variant: the first one).
+    const wanted = e.variants ?? [{ title: r.variants.nodes[0]?.title, price: e.price, stock: e.stock }]
+    for (const w of wanted) {
+      const rv = r.variants.nodes.find((v) => v.title === w.title)
+      if (!rv) {
+        console.warn(`  ${e.title}: no store variant titled "${w.title}" (add new variants in Shopify admin)`)
+        continue
+      }
+      if (w.price != null && String(w.price) !== String(rv.price)) {
+        const v = await gql(
+          `mutation($productId:ID!,$variants:[ProductVariantsBulkInput!]!){
+            productVariantsBulkUpdate(productId:$productId, variants:$variants){ userErrors{ field message } }
+          }`,
+          { productId: e.id, variants: [{ id: rv.id, price: String(w.price) }] },
+        )
+        assertNoUserErrors(v.productVariantsBulkUpdate, `price ${e.title} / ${w.title}`)
+      }
+      if (rv.inventoryItem && w.stock != null && (Number(w.stock) !== rv.inventoryQuantity || !rv.inventoryItem.tracked)) {
+        await setStock(gql, rv.inventoryItem.id, w.stock)
+      }
     }
     const media = await mediaSourcesFor(gql, e, 1000 + i)
     if (media.length) {

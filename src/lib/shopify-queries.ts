@@ -3,6 +3,7 @@ const PRODUCT_FIELDS = `
   handle
   title
   description
+  descriptionHtml
   productType
   tags
   priceRange {

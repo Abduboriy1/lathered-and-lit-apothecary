@@ -1,116 +1,502 @@
 {
   "products": [
     {
-      "id": "gid://shopify/Product/9272315543683",
-      "handle": "lemongrass-body-butter",
-      "title": "Lemongrass Body Butter",
-      "status": "ACTIVE",
-      "productType": "Skincare",
-      "vendor": "Lathered & Lit Apothecary",
-      "tags": [
-        "generated",
-        "lemongrass",
-        "skincare"
-      ],
-      "price": "15.66",
-      "stock": 25,
-      "descriptionHtml": "<p>Lemongrass Body Butter from Lathered &amp; Lit Apothecary, hand-poured in small batches and free of parabens and synthetic dyes.</p><p>Approx. 200g. Batch #1166.</p>",
-      "images": [
-        "https://cdn.shopify.com/s/files/1/0754/2013/9651/files/lemongrass-body-butter-1.png?v=1789008877"
-      ]
-    },
-    {
-      "id": "gid://shopify/Product/9272315707523",
-      "handle": "fig-amber-body-butter",
-      "title": "Fig & Amber Body Butter",
-      "status": "ACTIVE",
-      "productType": "Skincare",
-      "vendor": "Lathered & Lit Apothecary",
-      "tags": [
-        "fig",
-        "generated",
-        "skincare"
-      ],
-      "price": "20.87",
-      "stock": 25,
-      "descriptionHtml": "<p>Fig &amp; Amber Body Butter from Lathered &amp; Lit Apothecary, cured for six weeks for a longer-lasting bar and free of parabens and synthetic dyes.</p><p>Approx. 200g. Batch #5339.</p>",
-      "images": [
-        "https://cdn.shopify.com/s/files/1/0754/2013/9651/files/fig-amber-body-butter-2.png?v=1789008880"
-      ]
-    },
-    {
-      "id": "gid://shopify/Product/9272315969667",
-      "handle": "lavender-bar-soap",
-      "title": "Lavender Bar Soap",
+      "id": "gid://shopify/Product/15424808550531",
+      "handle": "peachy-dream-goat-milk-soap",
+      "title": "Peachy Dream Goat Milk Soap",
       "status": "ACTIVE",
       "productType": "Soap",
       "vendor": "Lathered & Lit Apothecary",
       "tags": [
-        "generated",
-        "lavender",
+        "goat-milk",
         "soap"
       ],
-      "price": "8.89",
-      "stock": 25,
-      "descriptionHtml": "<p>Lavender Bar Soap from Lathered &amp; Lit Apothecary, cured for six weeks for a longer-lasting bar and vegan and cruelty-free.</p><p>Approx. 120g. Batch #3525.</p>",
+      "price": "9.00",
+      "stock": 8,
+      "descriptionHtml": "<p>Deliciously sweet notes of juicy peaches capture the spirit of this perfect, market basket delight!</p><p>Handcrafted with a nourishing blend of plant-based oils, rich shea butter, and creamy goat milk, our soaps are made to give your skin a soft, clean, comfortable feel. Each bar is carefully crafted with olive oil, sweet almond oil, coconut oil, castor oil, and shea butter to create a creamy lather while helping cleanse without leaving your skin feeling overly stripped. Goat milk adds a creamy, silky quality, while kaolin clay provides gentle cleansing and a smooth skin feel. Every bar is beautifully scented with fragrance oil and colored with mica powder, making bath time feel a little more luxurious and special. Handmade in small batches with care, each bar is unique, because your everyday cleanse should feel like a treat.</p><h3>Scent</h3><p>Peaches &amp; Crème. Top notes: pear, plum, grass, verbena. Middle notes: peach, jasmine, floral, violet. Base notes: praline, heliotrope, coconut, balsamic.</p><h3>Ingredients</h3><ul>\n<li>\n<strong>Olive Oil</strong>: A gentle, moisturizing oil that helps nourish and soften the skin while creating a mild, conditioning bar.</li>\n<li>\n<strong>Sweet Almond Oil</strong>: Helps moisturize and condition the skin, leaving it feeling soft, smooth, and comfortable after cleansing.</li>\n<li>\n<strong>Coconut Oil</strong>: Provides cleansing power and helps create a rich, bubbly lather while leaving the skin feeling refreshed.</li>\n<li>\n<strong>Castor Oil</strong>: Helps create a creamy, stable lather and leaves skin feeling smooth and conditioned.</li>\n<li>\n<strong>Goat Milk</strong>: Helps give the soap a creamy, silky lather and a soft skin feel.</li>\n<li>\n<strong>White Kaolin Clay</strong>: A gentle clay that helps absorb excess oils while giving the soap a silky, smooth feel during cleansing.</li>\n<li>\n<strong>Shea Butter</strong>: Helps nourish, soften, and condition the skin while adding a creamy, luxurious feel.</li>\n<li>\n<strong>Distilled Water</strong>: Used to properly dissolve and combine the ingredients during the soap-making process.</li>\n<li>\n<strong>Lye (Sodium Hydroxide)</strong>: Essential for making true handmade soap; it reacts with the oils during saponification to create soap and glycerin. Once properly made and cured, no active lye remains.</li>\n<li>\n<strong>Fragrance Oil</strong>: Gives each soap its unique scent and personality and is used according to appropriate skin-safe usage rates.</li>\n<li>\n<strong>Mica Powder</strong>: A cosmetic colorant used to create beautiful colors and designs in the soap and is primarily used for appearance rather than skin-conditioning benefits.</li>\n</ul><p>Approx. 4–5 oz bar.</p>",
       "images": [
-        "https://cdn.shopify.com/s/files/1/0754/2013/9651/files/lavender-bar-soap-3.png?v=1789008882"
+        "https://cdn.shopify.com/s/files/1/0754/2013/9651/files/cellImage_0_0.png?v=1791837813"
       ]
     },
     {
-      "id": "gid://shopify/Product/9272316067971",
-      "handle": "juniper-bar-soap",
-      "title": "Juniper Bar Soap",
+      "id": "gid://shopify/Product/15424808616067",
+      "handle": "rainbow-bliss-goat-milk-soap",
+      "title": "Rainbow Bliss Goat Milk Soap",
       "status": "ACTIVE",
       "productType": "Soap",
       "vendor": "Lathered & Lit Apothecary",
       "tags": [
-        "generated",
-        "juniper",
+        "goat-milk",
         "soap"
       ],
-      "price": "10.50",
-      "stock": 25,
-      "descriptionHtml": "<p>Juniper Bar Soap from Lathered &amp; Lit Apothecary, cured for six weeks for a longer-lasting bar.</p><p>Approx. 120g. Batch #9227.</p>",
+      "price": "9.00",
+      "stock": 8,
+      "descriptionHtml": "<p>This scent opens with a trio of citrus: sparkling bergamot, clementine and pomelo. A heart of fruity apple, soft apricot and white strawberry is followed by a delicate base of amber blossom, sandalwood and musk.</p><p>Handcrafted with a nourishing blend of plant-based oils, rich shea butter, and creamy goat milk, our soaps are made to give your skin a soft, clean, comfortable feel. Each bar is carefully crafted with olive oil, sweet almond oil, coconut oil, castor oil, and shea butter to create a creamy lather while helping cleanse without leaving your skin feeling overly stripped. Goat milk adds a creamy, silky quality, while kaolin clay provides gentle cleansing and a smooth skin feel. Every bar is beautifully scented with fragrance oil and colored with mica powder, making bath time feel a little more luxurious and special. Handmade in small batches with care, each bar is unique, because your everyday cleanse should feel like a treat.</p><h3>Scent</h3><p>Bright citrus fruit with bergamot, clementine, pomelo, apple, and strawberry.</p><h3>Ingredients</h3><ul>\n<li>\n<strong>Olive Oil</strong>: A gentle, moisturizing oil that helps nourish and soften the skin while creating a mild, conditioning bar.</li>\n<li>\n<strong>Sweet Almond Oil</strong>: Helps moisturize and condition the skin, leaving it feeling soft, smooth, and comfortable after cleansing.</li>\n<li>\n<strong>Coconut Oil</strong>: Provides cleansing power and helps create a rich, bubbly lather while leaving the skin feeling refreshed.</li>\n<li>\n<strong>Castor Oil</strong>: Helps create a creamy, stable lather and leaves skin feeling smooth and conditioned.</li>\n<li>\n<strong>Goat Milk</strong>: Helps give the soap a creamy, silky lather and a soft skin feel.</li>\n<li>\n<strong>White Kaolin Clay</strong>: A gentle clay that helps absorb excess oils while giving the soap a silky, smooth feel during cleansing.</li>\n<li>\n<strong>Shea Butter</strong>: Helps nourish, soften, and condition the skin while adding a creamy, luxurious feel.</li>\n<li>\n<strong>Distilled Water</strong>: Used to properly dissolve and combine the ingredients during the soap-making process.</li>\n<li>\n<strong>Lye (Sodium Hydroxide)</strong>: Essential for making true handmade soap; it reacts with the oils during saponification to create soap and glycerin. Once properly made and cured, no active lye remains.</li>\n<li>\n<strong>Fragrance Oil</strong>: Gives each soap its unique scent and personality and is used according to appropriate skin-safe usage rates.</li>\n<li>\n<strong>Mica Powder</strong>: A cosmetic colorant used to create beautiful colors and designs in the soap and is primarily used for appearance rather than skin-conditioning benefits.</li>\n</ul><p>Approx. 4–5 oz bar.</p>",
       "images": [
-        "https://cdn.shopify.com/s/files/1/0754/2013/9651/files/juniper-bar-soap-4.png?v=1789008884"
+        "https://cdn.shopify.com/s/files/1/0754/2013/9651/files/cellImage_0_2.png?v=1791837816"
       ]
     },
     {
-      "id": "gid://shopify/Product/9272316199043",
-      "handle": "juniper-body-butter",
-      "title": "Juniper Body Butter",
+      "id": "gid://shopify/Product/15424808714371",
+      "handle": "blackberry-velvet-goat-milk-soap",
+      "title": "Blackberry Velvet Goat Milk Soap",
       "status": "ACTIVE",
-      "productType": "Skincare",
+      "productType": "Soap",
       "vendor": "Lathered & Lit Apothecary",
       "tags": [
-        "generated",
-        "juniper",
-        "skincare"
+        "goat-milk",
+        "soap"
       ],
-      "price": "21.24",
-      "stock": 25,
-      "descriptionHtml": "<p>Juniper Body Butter from Lathered &amp; Lit Apothecary, vegan and cruelty-free and free of parabens and synthetic dyes.</p><p>Approx. 200g. Batch #7597.</p>",
+      "price": "9.00",
+      "stock": 8,
+      "descriptionHtml": "<p>Juicy blackberries and ripe plums add an explosion of fruitiness to this delectable scent!</p><p>Handcrafted with a nourishing blend of plant-based oils, rich shea butter, and creamy goat milk, our soaps are made to give your skin a soft, clean, comfortable feel. Each bar is carefully crafted with olive oil, sweet almond oil, coconut oil, castor oil, and shea butter to create a creamy lather while helping cleanse without leaving your skin feeling overly stripped. Goat milk adds a creamy, silky quality, while kaolin clay provides gentle cleansing and a smooth skin feel. Every bar is beautifully scented with fragrance oil and colored with mica powder, making bath time feel a little more luxurious and special. Handmade in small batches with care, each bar is unique, because your everyday cleanse should feel like a treat.</p><h3>Scent</h3><p>Fresh Blackberry &amp; Cream. Top notes: strawberry, apple, plum, peach. Middle notes: raspberry, violet, heliotrope, muguet. Base notes: musk, vanilla, praline, tonka.</p><h3>Ingredients</h3><ul>\n<li>\n<strong>Olive Oil</strong>: A gentle, moisturizing oil that helps nourish and soften the skin while creating a mild, conditioning bar.</li>\n<li>\n<strong>Sweet Almond Oil</strong>: Helps moisturize and condition the skin, leaving it feeling soft, smooth, and comfortable after cleansing.</li>\n<li>\n<strong>Coconut Oil</strong>: Provides cleansing power and helps create a rich, bubbly lather while leaving the skin feeling refreshed.</li>\n<li>\n<strong>Castor Oil</strong>: Helps create a creamy, stable lather and leaves skin feeling smooth and conditioned.</li>\n<li>\n<strong>Goat Milk</strong>: Helps give the soap a creamy, silky lather and a soft skin feel.</li>\n<li>\n<strong>White Kaolin Clay</strong>: A gentle clay that helps absorb excess oils while giving the soap a silky, smooth feel during cleansing.</li>\n<li>\n<strong>Shea Butter</strong>: Helps nourish, soften, and condition the skin while adding a creamy, luxurious feel.</li>\n<li>\n<strong>Distilled Water</strong>: Used to properly dissolve and combine the ingredients during the soap-making process.</li>\n<li>\n<strong>Lye (Sodium Hydroxide)</strong>: Essential for making true handmade soap; it reacts with the oils during saponification to create soap and glycerin. Once properly made and cured, no active lye remains.</li>\n<li>\n<strong>Fragrance Oil</strong>: Gives each soap its unique scent and personality and is used according to appropriate skin-safe usage rates.</li>\n<li>\n<strong>Mica Powder</strong>: A cosmetic colorant used to create beautiful colors and designs in the soap and is primarily used for appearance rather than skin-conditioning benefits.</li>\n</ul><p>Approx. 4–5 oz bar.</p>",
       "images": [
-        "https://cdn.shopify.com/s/files/1/0754/2013/9651/files/juniper-body-butter-5.png?v=1789008886"
+        "https://cdn.shopify.com/s/files/1/0754/2013/9651/files/cellImage_0_3.png?v=1791837820"
       ]
     },
     {
-      "id": "gid://shopify/Product/9272321540227",
-      "handle": "sea-salt-bath-bomb",
-      "title": "Sea Salt Bath Bomb",
+      "id": "gid://shopify/Product/15424808747139",
+      "handle": "cranberry-sunset-goat-milk-soap",
+      "title": "Cranberry Sunset Goat Milk Soap",
       "status": "ACTIVE",
-      "productType": "Bath",
+      "productType": "Soap",
       "vendor": "Lathered & Lit Apothecary",
       "tags": [
-        "bath",
-        "sea-salt"
+        "goat-milk",
+        "soap"
       ],
-      "price": "7.50",
-      "stock": 25,
-      "descriptionHtml": "<p>Fizzing sea salt bath bomb, hand-pressed in small batches.</p>",
+      "price": "9.00",
+      "stock": 10,
+      "descriptionHtml": "<p>Freshly squeezed oranges kissed with tart cranberry. A clean, crisp blend that is sure to awaken the senses.</p><p>Handcrafted with a nourishing blend of plant-based oils, rich shea butter, and creamy goat milk, our soaps are made to give your skin a soft, clean, comfortable feel. Each bar is carefully crafted with olive oil, sweet almond oil, coconut oil, castor oil, and shea butter to create a creamy lather while helping cleanse without leaving your skin feeling overly stripped. Goat milk adds a creamy, silky quality, while kaolin clay provides gentle cleansing and a smooth skin feel. Every bar is beautifully scented with fragrance oil and colored with mica powder, making bath time feel a little more luxurious and special. Handmade in small batches with care, each bar is unique, because your everyday cleanse should feel like a treat.</p><h3>Scent</h3><p>Top notes: strawberry, pineapple, orange blossom, peach. Middle notes: floral, jasmine, raspberry, violet. Base notes: musk, heliotrope, cedarwood, coconut.</p><h3>Ingredients</h3><ul>\n<li>\n<strong>Olive Oil</strong>: A gentle, moisturizing oil that helps nourish and soften the skin while creating a mild, conditioning bar.</li>\n<li>\n<strong>Sweet Almond Oil</strong>: Helps moisturize and condition the skin, leaving it feeling soft, smooth, and comfortable after cleansing.</li>\n<li>\n<strong>Coconut Oil</strong>: Provides cleansing power and helps create a rich, bubbly lather while leaving the skin feeling refreshed.</li>\n<li>\n<strong>Castor Oil</strong>: Helps create a creamy, stable lather and leaves skin feeling smooth and conditioned.</li>\n<li>\n<strong>Goat Milk</strong>: Helps give the soap a creamy, silky lather and a soft skin feel.</li>\n<li>\n<strong>White Kaolin Clay</strong>: A gentle clay that helps absorb excess oils while giving the soap a silky, smooth feel during cleansing.</li>\n<li>\n<strong>Shea Butter</strong>: Helps nourish, soften, and condition the skin while adding a creamy, luxurious feel.</li>\n<li>\n<strong>Distilled Water</strong>: Used to properly dissolve and combine the ingredients during the soap-making process.</li>\n<li>\n<strong>Lye (Sodium Hydroxide)</strong>: Essential for making true handmade soap; it reacts with the oils during saponification to create soap and glycerin. Once properly made and cured, no active lye remains.</li>\n<li>\n<strong>Fragrance Oil</strong>: Gives each soap its unique scent and personality and is used according to appropriate skin-safe usage rates.</li>\n<li>\n<strong>Mica Powder</strong>: A cosmetic colorant used to create beautiful colors and designs in the soap and is primarily used for appearance rather than skin-conditioning benefits.</li>\n</ul><p>Approx. 4–5 oz bar.</p>",
       "images": [
-        "https://cdn.shopify.com/s/files/1/0754/2013/9651/files/sea-salt-bath-bomb-1.png?v=1789008997"
+        "https://cdn.shopify.com/s/files/1/0754/2013/9651/files/cellImage_0_4.png?v=1791837824"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15424808812675",
+      "handle": "oatmeal-honey-cloud-goat-milk-soap-unscented",
+      "title": "Oatmeal Honey Cloud Goat Milk Soap (Unscented)",
+      "status": "ACTIVE",
+      "productType": "Soap",
+      "vendor": "Lathered & Lit Apothecary",
+      "tags": [
+        "goat-milk",
+        "soap",
+        "unscented"
+      ],
+      "price": "9.00",
+      "stock": 10,
+      "descriptionHtml": "<p>A gentle, unscented goat milk bar with oatmeal and honey.</p><p>Handcrafted with a nourishing blend of plant-based oils, rich shea butter, and creamy goat milk, our soaps are made to give your skin a soft, clean, comfortable feel. Each bar is carefully crafted with olive oil, sweet almond oil, coconut oil, castor oil, and shea butter to create a creamy lather while helping cleanse without leaving your skin feeling overly stripped. Goat milk adds a creamy, silky quality, while kaolin clay provides gentle cleansing and a smooth skin feel. This bar is unscented, with no fragrance oil or mica, for a simple, gentle cleanse. Handmade in small batches with care, each bar is unique, because your everyday cleanse should feel like a treat.</p><h3>Scent</h3><p>Unscented.</p><h3>Ingredients</h3><ul>\n<li>\n<strong>Olive Oil</strong>: A gentle, moisturizing oil that helps nourish and soften the skin while creating a mild, conditioning bar.</li>\n<li>\n<strong>Sweet Almond Oil</strong>: Helps moisturize and condition the skin, leaving it feeling soft, smooth, and comfortable after cleansing.</li>\n<li>\n<strong>Coconut Oil</strong>: Provides cleansing power and helps create a rich, bubbly lather while leaving the skin feeling refreshed.</li>\n<li>\n<strong>Castor Oil</strong>: Helps create a creamy, stable lather and leaves skin feeling smooth and conditioned.</li>\n<li>\n<strong>Goat Milk</strong>: Helps give the soap a creamy, silky lather and a soft skin feel.</li>\n<li>\n<strong>White Kaolin Clay</strong>: A gentle clay that helps absorb excess oils while giving the soap a silky, smooth feel during cleansing.</li>\n<li>\n<strong>Shea Butter</strong>: Helps nourish, soften, and condition the skin while adding a creamy, luxurious feel.</li>\n<li>\n<strong>Distilled Water</strong>: Used to properly dissolve and combine the ingredients during the soap-making process.</li>\n<li>\n<strong>Lye (Sodium Hydroxide)</strong>: Essential for making true handmade soap; it reacts with the oils during saponification to create soap and glycerin. Once properly made and cured, no active lye remains.</li>\n<li>Oatmeal</li>\n<li>Honey</li>\n</ul><p>Approx. 4–5 oz bar.</p>",
+      "images": [
+        "https://cdn.shopify.com/s/files/1/0754/2013/9651/files/cellImage_0_5.png?v=1791837828"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15424808845443",
+      "handle": "berry-burst-goat-milk-soap",
+      "title": "Berry Burst Goat Milk Soap",
+      "status": "ACTIVE",
+      "productType": "Soap",
+      "vendor": "Lathered & Lit Apothecary",
+      "tags": [
+        "goat-milk",
+        "soap"
+      ],
+      "price": "9.00",
+      "stock": 9,
+      "descriptionHtml": "<p>A juicy berry blast of cherries, raspberries, blueberries, and blackberries.</p><p>Handcrafted with a nourishing blend of plant-based oils, rich shea butter, and creamy goat milk, our soaps are made to give your skin a soft, clean, comfortable feel. Each bar is carefully crafted with olive oil, sweet almond oil, coconut oil, castor oil, and shea butter to create a creamy lather while helping cleanse without leaving your skin feeling overly stripped. Goat milk adds a creamy, silky quality, while kaolin clay provides gentle cleansing and a smooth skin feel. Every bar is beautifully scented with fragrance oil and colored with mica powder, making bath time feel a little more luxurious and special. Handmade in small batches with care, each bar is unique, because your everyday cleanse should feel like a treat.</p><h3>Scent</h3><p>Notes of cherry, raspberry, blueberry, and blackberry.</p><h3>Ingredients</h3><ul>\n<li>\n<strong>Olive Oil</strong>: A gentle, moisturizing oil that helps nourish and soften the skin while creating a mild, conditioning bar.</li>\n<li>\n<strong>Sweet Almond Oil</strong>: Helps moisturize and condition the skin, leaving it feeling soft, smooth, and comfortable after cleansing.</li>\n<li>\n<strong>Coconut Oil</strong>: Provides cleansing power and helps create a rich, bubbly lather while leaving the skin feeling refreshed.</li>\n<li>\n<strong>Castor Oil</strong>: Helps create a creamy, stable lather and leaves skin feeling smooth and conditioned.</li>\n<li>\n<strong>Goat Milk</strong>: Helps give the soap a creamy, silky lather and a soft skin feel.</li>\n<li>\n<strong>White Kaolin Clay</strong>: A gentle clay that helps absorb excess oils while giving the soap a silky, smooth feel during cleansing.</li>\n<li>\n<strong>Shea Butter</strong>: Helps nourish, soften, and condition the skin while adding a creamy, luxurious feel.</li>\n<li>\n<strong>Distilled Water</strong>: Used to properly dissolve and combine the ingredients during the soap-making process.</li>\n<li>\n<strong>Lye (Sodium Hydroxide)</strong>: Essential for making true handmade soap; it reacts with the oils during saponification to create soap and glycerin. Once properly made and cured, no active lye remains.</li>\n<li>\n<strong>Fragrance Oil</strong>: Gives each soap its unique scent and personality and is used according to appropriate skin-safe usage rates.</li>\n<li>\n<strong>Mica Powder</strong>: A cosmetic colorant used to create beautiful colors and designs in the soap and is primarily used for appearance rather than skin-conditioning benefits.</li>\n</ul><p>Approx. 4–5 oz bar.</p>",
+      "images": [
+        "https://cdn.shopify.com/s/files/1/0754/2013/9651/files/cellImage_0_6.png?v=1791837831"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15424808910979",
+      "handle": "pumpkin-spice-bakery-goat-milk-soap",
+      "title": "Pumpkin Spice Bakery Goat Milk Soap",
+      "status": "ACTIVE",
+      "productType": "Soap",
+      "vendor": "Lathered & Lit Apothecary",
+      "tags": [
+        "goat-milk",
+        "soap"
+      ],
+      "price": "9.00",
+      "stock": 20,
+      "descriptionHtml": "<p>The aroma of festive fall baked goods fills the house and delights with sweet pumpkin, whipped coconut cream and decadent vanilla sugar caramel, accompanied by the warm, spiced embrace of crushed cardamom and grated cinnamon.</p><p>Handcrafted with a nourishing blend of plant-based oils, rich shea butter, and creamy goat milk, our soaps are made to give your skin a soft, clean, comfortable feel. Each bar is carefully crafted with olive oil, sweet almond oil, coconut oil, castor oil, and shea butter to create a creamy lather while helping cleanse without leaving your skin feeling overly stripped. Goat milk adds a creamy, silky quality, while kaolin clay provides gentle cleansing and a smooth skin feel. Every bar is beautifully scented with fragrance oil and colored with mica powder, making bath time feel a little more luxurious and special. Handmade in small batches with care, each bar is unique, because your everyday cleanse should feel like a treat.</p><h3>Scent</h3><p>Pumpkin Spice Cinnamon Roll. Top notes: fruity peach, strawberry, rice. Middle notes: heliotrope, cinnamon, coconut, clove. Base notes: vanilla, balsamic, musk, praline.</p><h3>Ingredients</h3><ul>\n<li>\n<strong>Olive Oil</strong>: A gentle, moisturizing oil that helps nourish and soften the skin while creating a mild, conditioning bar.</li>\n<li>\n<strong>Sweet Almond Oil</strong>: Helps moisturize and condition the skin, leaving it feeling soft, smooth, and comfortable after cleansing.</li>\n<li>\n<strong>Coconut Oil</strong>: Provides cleansing power and helps create a rich, bubbly lather while leaving the skin feeling refreshed.</li>\n<li>\n<strong>Castor Oil</strong>: Helps create a creamy, stable lather and leaves skin feeling smooth and conditioned.</li>\n<li>\n<strong>Goat Milk</strong>: Helps give the soap a creamy, silky lather and a soft skin feel.</li>\n<li>\n<strong>White Kaolin Clay</strong>: A gentle clay that helps absorb excess oils while giving the soap a silky, smooth feel during cleansing.</li>\n<li>\n<strong>Shea Butter</strong>: Helps nourish, soften, and condition the skin while adding a creamy, luxurious feel.</li>\n<li>\n<strong>Distilled Water</strong>: Used to properly dissolve and combine the ingredients during the soap-making process.</li>\n<li>\n<strong>Lye (Sodium Hydroxide)</strong>: Essential for making true handmade soap; it reacts with the oils during saponification to create soap and glycerin. Once properly made and cured, no active lye remains.</li>\n<li>\n<strong>Fragrance Oil</strong>: Gives each soap its unique scent and personality and is used according to appropriate skin-safe usage rates.</li>\n<li>\n<strong>Mica Powder</strong>: A cosmetic colorant used to create beautiful colors and designs in the soap and is primarily used for appearance rather than skin-conditioning benefits.</li>\n</ul><p>Approx. 4–5 oz bar.</p>",
+      "images": [
+        "https://cdn.shopify.com/s/files/1/0754/2013/9651/files/cellImage_0_7.png?v=1791837835"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15424808943747",
+      "handle": "cherry-orange-bliss-goat-milk-soap",
+      "title": "Cherry Orange Bliss Goat Milk Soap",
+      "status": "ACTIVE",
+      "productType": "Soap",
+      "vendor": "Lathered & Lit Apothecary",
+      "tags": [
+        "goat-milk",
+        "soap"
+      ],
+      "price": "9.00",
+      "stock": 10,
+      "descriptionHtml": "<p>Orange and cherry with a hint of almond.</p><p>Handcrafted with a nourishing blend of plant-based oils, rich shea butter, and creamy goat milk, our soaps are made to give your skin a soft, clean, comfortable feel. Each bar is carefully crafted with olive oil, sweet almond oil, coconut oil, castor oil, and shea butter to create a creamy lather while helping cleanse without leaving your skin feeling overly stripped. Goat milk adds a creamy, silky quality, while kaolin clay provides gentle cleansing and a smooth skin feel. Every bar is beautifully scented with fragrance oil and colored with mica powder, making bath time feel a little more luxurious and special. Handmade in small batches with care, each bar is unique, because your everyday cleanse should feel like a treat.</p><h3>Scent</h3><p>Orange, cherry, and almond.</p><h3>Ingredients</h3><ul>\n<li>\n<strong>Olive Oil</strong>: A gentle, moisturizing oil that helps nourish and soften the skin while creating a mild, conditioning bar.</li>\n<li>\n<strong>Sweet Almond Oil</strong>: Helps moisturize and condition the skin, leaving it feeling soft, smooth, and comfortable after cleansing.</li>\n<li>\n<strong>Coconut Oil</strong>: Provides cleansing power and helps create a rich, bubbly lather while leaving the skin feeling refreshed.</li>\n<li>\n<strong>Castor Oil</strong>: Helps create a creamy, stable lather and leaves skin feeling smooth and conditioned.</li>\n<li>\n<strong>Goat Milk</strong>: Helps give the soap a creamy, silky lather and a soft skin feel.</li>\n<li>\n<strong>White Kaolin Clay</strong>: A gentle clay that helps absorb excess oils while giving the soap a silky, smooth feel during cleansing.</li>\n<li>\n<strong>Shea Butter</strong>: Helps nourish, soften, and condition the skin while adding a creamy, luxurious feel.</li>\n<li>\n<strong>Distilled Water</strong>: Used to properly dissolve and combine the ingredients during the soap-making process.</li>\n<li>\n<strong>Lye (Sodium Hydroxide)</strong>: Essential for making true handmade soap; it reacts with the oils during saponification to create soap and glycerin. Once properly made and cured, no active lye remains.</li>\n<li>\n<strong>Fragrance Oil</strong>: Gives each soap its unique scent and personality and is used according to appropriate skin-safe usage rates.</li>\n<li>\n<strong>Mica Powder</strong>: A cosmetic colorant used to create beautiful colors and designs in the soap and is primarily used for appearance rather than skin-conditioning benefits.</li>\n</ul><p>Approx. 4–5 oz bar.</p>",
+      "images": [
+        "https://cdn.shopify.com/s/files/1/0754/2013/9651/files/cellImage_0_8.png?v=1791837839"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15424808976515",
+      "handle": "frosted-berry-goat-milk-soap",
+      "title": "Frosted Berry Goat Milk Soap",
+      "status": "ACTIVE",
+      "productType": "Soap",
+      "vendor": "Lathered & Lit Apothecary",
+      "tags": [
+        "goat-milk",
+        "presale",
+        "soap"
+      ],
+      "price": "9.00",
+      "stock": 10,
+      "descriptionHtml": "<p><strong>Pre-sale: ships November 5, 2026.</strong></p><p>A creamy, spicy, berry blend with notes of milky amber, creamy French vanilla, cinnamon and caramelized sugar.</p><p>Handcrafted with a nourishing blend of plant-based oils, rich shea butter, and creamy goat milk, our soaps are made to give your skin a soft, clean, comfortable feel. Each bar is carefully crafted with olive oil, sweet almond oil, coconut oil, castor oil, and shea butter to create a creamy lather while helping cleanse without leaving your skin feeling overly stripped. Goat milk adds a creamy, silky quality, while kaolin clay provides gentle cleansing and a smooth skin feel. Every bar is beautifully scented with fragrance oil and colored with mica powder, making bath time feel a little more luxurious and special. Handmade in small batches with care, each bar is unique, because your everyday cleanse should feel like a treat.</p><h3>Scent</h3><p>Berry, milky amber, French vanilla, cinnamon, caramelized sugar.</p><h3>Ingredients</h3><ul>\n<li>\n<strong>Olive Oil</strong>: A gentle, moisturizing oil that helps nourish and soften the skin while creating a mild, conditioning bar.</li>\n<li>\n<strong>Sweet Almond Oil</strong>: Helps moisturize and condition the skin, leaving it feeling soft, smooth, and comfortable after cleansing.</li>\n<li>\n<strong>Coconut Oil</strong>: Provides cleansing power and helps create a rich, bubbly lather while leaving the skin feeling refreshed.</li>\n<li>\n<strong>Castor Oil</strong>: Helps create a creamy, stable lather and leaves skin feeling smooth and conditioned.</li>\n<li>\n<strong>Goat Milk</strong>: Helps give the soap a creamy, silky lather and a soft skin feel.</li>\n<li>\n<strong>White Kaolin Clay</strong>: A gentle clay that helps absorb excess oils while giving the soap a silky, smooth feel during cleansing.</li>\n<li>\n<strong>Shea Butter</strong>: Helps nourish, soften, and condition the skin while adding a creamy, luxurious feel.</li>\n<li>\n<strong>Distilled Water</strong>: Used to properly dissolve and combine the ingredients during the soap-making process.</li>\n<li>\n<strong>Lye (Sodium Hydroxide)</strong>: Essential for making true handmade soap; it reacts with the oils during saponification to create soap and glycerin. Once properly made and cured, no active lye remains.</li>\n<li>\n<strong>Fragrance Oil</strong>: Gives each soap its unique scent and personality and is used according to appropriate skin-safe usage rates.</li>\n<li>\n<strong>Mica Powder</strong>: A cosmetic colorant used to create beautiful colors and designs in the soap and is primarily used for appearance rather than skin-conditioning benefits.</li>\n</ul><p>Approx. 4–5 oz bar.</p>",
+      "images": [
+        "https://cdn.shopify.com/s/files/1/0754/2013/9651/files/cellImage_0_9.png?v=1791837842"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15424809042051",
+      "handle": "apple-ever-apple-goat-milk-soap",
+      "title": "Apple Ever Apple Goat Milk Soap",
+      "status": "ACTIVE",
+      "productType": "Soap",
+      "vendor": "Lathered & Lit Apothecary",
+      "tags": [
+        "goat-milk",
+        "presale",
+        "soap"
+      ],
+      "price": "9.00",
+      "stock": 10,
+      "descriptionHtml": "<p><strong>Pre-sale: ships November 5, 2026.</strong></p><p>Pure apple: crisp and juicy. A succulent and fresh scent.</p><p>Handcrafted with a nourishing blend of plant-based oils, rich shea butter, and creamy goat milk, our soaps are made to give your skin a soft, clean, comfortable feel. Each bar is carefully crafted with olive oil, sweet almond oil, coconut oil, castor oil, and shea butter to create a creamy lather while helping cleanse without leaving your skin feeling overly stripped. Goat milk adds a creamy, silky quality, while kaolin clay provides gentle cleansing and a smooth skin feel. Every bar is beautifully scented with fragrance oil and colored with mica powder, making bath time feel a little more luxurious and special. Handmade in small batches with care, each bar is unique, because your everyday cleanse should feel like a treat.</p><h3>Scent</h3><p>Top notes: pineapple, strawberry, plum, citrus. Middle notes: peach, rose, jasmine, cinnamon. Base notes: musk.</p><h3>Ingredients</h3><ul>\n<li>\n<strong>Olive Oil</strong>: A gentle, moisturizing oil that helps nourish and soften the skin while creating a mild, conditioning bar.</li>\n<li>\n<strong>Sweet Almond Oil</strong>: Helps moisturize and condition the skin, leaving it feeling soft, smooth, and comfortable after cleansing.</li>\n<li>\n<strong>Coconut Oil</strong>: Provides cleansing power and helps create a rich, bubbly lather while leaving the skin feeling refreshed.</li>\n<li>\n<strong>Castor Oil</strong>: Helps create a creamy, stable lather and leaves skin feeling smooth and conditioned.</li>\n<li>\n<strong>Goat Milk</strong>: Helps give the soap a creamy, silky lather and a soft skin feel.</li>\n<li>\n<strong>White Kaolin Clay</strong>: A gentle clay that helps absorb excess oils while giving the soap a silky, smooth feel during cleansing.</li>\n<li>\n<strong>Shea Butter</strong>: Helps nourish, soften, and condition the skin while adding a creamy, luxurious feel.</li>\n<li>\n<strong>Distilled Water</strong>: Used to properly dissolve and combine the ingredients during the soap-making process.</li>\n<li>\n<strong>Lye (Sodium Hydroxide)</strong>: Essential for making true handmade soap; it reacts with the oils during saponification to create soap and glycerin. Once properly made and cured, no active lye remains.</li>\n<li>\n<strong>Fragrance Oil</strong>: Gives each soap its unique scent and personality and is used according to appropriate skin-safe usage rates.</li>\n<li>\n<strong>Mica Powder</strong>: A cosmetic colorant used to create beautiful colors and designs in the soap and is primarily used for appearance rather than skin-conditioning benefits.</li>\n</ul><p>Approx. 4–5 oz bar.</p>",
+      "images": [
+        "https://cdn.shopify.com/s/files/1/0754/2013/9651/files/cellImage_0_10.png?v=1791837846"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15424809074819",
+      "handle": "snowflake-dreams-goat-milk-soap",
+      "title": "Snowflake Dreams Goat Milk Soap",
+      "status": "ACTIVE",
+      "productType": "Soap",
+      "vendor": "Lathered & Lit Apothecary",
+      "tags": [
+        "goat-milk",
+        "presale",
+        "soap"
+      ],
+      "price": "9.00",
+      "stock": 8,
+      "descriptionHtml": "<p><strong>Pre-sale: ships November 5, 2026.</strong></p><p>Sweet juices of rich black plum cascade over fresh, green pine needles.</p><p>Handcrafted with a nourishing blend of plant-based oils, rich shea butter, and creamy goat milk, our soaps are made to give your skin a soft, clean, comfortable feel. Each bar is carefully crafted with olive oil, sweet almond oil, coconut oil, castor oil, and shea butter to create a creamy lather while helping cleanse without leaving your skin feeling overly stripped. Goat milk adds a creamy, silky quality, while kaolin clay provides gentle cleansing and a smooth skin feel. Every bar is beautifully scented with fragrance oil and colored with mica powder, making bath time feel a little more luxurious and special. Handmade in small batches with care, each bar is unique, because your everyday cleanse should feel like a treat.</p><h3>Scent</h3><p>Sparkling Snowflake. Top notes: galbanum, strawberry, aldehydic, camphor. Middle notes: pine, raspberry, muguet, leaf. Base notes: musk, balsamic, praline, tonka.</p><h3>Ingredients</h3><ul>\n<li>\n<strong>Olive Oil</strong>: A gentle, moisturizing oil that helps nourish and soften the skin while creating a mild, conditioning bar.</li>\n<li>\n<strong>Sweet Almond Oil</strong>: Helps moisturize and condition the skin, leaving it feeling soft, smooth, and comfortable after cleansing.</li>\n<li>\n<strong>Coconut Oil</strong>: Provides cleansing power and helps create a rich, bubbly lather while leaving the skin feeling refreshed.</li>\n<li>\n<strong>Castor Oil</strong>: Helps create a creamy, stable lather and leaves skin feeling smooth and conditioned.</li>\n<li>\n<strong>Goat Milk</strong>: Helps give the soap a creamy, silky lather and a soft skin feel.</li>\n<li>\n<strong>White Kaolin Clay</strong>: A gentle clay that helps absorb excess oils while giving the soap a silky, smooth feel during cleansing.</li>\n<li>\n<strong>Shea Butter</strong>: Helps nourish, soften, and condition the skin while adding a creamy, luxurious feel.</li>\n<li>\n<strong>Distilled Water</strong>: Used to properly dissolve and combine the ingredients during the soap-making process.</li>\n<li>\n<strong>Lye (Sodium Hydroxide)</strong>: Essential for making true handmade soap; it reacts with the oils during saponification to create soap and glycerin. Once properly made and cured, no active lye remains.</li>\n<li>\n<strong>Fragrance Oil</strong>: Gives each soap its unique scent and personality and is used according to appropriate skin-safe usage rates.</li>\n<li>\n<strong>Mica Powder</strong>: A cosmetic colorant used to create beautiful colors and designs in the soap and is primarily used for appearance rather than skin-conditioning benefits.</li>\n</ul><p>Approx. 4–5 oz bar.</p>",
+      "images": [
+        "https://cdn.shopify.com/s/files/1/0754/2013/9651/files/cellImage_0_11.png?v=1791837849"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15424809107587",
+      "handle": "pineapple-goat-milk-soap",
+      "title": "Pineapple Goat Milk Soap",
+      "status": "ACTIVE",
+      "productType": "Soap",
+      "vendor": "Lathered & Lit Apothecary",
+      "tags": [
+        "goat-milk",
+        "soap"
+      ],
+      "price": "9.00",
+      "stock": 10,
+      "descriptionHtml": "<p>The islands are calling with this fruity yet sophisticated blend of strawberries, pineapples, and apples blended with peach blossoms and jasmine, finished with dreamy coconut milk, sensual musk and just a hint of basil.</p><p>Handcrafted with a nourishing blend of plant-based oils, rich shea butter, and creamy goat milk, our soaps are made to give your skin a soft, clean, comfortable feel. Each bar is carefully crafted with olive oil, sweet almond oil, coconut oil, castor oil, and shea butter to create a creamy lather while helping cleanse without leaving your skin feeling overly stripped. Goat milk adds a creamy, silky quality, while kaolin clay provides gentle cleansing and a smooth skin feel. Every bar is beautifully scented with fragrance oil and colored with mica powder, making bath time feel a little more luxurious and special. Handmade in small batches with care, each bar is unique, because your everyday cleanse should feel like a treat.</p><h3>Scent</h3><p>Top notes: strawberry, pineapple. Middle notes: peach, jasmine, blossom, rose. Base notes: coconut milk, musk.</p><h3>Ingredients</h3><ul>\n<li>\n<strong>Olive Oil</strong>: A gentle, moisturizing oil that helps nourish and soften the skin while creating a mild, conditioning bar.</li>\n<li>\n<strong>Sweet Almond Oil</strong>: Helps moisturize and condition the skin, leaving it feeling soft, smooth, and comfortable after cleansing.</li>\n<li>\n<strong>Coconut Oil</strong>: Provides cleansing power and helps create a rich, bubbly lather while leaving the skin feeling refreshed.</li>\n<li>\n<strong>Castor Oil</strong>: Helps create a creamy, stable lather and leaves skin feeling smooth and conditioned.</li>\n<li>\n<strong>Goat Milk</strong>: Helps give the soap a creamy, silky lather and a soft skin feel.</li>\n<li>\n<strong>White Kaolin Clay</strong>: A gentle clay that helps absorb excess oils while giving the soap a silky, smooth feel during cleansing.</li>\n<li>\n<strong>Shea Butter</strong>: Helps nourish, soften, and condition the skin while adding a creamy, luxurious feel.</li>\n<li>\n<strong>Distilled Water</strong>: Used to properly dissolve and combine the ingredients during the soap-making process.</li>\n<li>\n<strong>Lye (Sodium Hydroxide)</strong>: Essential for making true handmade soap; it reacts with the oils during saponification to create soap and glycerin. Once properly made and cured, no active lye remains.</li>\n<li>\n<strong>Fragrance Oil</strong>: Gives each soap its unique scent and personality and is used according to appropriate skin-safe usage rates.</li>\n<li>\n<strong>Mica Powder</strong>: A cosmetic colorant used to create beautiful colors and designs in the soap and is primarily used for appearance rather than skin-conditioning benefits.</li>\n</ul><p>Approx. 4–5 oz bar.</p>",
+      "images": [
+        "https://cdn.shopify.com/s/files/1/0754/2013/9651/files/cellImage_0_12.png?v=1791837853"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15424809140355",
+      "handle": "forbidden-fruit-goat-milk-soap",
+      "title": "Forbidden Fruit Goat Milk Soap",
+      "status": "ACTIVE",
+      "productType": "Soap",
+      "vendor": "Lathered & Lit Apothecary",
+      "tags": [
+        "goat-milk",
+        "presale",
+        "soap"
+      ],
+      "price": "9.00",
+      "stock": 8,
+      "descriptionHtml": "<p><strong>Pre-sale: ships the week of November 16, 2026.</strong></p><p>A juicy orchard blend of blueberry, apple, peach, and cranberry.</p><p>Handcrafted with a nourishing blend of plant-based oils, rich shea butter, and creamy goat milk, our soaps are made to give your skin a soft, clean, comfortable feel. Each bar is carefully crafted with olive oil, sweet almond oil, coconut oil, castor oil, and shea butter to create a creamy lather while helping cleanse without leaving your skin feeling overly stripped. Goat milk adds a creamy, silky quality, while kaolin clay provides gentle cleansing and a smooth skin feel. Every bar is beautifully scented with fragrance oil and colored with mica powder, making bath time feel a little more luxurious and special. Handmade in small batches with care, each bar is unique, because your everyday cleanse should feel like a treat.</p><h3>Scent</h3><p>Apples, peaches, oranges, cranberry.</p><h3>Ingredients</h3><ul>\n<li>\n<strong>Olive Oil</strong>: A gentle, moisturizing oil that helps nourish and soften the skin while creating a mild, conditioning bar.</li>\n<li>\n<strong>Sweet Almond Oil</strong>: Helps moisturize and condition the skin, leaving it feeling soft, smooth, and comfortable after cleansing.</li>\n<li>\n<strong>Coconut Oil</strong>: Provides cleansing power and helps create a rich, bubbly lather while leaving the skin feeling refreshed.</li>\n<li>\n<strong>Castor Oil</strong>: Helps create a creamy, stable lather and leaves skin feeling smooth and conditioned.</li>\n<li>\n<strong>Goat Milk</strong>: Helps give the soap a creamy, silky lather and a soft skin feel.</li>\n<li>\n<strong>White Kaolin Clay</strong>: A gentle clay that helps absorb excess oils while giving the soap a silky, smooth feel during cleansing.</li>\n<li>\n<strong>Shea Butter</strong>: Helps nourish, soften, and condition the skin while adding a creamy, luxurious feel.</li>\n<li>\n<strong>Distilled Water</strong>: Used to properly dissolve and combine the ingredients during the soap-making process.</li>\n<li>\n<strong>Lye (Sodium Hydroxide)</strong>: Essential for making true handmade soap; it reacts with the oils during saponification to create soap and glycerin. Once properly made and cured, no active lye remains.</li>\n<li>\n<strong>Fragrance Oil</strong>: Gives each soap its unique scent and personality and is used according to appropriate skin-safe usage rates.</li>\n<li>\n<strong>Mica Powder</strong>: A cosmetic colorant used to create beautiful colors and designs in the soap and is primarily used for appearance rather than skin-conditioning benefits.</li>\n</ul><p>Approx. 4–5 oz bar.</p>",
+      "images": [
+        "https://cdn.shopify.com/s/files/1/0754/2013/9651/files/cellImage_0_13.png?v=1791837857"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15424809173123",
+      "handle": "midnight-swagger-goat-milk-soap",
+      "title": "Midnight Swagger Goat Milk Soap",
+      "status": "ACTIVE",
+      "productType": "Soap",
+      "vendor": "Lathered & Lit Apothecary",
+      "tags": [
+        "goat-milk",
+        "presale",
+        "soap"
+      ],
+      "price": "9.00",
+      "stock": 8,
+      "descriptionHtml": "<p><strong>Pre-sale: ships the week of November 16, 2026.</strong></p><p>A bold cologne-inspired fragrance with dreamy coconut milk, sensual musk and a hint of basil.</p><p>Handcrafted with a nourishing blend of plant-based oils, rich shea butter, and creamy goat milk, our soaps are made to give your skin a soft, clean, comfortable feel. Each bar is carefully crafted with olive oil, sweet almond oil, coconut oil, castor oil, and shea butter to create a creamy lather while helping cleanse without leaving your skin feeling overly stripped. Goat milk adds a creamy, silky quality, while kaolin clay provides gentle cleansing and a smooth skin feel. Every bar is beautifully scented with fragrance oil and colored with mica powder, making bath time feel a little more luxurious and special. Handmade in small batches with care, each bar is unique, because your everyday cleanse should feel like a treat.</p><h3>Scent</h3><p>Top notes: bergamot. Middle notes: creamy sandalwood. Base notes: rich musk, coconut milk, basil.</p><h3>Ingredients</h3><ul>\n<li>\n<strong>Olive Oil</strong>: A gentle, moisturizing oil that helps nourish and soften the skin while creating a mild, conditioning bar.</li>\n<li>\n<strong>Sweet Almond Oil</strong>: Helps moisturize and condition the skin, leaving it feeling soft, smooth, and comfortable after cleansing.</li>\n<li>\n<strong>Coconut Oil</strong>: Provides cleansing power and helps create a rich, bubbly lather while leaving the skin feeling refreshed.</li>\n<li>\n<strong>Castor Oil</strong>: Helps create a creamy, stable lather and leaves skin feeling smooth and conditioned.</li>\n<li>\n<strong>Goat Milk</strong>: Helps give the soap a creamy, silky lather and a soft skin feel.</li>\n<li>\n<strong>White Kaolin Clay</strong>: A gentle clay that helps absorb excess oils while giving the soap a silky, smooth feel during cleansing.</li>\n<li>\n<strong>Shea Butter</strong>: Helps nourish, soften, and condition the skin while adding a creamy, luxurious feel.</li>\n<li>\n<strong>Distilled Water</strong>: Used to properly dissolve and combine the ingredients during the soap-making process.</li>\n<li>\n<strong>Lye (Sodium Hydroxide)</strong>: Essential for making true handmade soap; it reacts with the oils during saponification to create soap and glycerin. Once properly made and cured, no active lye remains.</li>\n<li>\n<strong>Fragrance Oil</strong>: Gives each soap its unique scent and personality and is used according to appropriate skin-safe usage rates.</li>\n<li>\n<strong>Mica Powder</strong>: A cosmetic colorant used to create beautiful colors and designs in the soap and is primarily used for appearance rather than skin-conditioning benefits.</li>\n</ul><p>Approx. 4–5 oz bar.</p>",
+      "images": [
+        "https://cdn.shopify.com/s/files/1/0754/2013/9651/files/cellImage_0_14.png?v=1791837861"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15424809205891",
+      "handle": "honey-kissed-daydream-goat-milk-soap",
+      "title": "Honey Kissed Daydream Goat Milk Soap",
+      "status": "ACTIVE",
+      "productType": "Soap",
+      "vendor": "Lathered & Lit Apothecary",
+      "tags": [
+        "goat-milk",
+        "soap"
+      ],
+      "price": "9.00",
+      "stock": 6,
+      "descriptionHtml": "<p>A sweet escape with notes of juicy strawberry, ripe peaches, golden honey, soft almond and cherry swirled into a bar as pretty as it smells.</p><p>Handcrafted with a nourishing blend of plant-based oils, rich shea butter, and creamy goat milk, our soaps are made to give your skin a soft, clean, comfortable feel. Each bar is carefully crafted with olive oil, sweet almond oil, coconut oil, castor oil, and shea butter to create a creamy lather while helping cleanse without leaving your skin feeling overly stripped. Goat milk adds a creamy, silky quality, while kaolin clay provides gentle cleansing and a smooth skin feel. Every bar is beautifully scented with fragrance oil and colored with mica powder, making bath time feel a little more luxurious and special. Handmade in small batches with care, each bar is unique, because your everyday cleanse should feel like a treat.</p><h3>Scent</h3><p>Strawberry, peach, almond, honey, cherry.</p><h3>Ingredients</h3><ul>\n<li>\n<strong>Olive Oil</strong>: A gentle, moisturizing oil that helps nourish and soften the skin while creating a mild, conditioning bar.</li>\n<li>\n<strong>Sweet Almond Oil</strong>: Helps moisturize and condition the skin, leaving it feeling soft, smooth, and comfortable after cleansing.</li>\n<li>\n<strong>Coconut Oil</strong>: Provides cleansing power and helps create a rich, bubbly lather while leaving the skin feeling refreshed.</li>\n<li>\n<strong>Castor Oil</strong>: Helps create a creamy, stable lather and leaves skin feeling smooth and conditioned.</li>\n<li>\n<strong>Goat Milk</strong>: Helps give the soap a creamy, silky lather and a soft skin feel.</li>\n<li>\n<strong>White Kaolin Clay</strong>: A gentle clay that helps absorb excess oils while giving the soap a silky, smooth feel during cleansing.</li>\n<li>\n<strong>Shea Butter</strong>: Helps nourish, soften, and condition the skin while adding a creamy, luxurious feel.</li>\n<li>\n<strong>Distilled Water</strong>: Used to properly dissolve and combine the ingredients during the soap-making process.</li>\n<li>\n<strong>Lye (Sodium Hydroxide)</strong>: Essential for making true handmade soap; it reacts with the oils during saponification to create soap and glycerin. Once properly made and cured, no active lye remains.</li>\n<li>\n<strong>Fragrance Oil</strong>: Gives each soap its unique scent and personality and is used according to appropriate skin-safe usage rates.</li>\n<li>\n<strong>Mica Powder</strong>: A cosmetic colorant used to create beautiful colors and designs in the soap and is primarily used for appearance rather than skin-conditioning benefits.</li>\n</ul><p>Approx. 4–5 oz bar.</p>",
+      "images": [
+        "https://cdn.shopify.com/s/files/1/0754/2013/9651/files/cellImage_0_15.png?v=1791837865"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15424809238659",
+      "handle": "after-hours-goat-milk-soap",
+      "title": "After Hours Goat Milk Soap",
+      "status": "ACTIVE",
+      "productType": "Soap",
+      "vendor": "Lathered & Lit Apothecary",
+      "tags": [
+        "goat-milk",
+        "soap"
+      ],
+      "price": "9.00",
+      "stock": 8,
+      "descriptionHtml": "<p>An enticing blend of bergamot and warm, creamy sandalwood with rich musk.</p><p>Handcrafted with a nourishing blend of plant-based oils, rich shea butter, and creamy goat milk, our soaps are made to give your skin a soft, clean, comfortable feel. Each bar is carefully crafted with olive oil, sweet almond oil, coconut oil, castor oil, and shea butter to create a creamy lather while helping cleanse without leaving your skin feeling overly stripped. Goat milk adds a creamy, silky quality, while kaolin clay provides gentle cleansing and a smooth skin feel. Every bar is beautifully scented with fragrance oil and colored with mica powder, making bath time feel a little more luxurious and special. Handmade in small batches with care, each bar is unique, because your everyday cleanse should feel like a treat.</p><h3>Scent</h3><p>Top notes: bergamot. Middle notes: creamy sandalwood. Base notes: rich musk.</p><h3>Ingredients</h3><ul>\n<li>\n<strong>Olive Oil</strong>: A gentle, moisturizing oil that helps nourish and soften the skin while creating a mild, conditioning bar.</li>\n<li>\n<strong>Sweet Almond Oil</strong>: Helps moisturize and condition the skin, leaving it feeling soft, smooth, and comfortable after cleansing.</li>\n<li>\n<strong>Coconut Oil</strong>: Provides cleansing power and helps create a rich, bubbly lather while leaving the skin feeling refreshed.</li>\n<li>\n<strong>Castor Oil</strong>: Helps create a creamy, stable lather and leaves skin feeling smooth and conditioned.</li>\n<li>\n<strong>Goat Milk</strong>: Helps give the soap a creamy, silky lather and a soft skin feel.</li>\n<li>\n<strong>White Kaolin Clay</strong>: A gentle clay that helps absorb excess oils while giving the soap a silky, smooth feel during cleansing.</li>\n<li>\n<strong>Shea Butter</strong>: Helps nourish, soften, and condition the skin while adding a creamy, luxurious feel.</li>\n<li>\n<strong>Distilled Water</strong>: Used to properly dissolve and combine the ingredients during the soap-making process.</li>\n<li>\n<strong>Lye (Sodium Hydroxide)</strong>: Essential for making true handmade soap; it reacts with the oils during saponification to create soap and glycerin. Once properly made and cured, no active lye remains.</li>\n<li>\n<strong>Fragrance Oil</strong>: Gives each soap its unique scent and personality and is used according to appropriate skin-safe usage rates.</li>\n<li>\n<strong>Mica Powder</strong>: A cosmetic colorant used to create beautiful colors and designs in the soap and is primarily used for appearance rather than skin-conditioning benefits.</li>\n</ul><p>Approx. 4–5 oz bar.</p>",
+      "images": [
+        "https://cdn.shopify.com/s/files/1/0754/2013/9651/files/cellImage_0_16.png?v=1791837869"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15424809271427",
+      "handle": "activated-charcoal-goat-milk-soap-unscented",
+      "title": "Activated Charcoal Goat Milk Soap (Unscented)",
+      "status": "ACTIVE",
+      "productType": "Soap",
+      "vendor": "Lathered & Lit Apothecary",
+      "tags": [
+        "goat-milk",
+        "presale",
+        "soap",
+        "unscented"
+      ],
+      "price": "9.00",
+      "stock": 8,
+      "descriptionHtml": "<p><strong>Pre-sale: ships the week of November 9, 2026.</strong></p><p>An unscented goat milk bar with activated charcoal.</p><p>Handcrafted with a nourishing blend of plant-based oils, rich shea butter, and creamy goat milk, our soaps are made to give your skin a soft, clean, comfortable feel. Each bar is carefully crafted with olive oil, sweet almond oil, coconut oil, castor oil, and shea butter to create a creamy lather while helping cleanse without leaving your skin feeling overly stripped. Goat milk adds a creamy, silky quality, while kaolin clay provides gentle cleansing and a smooth skin feel. This bar is unscented, with no fragrance oil or mica, for a simple, gentle cleanse. Handmade in small batches with care, each bar is unique, because your everyday cleanse should feel like a treat.</p><h3>Scent</h3><p>Unscented.</p><h3>Ingredients</h3><ul>\n<li>\n<strong>Olive Oil</strong>: A gentle, moisturizing oil that helps nourish and soften the skin while creating a mild, conditioning bar.</li>\n<li>\n<strong>Sweet Almond Oil</strong>: Helps moisturize and condition the skin, leaving it feeling soft, smooth, and comfortable after cleansing.</li>\n<li>\n<strong>Coconut Oil</strong>: Provides cleansing power and helps create a rich, bubbly lather while leaving the skin feeling refreshed.</li>\n<li>\n<strong>Castor Oil</strong>: Helps create a creamy, stable lather and leaves skin feeling smooth and conditioned.</li>\n<li>\n<strong>Goat Milk</strong>: Helps give the soap a creamy, silky lather and a soft skin feel.</li>\n<li>\n<strong>White Kaolin Clay</strong>: A gentle clay that helps absorb excess oils while giving the soap a silky, smooth feel during cleansing.</li>\n<li>\n<strong>Shea Butter</strong>: Helps nourish, soften, and condition the skin while adding a creamy, luxurious feel.</li>\n<li>\n<strong>Distilled Water</strong>: Used to properly dissolve and combine the ingredients during the soap-making process.</li>\n<li>\n<strong>Lye (Sodium Hydroxide)</strong>: Essential for making true handmade soap; it reacts with the oils during saponification to create soap and glycerin. Once properly made and cured, no active lye remains.</li>\n<li>Activated Charcoal</li>\n</ul><p>Approx. 4–5 oz bar.</p>",
+      "images": [
+        "https://cdn.shopify.com/s/files/1/0754/2013/9651/files/cellImage_0_17.png?v=1791837872"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15424809304195",
+      "handle": "sweet-dreams-goat-milk-soap",
+      "title": "Sweet Dreams Goat Milk Soap",
+      "status": "ACTIVE",
+      "productType": "Soap",
+      "vendor": "Lathered & Lit Apothecary",
+      "tags": [
+        "goat-milk",
+        "presale",
+        "soap"
+      ],
+      "price": "9.00",
+      "stock": 16,
+      "descriptionHtml": "<p><strong>Pre-sale: ships the week of November 16, 2026.</strong></p><p>A floral and herbal lavender bouquet.</p><p>Handcrafted with a nourishing blend of plant-based oils, rich shea butter, and creamy goat milk, our soaps are made to give your skin a soft, clean, comfortable feel. Each bar is carefully crafted with olive oil, sweet almond oil, coconut oil, castor oil, and shea butter to create a creamy lather while helping cleanse without leaving your skin feeling overly stripped. Goat milk adds a creamy, silky quality, while kaolin clay provides gentle cleansing and a smooth skin feel. Every bar is beautifully scented with fragrance oil and colored with mica powder, making bath time feel a little more luxurious and special. Handmade in small batches with care, each bar is unique, because your everyday cleanse should feel like a treat.</p><h3>Scent</h3><p>Lemon, orange, geranium, jasmine, rose, chamomile, ylang ylang, cedarwood, clove, clary sage, oakmoss, vetiver, patchouli.</p><h3>Ingredients</h3><ul>\n<li>\n<strong>Olive Oil</strong>: A gentle, moisturizing oil that helps nourish and soften the skin while creating a mild, conditioning bar.</li>\n<li>\n<strong>Sweet Almond Oil</strong>: Helps moisturize and condition the skin, leaving it feeling soft, smooth, and comfortable after cleansing.</li>\n<li>\n<strong>Coconut Oil</strong>: Provides cleansing power and helps create a rich, bubbly lather while leaving the skin feeling refreshed.</li>\n<li>\n<strong>Castor Oil</strong>: Helps create a creamy, stable lather and leaves skin feeling smooth and conditioned.</li>\n<li>\n<strong>Goat Milk</strong>: Helps give the soap a creamy, silky lather and a soft skin feel.</li>\n<li>\n<strong>White Kaolin Clay</strong>: A gentle clay that helps absorb excess oils while giving the soap a silky, smooth feel during cleansing.</li>\n<li>\n<strong>Shea Butter</strong>: Helps nourish, soften, and condition the skin while adding a creamy, luxurious feel.</li>\n<li>\n<strong>Distilled Water</strong>: Used to properly dissolve and combine the ingredients during the soap-making process.</li>\n<li>\n<strong>Lye (Sodium Hydroxide)</strong>: Essential for making true handmade soap; it reacts with the oils during saponification to create soap and glycerin. Once properly made and cured, no active lye remains.</li>\n<li>\n<strong>Fragrance Oil</strong>: Gives each soap its unique scent and personality and is used according to appropriate skin-safe usage rates.</li>\n<li>\n<strong>Mica Powder</strong>: A cosmetic colorant used to create beautiful colors and designs in the soap and is primarily used for appearance rather than skin-conditioning benefits.</li>\n</ul><p>Approx. 4–5 oz bar.</p>",
+      "images": [
+        "https://cdn.shopify.com/s/files/1/0754/2013/9651/files/cellImage_0_18.png?v=1791837876"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15424809336963",
+      "handle": "morning-breeze-goat-milk-soap",
+      "title": "Morning Breeze Goat Milk Soap",
+      "status": "ACTIVE",
+      "productType": "Soap",
+      "vendor": "Lathered & Lit Apothecary",
+      "tags": [
+        "goat-milk",
+        "presale",
+        "soap"
+      ],
+      "price": "9.00",
+      "stock": 16,
+      "descriptionHtml": "<p><strong>Pre-sale: ships the week of November 16, 2026.</strong></p><p>A clean, fresh blend of cucumber and bergamot with soft florals.</p><p>Handcrafted with a nourishing blend of plant-based oils, rich shea butter, and creamy goat milk, our soaps are made to give your skin a soft, clean, comfortable feel. Each bar is carefully crafted with olive oil, sweet almond oil, coconut oil, castor oil, and shea butter to create a creamy lather while helping cleanse without leaving your skin feeling overly stripped. Goat milk adds a creamy, silky quality, while kaolin clay provides gentle cleansing and a smooth skin feel. Every bar is beautifully scented with fragrance oil and colored with mica powder, making bath time feel a little more luxurious and special. Handmade in small batches with care, each bar is unique, because your everyday cleanse should feel like a treat.</p><h3>Scent</h3><p>Cucumber, bergamot, apple leaf, rose, muguet, jasmine, floral, musk, sandalwood.</p><h3>Ingredients</h3><ul>\n<li>\n<strong>Olive Oil</strong>: A gentle, moisturizing oil that helps nourish and soften the skin while creating a mild, conditioning bar.</li>\n<li>\n<strong>Sweet Almond Oil</strong>: Helps moisturize and condition the skin, leaving it feeling soft, smooth, and comfortable after cleansing.</li>\n<li>\n<strong>Coconut Oil</strong>: Provides cleansing power and helps create a rich, bubbly lather while leaving the skin feeling refreshed.</li>\n<li>\n<strong>Castor Oil</strong>: Helps create a creamy, stable lather and leaves skin feeling smooth and conditioned.</li>\n<li>\n<strong>Goat Milk</strong>: Helps give the soap a creamy, silky lather and a soft skin feel.</li>\n<li>\n<strong>White Kaolin Clay</strong>: A gentle clay that helps absorb excess oils while giving the soap a silky, smooth feel during cleansing.</li>\n<li>\n<strong>Shea Butter</strong>: Helps nourish, soften, and condition the skin while adding a creamy, luxurious feel.</li>\n<li>\n<strong>Distilled Water</strong>: Used to properly dissolve and combine the ingredients during the soap-making process.</li>\n<li>\n<strong>Lye (Sodium Hydroxide)</strong>: Essential for making true handmade soap; it reacts with the oils during saponification to create soap and glycerin. Once properly made and cured, no active lye remains.</li>\n<li>\n<strong>Fragrance Oil</strong>: Gives each soap its unique scent and personality and is used according to appropriate skin-safe usage rates.</li>\n<li>\n<strong>Mica Powder</strong>: A cosmetic colorant used to create beautiful colors and designs in the soap and is primarily used for appearance rather than skin-conditioning benefits.</li>\n</ul><p>Approx. 4–5 oz bar.</p>",
+      "images": [
+        "https://cdn.shopify.com/s/files/1/0754/2013/9651/files/cellImage_0_19.png?v=1791837880"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15424809369731",
+      "handle": "secret-grove-goat-milk-soap",
+      "title": "Secret Grove Goat Milk Soap",
+      "status": "ACTIVE",
+      "productType": "Soap",
+      "vendor": "Lathered & Lit Apothecary",
+      "tags": [
+        "goat-milk",
+        "presale",
+        "soap"
+      ],
+      "price": "9.00",
+      "stock": 16,
+      "descriptionHtml": "<p><strong>Pre-sale: ships the week of November 16, 2026.</strong></p><p>A vibrant blend of peach, raspberry, and rose, balanced by deep patchouli, sandalwood, and musk.</p><p>Handcrafted with a nourishing blend of plant-based oils, rich shea butter, and creamy goat milk, our soaps are made to give your skin a soft, clean, comfortable feel. Each bar is carefully crafted with olive oil, sweet almond oil, coconut oil, castor oil, and shea butter to create a creamy lather while helping cleanse without leaving your skin feeling overly stripped. Goat milk adds a creamy, silky quality, while kaolin clay provides gentle cleansing and a smooth skin feel. Every bar is beautifully scented with fragrance oil and colored with mica powder, making bath time feel a little more luxurious and special. Handmade in small batches with care, each bar is unique, because your everyday cleanse should feel like a treat.</p><h3>Scent</h3><p>Peach pulp, pink floral notes, rose, musk accord, soft amber, patchouli.</p><h3>Ingredients</h3><ul>\n<li>\n<strong>Olive Oil</strong>: A gentle, moisturizing oil that helps nourish and soften the skin while creating a mild, conditioning bar.</li>\n<li>\n<strong>Sweet Almond Oil</strong>: Helps moisturize and condition the skin, leaving it feeling soft, smooth, and comfortable after cleansing.</li>\n<li>\n<strong>Coconut Oil</strong>: Provides cleansing power and helps create a rich, bubbly lather while leaving the skin feeling refreshed.</li>\n<li>\n<strong>Castor Oil</strong>: Helps create a creamy, stable lather and leaves skin feeling smooth and conditioned.</li>\n<li>\n<strong>Goat Milk</strong>: Helps give the soap a creamy, silky lather and a soft skin feel.</li>\n<li>\n<strong>White Kaolin Clay</strong>: A gentle clay that helps absorb excess oils while giving the soap a silky, smooth feel during cleansing.</li>\n<li>\n<strong>Shea Butter</strong>: Helps nourish, soften, and condition the skin while adding a creamy, luxurious feel.</li>\n<li>\n<strong>Distilled Water</strong>: Used to properly dissolve and combine the ingredients during the soap-making process.</li>\n<li>\n<strong>Lye (Sodium Hydroxide)</strong>: Essential for making true handmade soap; it reacts with the oils during saponification to create soap and glycerin. Once properly made and cured, no active lye remains.</li>\n<li>\n<strong>Fragrance Oil</strong>: Gives each soap its unique scent and personality and is used according to appropriate skin-safe usage rates.</li>\n<li>\n<strong>Mica Powder</strong>: A cosmetic colorant used to create beautiful colors and designs in the soap and is primarily used for appearance rather than skin-conditioning benefits.</li>\n</ul><p>Approx. 4–5 oz bar.</p>",
+      "images": [
+        "https://cdn.shopify.com/s/files/1/0754/2013/9651/files/cellImage_0_20.png?v=1791837885"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15424809402499",
+      "handle": "pretty-in-pink-goat-milk-soap",
+      "title": "Pretty in Pink Goat Milk Soap",
+      "status": "ACTIVE",
+      "productType": "Soap",
+      "vendor": "Lathered & Lit Apothecary",
+      "tags": [
+        "goat-milk",
+        "presale",
+        "soap"
+      ],
+      "price": "9.00",
+      "stock": 16,
+      "descriptionHtml": "<p><strong>Pre-sale: ships the week of November 16, 2026.</strong></p><p>Sweet pea petals and watery pear entwine with sheer freesia, fresh berry, and soft, delicate musk.</p><p>Handcrafted with a nourishing blend of plant-based oils, rich shea butter, and creamy goat milk, our soaps are made to give your skin a soft, clean, comfortable feel. Each bar is carefully crafted with olive oil, sweet almond oil, coconut oil, castor oil, and shea butter to create a creamy lather while helping cleanse without leaving your skin feeling overly stripped. Goat milk adds a creamy, silky quality, while kaolin clay provides gentle cleansing and a smooth skin feel. Every bar is beautifully scented with fragrance oil and colored with mica powder, making bath time feel a little more luxurious and special. Handmade in small batches with care, each bar is unique, because your everyday cleanse should feel like a treat.</p><h3>Scent</h3><p>Orange blossom, aldehydic, peach, bergamot, muguet, floral, rose, jasmine, musk, oak moss, animalic, cedarwood.</p><h3>Ingredients</h3><ul>\n<li>\n<strong>Olive Oil</strong>: A gentle, moisturizing oil that helps nourish and soften the skin while creating a mild, conditioning bar.</li>\n<li>\n<strong>Sweet Almond Oil</strong>: Helps moisturize and condition the skin, leaving it feeling soft, smooth, and comfortable after cleansing.</li>\n<li>\n<strong>Coconut Oil</strong>: Provides cleansing power and helps create a rich, bubbly lather while leaving the skin feeling refreshed.</li>\n<li>\n<strong>Castor Oil</strong>: Helps create a creamy, stable lather and leaves skin feeling smooth and conditioned.</li>\n<li>\n<strong>Goat Milk</strong>: Helps give the soap a creamy, silky lather and a soft skin feel.</li>\n<li>\n<strong>White Kaolin Clay</strong>: A gentle clay that helps absorb excess oils while giving the soap a silky, smooth feel during cleansing.</li>\n<li>\n<strong>Shea Butter</strong>: Helps nourish, soften, and condition the skin while adding a creamy, luxurious feel.</li>\n<li>\n<strong>Distilled Water</strong>: Used to properly dissolve and combine the ingredients during the soap-making process.</li>\n<li>\n<strong>Lye (Sodium Hydroxide)</strong>: Essential for making true handmade soap; it reacts with the oils during saponification to create soap and glycerin. Once properly made and cured, no active lye remains.</li>\n<li>\n<strong>Fragrance Oil</strong>: Gives each soap its unique scent and personality and is used according to appropriate skin-safe usage rates.</li>\n<li>\n<strong>Mica Powder</strong>: A cosmetic colorant used to create beautiful colors and designs in the soap and is primarily used for appearance rather than skin-conditioning benefits.</li>\n</ul><p>Approx. 4–5 oz bar.</p>",
+      "images": [
+        "https://cdn.shopify.com/s/files/1/0754/2013/9651/files/cellImage_0_21.png?v=1791837888"
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15424809435267",
+      "handle": "lemon-dish-soap-bar",
+      "title": "Lemon Dish Soap Bar",
+      "status": "ACTIVE",
+      "productType": "Soap",
+      "vendor": "Lathered & Lit Apothecary",
+      "tags": [
+        "dish-soap",
+        "home",
+        "low-waste"
+      ],
+      "price": "21.99",
+      "stock": 12,
+      "descriptionHtml": "<p><strong>Tough on grease. Gentle on your home.</strong></p><p>Skip the plastic bottle and enjoy a simple, handmade way to clean your dishes. Our Lemon Dish Soap Bar is made with coconut oil and castor oil to create a rich, cleansing lather that helps cut through everyday grease and food residue.</p><p>Infused with lemon essential oil, it leaves your kitchen smelling fresh and naturally citrusy. Pair it with our wooden dish brush for a beautiful, low-waste dishwashing routine.</p><p>Handmade • Fresh • Simple • Low-Waste</p><h3>Ingredients</h3><ul>\n<li>Coconut Oil</li>\n<li>Castor Oil</li>\n<li>Lye</li>\n<li>Distilled Water</li>\n<li>Lemon Essential Oil</li>\n</ul><p>6 oz bar.</p>",
+      "images": [
+        "https://cdn.shopify.com/s/files/1/0754/2013/9651/files/cellImage_505912479_0.png?v=1791837892"
+      ],
+      "variants": [
+        {
+          "title": "Set",
+          "price": "21.99",
+          "stock": 12
+        },
+        {
+          "title": "Refill",
+          "price": "11.00",
+          "stock": 12
+        }
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15424809828483",
+      "handle": "buttercream-sugar-cookie-lotion-bar",
+      "title": "Buttercream Sugar Cookie Lotion Bar",
+      "status": "ACTIVE",
+      "productType": "Body",
+      "vendor": "Lathered & Lit Apothecary",
+      "tags": [
+        "body",
+        "lotion-bar"
+      ],
+      "price": "6.00",
+      "stock": 10,
+      "descriptionHtml": "<p>Treat your skin to rich, lasting moisture with our decadent Buttercream Sugar Cookie Lotion Bar, made with nourishing sweet almond oil, shea butter, coconut oil, and beeswax. This solid moisturizer melts with the warmth of your skin to help soften rough, very dry areas while sealing in moisture and helping reduce moisture loss.</p><p>Perfect for dry hands, elbows, knees, heels, and other areas that need a little extra care. Skin is left feeling soft, smooth, supple, and comfortable without the mess of a traditional lotion.</p><h3>How to use</h3><p>For best results, apply to slightly damp skin after bathing. Allow your body's natural warmth to soften the bar as you glide it directly over dry areas. Gently massage into the skin until absorbed.</p><h3>Ingredients</h3><ul>\n<li>Beeswax</li>\n<li>Shea Butter</li>\n<li>Sweet Almond Oil</li>\n<li>Coconut Oil</li>\n<li>Mica</li>\n<li>Fragrance</li>\n</ul><p>2 oz.</p>",
+      "images": [
+        "https://cdn.shopify.com/s/files/1/0754/2013/9651/files/cellImage_464897046_0.png?v=1791837939"
+      ],
+      "variants": [
+        {
+          "title": "Lotion Bar",
+          "price": "6.00",
+          "stock": 10
+        },
+        {
+          "title": "Refill Bar",
+          "price": "5.00",
+          "stock": 10
+        }
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15424809861251",
+      "handle": "sweet-orange-cranberry-lotion-bar",
+      "title": "Sweet Orange Cranberry Lotion Bar",
+      "status": "ACTIVE",
+      "productType": "Body",
+      "vendor": "Lathered & Lit Apothecary",
+      "tags": [
+        "body",
+        "lotion-bar"
+      ],
+      "price": "6.00",
+      "stock": 10,
+      "descriptionHtml": "<p>Treat your skin to rich, lasting moisture with our decadent Sweet Orange Cranberry Lotion Bar, made with nourishing sweet almond oil, shea butter, coconut oil, and beeswax. This solid moisturizer melts with the warmth of your skin to help soften rough, very dry areas while sealing in moisture and helping reduce moisture loss.</p><p>Perfect for dry hands, elbows, knees, heels, and other areas that need a little extra care. Skin is left feeling soft, smooth, supple, and comfortable without the mess of a traditional lotion.</p><h3>How to use</h3><p>For best results, apply to slightly damp skin after bathing. Allow your body's natural warmth to soften the bar as you glide it directly over dry areas. Gently massage into the skin until absorbed.</p><h3>Ingredients</h3><ul>\n<li>Beeswax</li>\n<li>Shea Butter</li>\n<li>Sweet Almond Oil</li>\n<li>Coconut Oil</li>\n<li>Mica</li>\n<li>Fragrance</li>\n</ul><p>2 oz.</p>",
+      "images": [
+        "https://cdn.shopify.com/s/files/1/0754/2013/9651/files/cellImage_464897046_1.png?v=1791837945"
+      ],
+      "variants": [
+        {
+          "title": "Lotion Bar",
+          "price": "6.00",
+          "stock": 10
+        },
+        {
+          "title": "Refill Bar",
+          "price": "5.00",
+          "stock": 10
+        }
+      ]
+    },
+    {
+      "id": "gid://shopify/Product/15424809894019",
+      "handle": "orange-cranberry-moisturizing-balm",
+      "title": "Orange Cranberry Moisturizing Balm",
+      "status": "ACTIVE",
+      "productType": "Body",
+      "vendor": "Lathered & Lit Apothecary",
+      "tags": [
+        "balm",
+        "body"
+      ],
+      "price": "6.00",
+      "stock": 10,
+      "descriptionHtml": "<p>Freshly squeezed oranges kissed with tart cranberry. A clean, crisp blend that is sure to awaken the senses.</p><p>Keep your skin feeling soft and moisturized wherever you go with our nourishing Moisturizing Balm. Made with sweet almond oil, shea butter, coconut oil, and beeswax, this rich, protective balm is designed to comfort dry, rough hands and help seal in moisture.</p><p>Its convenient size makes it perfect to keep in your purse, bag, desk, or car for those moments when your hands need a little extra moisture throughout the day. The smooth, salve-like texture melts into the skin as you massage it in, leaving hands feeling soft, supple, and protected.</p><h3>How to use</h3><p>Apply a small amount to dry hands or other areas that need extra moisture. Massage gently into the skin until absorbed. Reapply whenever your skin needs a moisturizing boost.</p><h3>Ingredients</h3><ul>\n<li>Beeswax</li>\n<li>Shea Butter</li>\n<li>Sweet Almond Oil</li>\n<li>Coconut Oil</li>\n<li>Mica</li>\n<li>Fragrance</li>\n</ul><p>2 oz.</p>",
+      "images": [
+        "https://cdn.shopify.com/s/files/1/0754/2013/9651/files/cellImage_455127197_0.png?v=1791837950"
       ]
     }
   ]

@@ -89,6 +89,11 @@ export async function createProduct(gql, p, mediaSources, status = STATUS) {
   )
   assertNoUserErrors(data.productCreate, 'productCreate')
   const product = data.productCreate.product
+  if (p.variants?.length > 1) {
+    await createVariants(gql, product.id, p)
+    await publishToOnlineStore(gql, [product.id])
+    return product
+  }
   const variantId = product.variants.nodes[0]?.id
   if (variantId && p.price != null) {
     const v = await gql(
@@ -103,6 +108,32 @@ export async function createProduct(gql, p, mediaSources, status = STATUS) {
   if (inventoryItemId) await setStock(gql, inventoryItemId, p.stock ?? 25)
   await publishToOnlineStore(gql, [product.id])
   return product
+}
+
+/** Turn the default variant into p.variants ([{ title, price, stock }]) under one option (p.optionName). */
+export async function createVariants(gql, productId, p) {
+  const optionName = p.optionName ?? 'Option'
+  // CREATE strategy: the existing default variant takes the first value, new variants are made for the rest.
+  const o = await gql(
+    `mutation($productId:ID!,$options:[OptionCreateInput!]!){
+      productOptionsCreate(productId:$productId, options:$options, variantStrategy:CREATE){
+        product{ variants(first:20){ nodes{ id title inventoryItem{ id } } } }
+        userErrors{ field message }
+      }
+    }`,
+    { productId, options: [{ name: optionName, values: p.variants.map((v) => ({ name: v.title })) }] },
+  )
+  assertNoUserErrors(o.productOptionsCreate, 'productOptionsCreate')
+  const created = o.productOptionsCreate.product.variants.nodes
+  const pairs = p.variants.map((v) => [v, created.find((c) => c.title === v.title)])
+  const u = await gql(
+    `mutation($productId:ID!,$variants:[ProductVariantsBulkInput!]!){
+      productVariantsBulkUpdate(productId:$productId, variants:$variants){ userErrors{ field message } }
+    }`,
+    { productId, variants: pairs.map(([v, c]) => ({ id: c.id, price: String(v.price) })) },
+  )
+  assertNoUserErrors(u.productVariantsBulkUpdate, 'productVariantsBulkUpdate')
+  for (const [v, c] of pairs) await setStock(gql, c.inventoryItem.id, v.stock ?? 0)
 }
 
 async function main() {
