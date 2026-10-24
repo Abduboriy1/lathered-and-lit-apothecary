@@ -128,7 +128,7 @@ onMounted(() => {
                     <ul class="hero-trust enter-up mt-8 md:mt-10 flex flex-wrap lg:flex-nowrap gap-y-2 items-center justify-center lg:justify-start gap-x-4 xl:gap-x-5 text-[10px] sm:text-[11px] xl:text-xs uppercase tracking-[0.1em] text-ink-soft font-body whitespace-nowrap max-w-full">
                         <li class="flex items-center gap-2">
                             <span class="w-2 h-2 rotate-45 bg-gradient-to-br from-gold-light to-gold shadow-glow-gold flex-shrink-0" aria-hidden="true"/>
-                            Free shipping over $50
+                            Free shipping over $75
                         </li>
                         <li class="flex items-center gap-2">
                             <span class="w-2 h-2 rotate-45 bg-gradient-to-br from-gold-light to-gold shadow-glow-gold flex-shrink-0" aria-hidden="true"/>

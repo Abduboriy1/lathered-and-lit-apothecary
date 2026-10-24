@@ -4,6 +4,7 @@ import { useCartStore } from '@/stores/cart'
 import GlowButton from '@/components/ui/GlowButton.vue'
 
 const cart = useCartStore()
+const FREE_SHIPPING_THRESHOLD = 75
 
 defineEmits<{ checkout: [] }>()
 </script>
@@ -16,16 +17,16 @@ defineEmits<{ checkout: [] }>()
     </div>
     <div class="flex justify-between text-sm font-body text-ink-soft mb-4">
       <span>Shipping</span>
-      <span class="text-teal">{{ cart.subtotal >= 50 ? 'Free' : '$5.99' }}</span>
+      <span class="text-teal">{{ cart.subtotal >= FREE_SHIPPING_THRESHOLD ? 'Free' : '$5.99' }}</span>
     </div>
-    <div v-if="cart.subtotal < 50" class="mb-5">
+    <div v-if="cart.subtotal < FREE_SHIPPING_THRESHOLD" class="mb-5">
       <p class="text-xs text-blush-deep font-body mb-2 text-center">
-        Add <span class="font-semibold">${{ (50 - cart.subtotal).toFixed(2) }}</span> more for free shipping ✨
+        Add <span class="font-semibold">${{ (FREE_SHIPPING_THRESHOLD - cart.subtotal).toFixed(2) }}</span> more for free shipping ✨
       </p>
       <div class="h-1.5 rounded-full bg-blush-light/70 overflow-hidden">
         <div
           class="h-full rounded-full bg-rose-gradient transition-all duration-500"
-          :style="{ width: `${Math.min(100, (cart.subtotal / 50) * 100)}%` }"
+          :style="{ width: `${Math.min(100, (cart.subtotal / FREE_SHIPPING_THRESHOLD) * 100)}%` }"
         />
       </div>
     </div>
@@ -34,7 +35,7 @@ defineEmits<{ checkout: [] }>()
     </p>
     <div class="flex justify-between font-display text-ink text-lg mb-6">
       <span>Total</span>
-      <span>${{ (cart.subtotal + (cart.subtotal >= 50 ? 0 : 5.99)).toFixed(2) }}</span>
+      <span>${{ (cart.subtotal + (cart.subtotal >= FREE_SHIPPING_THRESHOLD ? 0 : 5.99)).toFixed(2) }}</span>
     </div>
 
     <GlowButton size="lg" class="w-full" @click="$emit('checkout')">
